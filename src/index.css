@@ -1,0 +1,419 @@
+
+@import '~antd/dist/antd.css';
+@import './res/fonts/fonts.css';
+
+body {
+  font-family: 'neo_sans';
+  font-weight: 700;
+}
+
+/* Header */
+.stc-header-top-row {
+  text-align: center;
+}
+
+.stc-landing-header {
+  max-width: 163px;
+}
+
+.ant-layout-header {
+  background: #b3282d;
+  color: #fff;
+}
+/* Content */
+.ant-layout-content {
+  padding: 4rem 0 1.5rem;
+}
+/* ********************************************************************************************************************************************* */
+.steps-action {
+  margin-top: 24px;
+}
+
+.ant-steps-item-process .ant-steps-item-icon {
+  background: #d9272e;
+}
+
+.ant-steps-item-process .ant-steps-item-icon {
+  border-color: #d9272e;
+}
+
+.ant-steps-item-finish .ant-steps-item-icon {
+  background-color: #fff;
+  border-color: #d9272e;
+}
+
+.ant-steps-item-finish .ant-steps-item-icon>.ant-steps-icon {
+  color: #d9272e;
+}
+
+.ant-steps-navigation .ant-steps-item:before {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  display: inline-block;
+  width: 0;
+  height: 3px;
+  background-color: #d9272e;
+  transition: width .3s,left .3s;
+  transition-timing-function: ease-out;
+  content: "";
+}
+
+.ant-steps-item-title {
+  white-space: initial;
+  line-height: normal;
+}
+/* ********************************************************************************************************************************************** */
+/* general steps */
+/* ************ */
+
+/* #components-layout-demo-side .logo {
+  height: 32px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px;
+} */
+
+/* ach feature */
+.text-agreement {
+  text-align: justify;
+  padding: 2.5rem;
+}
+
+/**************************************************** Content and Steps ***********************************************/
+.stc-content {
+  margin: 2rem 0;
+}
+
+.stc-content .ant-card.stc-card-widget.ant-card-bordered .ant-card-head-title {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  color: white;
+  text-align: center;
+}
+
+.stc-content .ant-card.stc-card-widget.ant-card-bordered {
+  box-shadow: 0 0 5px 5px rgba(0,0,0,.03);
+  border-radius: 3rem 3rem 3rem 3rem;
+  width: 84%;
+  margin: 0 auto;
+}
+
+.stc-content .ant-card.stc-card-widget.ant-card-bordered .ant-card-head {
+  background: #d22630;
+  padding: 1rem;
+  border-radius: 3rem 3rem 0 0;
+}
+.stc-content .ant-card.stc-card-widget.ant-card-bordered .ant-card-body{
+  border-radius: 3rem;
+}
+
+/********************************************** Wrapper and form ****************************************************/
+.stc-form {
+  margin-top: 16px;
+  border: 1px dashed #e9e9e9;
+  border-radius: 20px;
+  background-color: #fafafa;
+  min-height: 200px;
+  text-align: center;
+  padding: 3rem 0;
+  margin: 2rem 8rem 3rem;
+}
+
+.form-content {
+  padding-top: 16px;
+  border: 1px dashed #e9e9e9;
+  border-radius: 20px;
+  background-color: #fafafa;
+  min-height: 200px;
+  text-align: center;
+  min-height: 31rem;
+}
+
+.form-content .noah {
+  margin: 2rem 14rem;
+}
+
+.form-content .ant-descriptions-item-label {
+  font-weight: bold;
+}
+/************************ Form components **********************/
+.stc-button {
+  color: #fff;
+  border-radius: 10px;
+  font-size: medium;
+
+
+  padding: 0.5rem 2rem 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 10px;
+}
+
+.ant-btn-primary {
+   background-color: #d9272e;
+  border-color: #d9272e;
+}
+
+.ant-btn-primary:hover {
+  background-color: #d9272ec4;
+  border-color: #d9272ec4;
+}
+
+/* .ant-form-item-has-error .ant-input, .ant-form-item-has-error .ant-input-affix-wrapper, .ant-form-item-has-error .ant-input-affix-wrapper:hover, .ant-form-item-has-error .ant-input:hover {
+  background-color: #fff;
+  border-color: #ff4d4f;
+} */
+
+.ant-input {
+  height: 2.5rem;
+  border-radius: 0.8rem
+}
+
+.ant-input:hover {
+  border-color: #d9272ec4;
+}
+
+.ant-form label {
+  font-weight: bolder;
+}
+/************************************************************** Footer *****************************************************************/
+.ant-layout-footer {
+  background: #d22630;
+  color: #fff;
+}
+.ant-layout-footer {
+  padding: 24px 0 0;
+}
+
+.stc-footer-base {
+  padding: 1rem 0 1.25rem;
+  margin-top: 0.5rem;
+  background: #b3282d;
+}
+
+.stc-footer .ant-row .ant-col {
+text-align: center;
+}
+
+.stc-footer-site{
+  /* margin-top: 1rem; */
+  text-align: center;
+  font-size: 1rem;
+}
+
+/************************************+ Tabs Menu ************************************************/
+.stc-head-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+  background-color:#d9272e;;
+  /*background-color:#000;
+  border-radius:40px */
+  border-radius: 3rem;
+  width: 83%;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.stc-main-title {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.stc-card-title {
+  text-align: center;
+  /* background: pink; */
+}
+
+.stc-card-title {
+  text-align: center;
+  /* background: white; */
+}
+
+.stc-tabs.ant-row.ant-row-center.ant-row-middle {
+  /* background-color: green; */
+  background-color: #d9272e;
+  padding: 0 0 1rem;
+}
+
+.stc-tabs.ant-row.ant-row-center.ant-row-middle .stc-main-title h1 {
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: .5rem;
+  color: #fff;
+  font-weight: 600;
+  line-height: 1.23;
+  white-space: initial;
+}
+
+/* Tab */
+/************************************************************** tabs *************************************************/
+.stc-tab-border {
+  padding: 1.5px 6px;
+  flex: 1 1 auto;
+}
+
+.stc-icon-size {
+  height: 100px;
+  width: 100px;
+  margin: 0 auto;
+}
+
+.stc-tab {
+  background: rgb(236, 230, 230);
+  padding: 0.5rem;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 40px;
+  border: 5px solid #d9272e;
+}
+
+.stc-tab .ant-card-meta-title {
+  white-space: initial;
+}
+
+.stc-selected-tab .stc-card-selected-border {
+  text-align: center;
+  width: 60%;
+  margin: 0 auto;
+  border-bottom: 3px solid #fff;
+  padding: .4rem;
+  -webkit-animation: fadein 4s;
+  animation: fadein 4s;
+}
+/* .stc-selected-tab .stc-tab {
+  padding-bottom: 0.3rem;
+} */
+
+/********************************************************** Media queries **********************************************************/
+/* 
+  ##Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+@media (min-width: 1281px) {
+  /* CSS */
+}
+
+/* 
+  ##Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+ /* css */
+}
+
+/* 
+  ##Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .stc-form {
+    margin: 0;
+  }
+}
+
+
+/* 
+  ##Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+@media (min-width: 481px) and (max-width: 767px) {
+  /* ******************************************************** */
+  .stc-content .ant-card.stc-card-widget.ant-card-bordered {
+    width: 95%;
+  }  
+  .stc-form {
+    margin: 0;
+  }
+  /* ******************* */
+  .ant-steps-horizontal.ant-steps-label-horizontal {
+    display: flex;
+  }
+  .ant-steps {
+    display: flex;
+  }
+  .ant-steps-navigation .ant-steps-item {
+    overflow: visible !important;
+    text-align: center;
+  }
+  .ant-steps-item {
+    display: inline-block !important;
+  }
+
+  /* ******************** */
+  .stc-tab {
+    border-radius: 20px;
+  }
+  .stc-tab .ant-card-body {
+    display: none;
+  }
+  .stc-icon-size {
+    height: 55px;
+    width: 55px;
+  }
+
+  /* ******************************+ */
+  .ant-row.stc-head-tabs {
+    width: 100%;
+  }
+  .stc-selected-tab .stc-card-selected-border {
+    padding: 0.3rem;
+  } 
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  /* ******************************************************** */
+  .stc-content .ant-card.stc-card-widget.ant-card-bordered {
+    width: 95%;
+  }  
+  .stc-form {
+    margin: 0;
+  }
+  /* *****************************************************+ */
+  .ant-steps-horizontal.ant-steps-label-horizontal {
+    display: flex;
+  }
+  .ant-steps {
+    display: flex;
+  }
+  .ant-steps-navigation .ant-steps-item {
+    overflow: visible !important;
+    text-align: center;
+  }
+  .ant-steps-item {
+    display: inline-block !important;
+  }
+  /* ******************************+ */
+  .stc-tab {
+    border-radius: 20px;
+  }
+  .stc-tab .ant-card-body {
+    display: none;
+  }
+  .stc-icon-size {
+    height: 55px;
+    width: 55px;
+  }
+  .ant-row.stc-head-tabs {
+    width: 100%;
+  }
+
+  /* ******************************+ */
+  .ant-row.stc-head-tabs {
+    width: 100%;
+  }
+  .stc-selected-tab .stc-card-selected-border {
+    padding: 0.2rem;
+  } 
+}
+
+
+
