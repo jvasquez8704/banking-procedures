@@ -1,11 +1,12 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Form, Input, Button } from 'antd';
+import { Form, Button } from 'antd';
 
 import { useForm } from '../../hooks/useForm';
 import { startLogin } from '../../actions/auth';
 import { unsetError, updateStep } from '../../actions/ui';
 import { getUserInfo } from '../../actions/ach';
+import CustomInput from '../ui/form/CustomInput';
 
 const UnlockUser = () => {
 
@@ -40,40 +41,18 @@ const UnlockUser = () => {
             className="stc-form"
             onSubmit={handleLogin}
         >
-            <Form.Item
-                label="Usuario Atlántida Online"
-                name="username-item"
-                rules={[
-                    {
-                        required: true,
-                        message: 'Por favor ingresa tu usuario',
-                    },
-                ]}
-                required
-            >
-                <Input
-                    name="username"
-                    placeholder="Ingresa tu usuario"
-                    onChange={handleInputChange}
-                />
-            </Form.Item>
-            <Form.Item
-                label="Token"
-                name="token-item"
-                rules={[
-                    {
-                        required: true,
-                        message: 'Por favor ingresa tu token',
-                    },
-                ]}
-                required
-            >
-                <Input
-                    name="token"
-                    placeholder="Ingresa tu Token"
-                    onChange={handleInputChange}
-                />
-            </Form.Item>
+            <CustomInput fieldName="username"
+                iLabel="Usuario Atlántida Online"
+                errMjs="Por favor ingresa tu usuario"
+                iPlaceholder="Ingresa tu usuarios"
+                ihandleInputChange={handleInputChange}
+            />
+            <CustomInput fieldName="token"
+                iLabel="Token"
+                errMjs="Por favor ingresa tu token"
+                iPlaceholder="Ingresa tu Token"
+                ihandleInputChange={handleInputChange}
+            />
             <Form.Item>
                 <Button type="primary" className="stc-button" htmlType="submit" style={{background:'#d9272e'}}>
                     Siguiente

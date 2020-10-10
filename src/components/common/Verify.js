@@ -4,7 +4,7 @@ import { Form, Button } from 'antd';
 
 import { useForm } from '../../hooks/useForm';
 import { verifyCustomer } from '../../actions/auth';
-import Input from '../ui/form/CustomInput';
+import CustomInput from '../ui/form/CustomInput';
 
 
 const Verify = () => {
@@ -27,24 +27,7 @@ const Verify = () => {
             className="stc-form"
             onSubmit={handleLogin}
         >
-            {/* <Form.Item
-                label="Número de identidad"
-                name="identity"
-                rules={[
-                    {
-                        required: true,
-                        message: 'Por favor ingresa tu identidad',
-                    },
-                ]}
-                required
-            >
-                <Input
-                    name="identity"
-                    placeholder="Sin espacios ni guiones"
-                    onChange={handleInputChange}
-                />
-            </Form.Item> */}
-            <Input fieldName="identity"
+            <CustomInput fieldName="identity"
                 iLabel="Número de identidad"
                 errMjs="Por favor ingresa tu identidad"
                 iPlaceholder="Sin espacios ni guiones"

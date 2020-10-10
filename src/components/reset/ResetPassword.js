@@ -1,10 +1,11 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Form, Input, Button } from 'antd';
+import { Form, Button } from 'antd';
 
 import { useForm } from '../../hooks/useForm';
 import { unsetError, updateStep } from '../../actions/ui';
 import { resetUserPassword } from '../../actions/user';
+import CustomInput from '../ui/form/CustomInput';
 
 const ResetPassword = () => {
     const dispatch = useDispatch();
@@ -35,76 +36,31 @@ const ResetPassword = () => {
             className="stc-form"
             onSubmit={handleLogin}
         >
-            <Form.Item
-                label="Usuario Atlántida Online"
-                name="username-item"
-                rules={[
-                    {
-                        required: true,
-                        message: 'Por favor ingresa tu usuario',
-                    },
-                ]}
-                required
-            >
-                <Input
-                    name="username"
-                    placeholder="Ingresa tu usuario"
-                    onChange={handleInputChange}
-                />
-            </Form.Item>
-            <Form.Item
-                label="Token"
-                name="token-item"
-                rules={[
-                    {
-                        required: true,
-                        message: 'Por favor ingresa tu token',
-                    },
-                ]}
-                required
-            >
-                <Input
-                    name="token"
-                    placeholder="Ingresa tu Token"
-                    onChange={handleInputChange}
-                />
-            </Form.Item>
-            <Form.Item
-                label="Teléfono"
-                name="phone-item"
-                rules={[
-                    {
-                        required: true,
-                        message: 'Por favor ingresa tu teléfono',
-                    },
-                ]}
-                required
-            >
-                <Input
-                    name="telephone"
-                    placeholder="Ingresa tu teléfono"
-                    onChange={handleInputChange}
-                />
-            </Form.Item>
+            <CustomInput fieldName="username"
+                iLabel="Usuario Atlántida Online"
+                errMjs="Por favor ingresa tu usuario"
+                iPlaceholder="Ingresa tu usuarios"
+                ihandleInputChange={handleInputChange}
+            />
+            <CustomInput fieldName="token"
+                iLabel="Token"
+                errMjs="Por favor ingresa tu token"
+                iPlaceholder="Ingresa tu Token"
+                ihandleInputChange={handleInputChange}
+            /> 
+            <CustomInput fieldName="telephone"
+                iLabel="Teléfono"
+                errMjs="Ingresa tu teléfono"
+                iPlaceholder="Ingresa tu teléfono"
+                ihandleInputChange={handleInputChange}
+            /> 
+            <CustomInput fieldName="email"
+                iLabel="Correo Electrónico"
+                errMjs="Por favor ingresa tu correo electrónico"
+                iPlaceholder="Ingresa tu correo electrónico"
+                ihandleInputChange={handleInputChange}
+            />
             
-            <Form.Item
-                label="Correo Electrónico"
-                name="email-item"
-                rules={[
-                    {
-                        required: true,
-                        message: 'Por favor ingresa tu correo electrónico',
-                    },
-                ]}
-                required
-            >
-                <Input
-                    name="email"
-                    placeholder="Ingresa tu correo electrónico"
-                    onChange={handleInputChange}
-                />
-            </Form.Item>
-
             <Form.Item>
                 <Button type="primary" className="stc-button" htmlType="submit">
                     Siguiente
