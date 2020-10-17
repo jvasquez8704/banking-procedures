@@ -35,7 +35,7 @@ const AgreementACH = () => {
         <Form
             name="basic"
             layout="vertical"
-            className="form-content"
+            className="stc-form"
             onSubmit={handleSubmit}
         >
             <Form.Item name="info-item">
@@ -44,13 +44,13 @@ const AgreementACH = () => {
             <Form.Item name="remember" valuePropName="checked">
                 <Checkbox onChange={handleChange}>Acepta términos</Checkbox>
             </Form.Item>
-            <Form.Item className="noah">
+            <Form.Item>
                 <Button type="primary" className="stc-button" htmlType="submit">
                     Siguiente
                 </Button>
             </Form.Item>
-            <Form.Item className="noah">
-                <Button type="default" className="btn" htmlType="button" onClick={handleBack}>
+            <Form.Item>
+                <Button type="default" className="btn stc-button-default" htmlType="button" onClick={handleBack}>
                     Atrás
                 </Button>
             </Form.Item>

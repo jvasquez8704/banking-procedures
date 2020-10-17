@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 
 import Content from './Content';
 
-import Tab from './Tab';
 import img1 from '../../res/img/unlock.svg';
 import img2 from '../../res/img/ach.svg';
 import img3 from '../../res/img/reset.svg';
@@ -30,26 +29,19 @@ const TabsCard = () => {
   const tabList = [
     {
       key: 'tab1',
-      tab: <Tab image={img1} desc="Desbloqueo de usuario de Atlántida Online" />,
       img: img1,
       desc: "Desbloqueo de usuario de Atlántida Online"
     },
     {
       key: 'tab2',
-      tab: <Tab image={img2} desc="Habilitar transferencias a otros bancos(ACH)" />,
       img: img2,
       desc: "Habilitar transferencias a otros bancos(ACH)"
     },
     {
       key: 'tab3',
-      tab: <Tab image={img3} desc="Restablecer contraseña de Atlántida Online" />,
       img: img3,
       desc: "Restablecer contraseña de Atlántida Online"
-    },
-    // {
-    //   key: 'tab4',
-    //   tab: <p>Cheques</p>,
-    // },
+    }
   ];
 
   const unlockJourney = [

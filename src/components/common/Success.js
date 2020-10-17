@@ -47,7 +47,7 @@ const Success = () => {
             </Form.Item>
 
             <Form.Item>
-                <Button type="primary" className="atl-button" htmlType="submit">
+                <Button type="primary" className="stc-button" htmlType="submit">
                     Inicio
                 </Button>
             </Form.Item>

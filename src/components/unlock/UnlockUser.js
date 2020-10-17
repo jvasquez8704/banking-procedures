@@ -59,7 +59,7 @@ const UnlockUser = () => {
                 </Button>
             </Form.Item>
             <Form.Item>
-                <Button type="default" className="btn" htmlType="button" onClick={handleBack}>
+                <Button type="default" className="btn stc-button-default" htmlType="button" onClick={handleBack}>
                     Atrás
                 </Button>
             </Form.Item>

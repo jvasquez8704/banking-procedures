@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { Steps, Spin, Card, Typography } from 'antd';
 import { LoadingOutlined } from '@ant-design/icons';
@@ -30,12 +30,10 @@ const StepScreen = ({ steps, desc }) => {
                 <Steps
                     type="navigation"
                     current={current}
-                    // onChange={onChange}
                     className="site-navigation-steps"
                     status={`${ err ? 'error': 'process'}`}
                 >
                     {steps && steps.map( ( item, idx ) => (
-                        // <Step key={item.key} title={item.title} />
                         <Step key={item.key} title={`${idx === current && err ? err : ''}`} />
                     ))}
 

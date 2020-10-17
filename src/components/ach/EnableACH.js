@@ -4,8 +4,8 @@ import { Form, Button } from 'antd';
 
 import { setError, unsetError, updateStep } from '../../actions/ui';
 import UserInfoTable from './UserInfoTable';
-import CustomSelect from '../common/CustomSelect';
-import { getAgreement } from '../../actions/ach';
+import CustomSelect from '../ui/form/CustomSelect';
+import { getAgreement, setAchAccount } from '../../actions/ach';
 
 const EnableACH = () => {
 
@@ -24,8 +24,9 @@ const EnableACH = () => {
         dispatch(getAgreement(token, account)); 
     }
 
-    const getSelectAccount = acct => {
-        setAccount(acct);
+    const handleChange = value => {
+        dispatch(setAchAccount(value));
+        setAccount(value);
     }
     
     const handleBack = () => {
@@ -37,33 +38,29 @@ const EnableACH = () => {
         <Form
             name="basic"
             layout="vertical"
-            className="form-content"
+            className="stc-form"
             onSubmit={handleSubmit}
         >
             <Form.Item name="info-item">
                <UserInfoTable info={info} />
             </Form.Item>
-            <Form.Item
-                label="Selecciona una cuenta"
-                name="account-item"
-                rules={[
-                    {
-                        required: true,
-                        message: 'Por favor seleccione una cuenta',
-                    },
-                ]}
-                className="noah"
-                required
-            >
-                <CustomSelect items={accounts} getAccount={getSelectAccount} />
-            </Form.Item>
-            <Form.Item className="noah">
+            
+            <CustomSelect
+                fieldName="account-item"
+                iLabel="Selecciona una cuenta"
+                errMjs="Por favor seleccione una cuenta"
+                iPlaceholder="Seleccione una Cuenta"
+                items={accounts}
+                iHandleSelectChange={handleChange}
+            />
+            
+            <Form.Item>
                 <Button type="primary" className="stc-button" htmlType="submit">
                     Siguiente
                 </Button>
             </Form.Item>
-            <Form.Item className="noah">
-                <Button type="default" className="btn" htmlType="button" onClick={handleBack}>
+            <Form.Item>
+                <Button type="default" className="btn stc-button-default" htmlType="button" onClick={handleBack}>
                     Atrás
                 </Button>
             </Form.Item>
