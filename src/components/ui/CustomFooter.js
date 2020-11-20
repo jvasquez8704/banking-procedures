@@ -37,15 +37,20 @@ const CustomFooter = () => {
                             </a>
                         </Col>
                     </Row>
+                    <Row>
+                        <div className="stc-footer-site">
+                            <a href="https://www.bancatlan.hn" target="_blank" rel="noopener noreferrer" className="stc-address-site">www.bancatlan.hn</a>
+                        </div>
+                    </Row>
                 </Col>
             </Row>
-            <Row type="flex" justify="center" className="stc-footer-base">
+            {/* <Row type="flex" justify="center" className="stc-footer-base">
                 <Col xs={24} sm={24} md={8} lg={8} xl={8} xxl={8}>
                     <div className="stc-footer-site">
                         <a href="https://www.bancatlan.hn" target="_blank" rel="noopener noreferrer" className="stc-address-site">www.bancatlan.hn</a>
                     </div>
                 </Col>
-            </Row>
+            </Row> */}
         </div>
     );
 };
