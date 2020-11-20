@@ -1,12 +1,14 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { Steps, Spin, Card } from 'antd';
+import { useDispatch, useSelector } from 'react-redux';
+import { Steps, Spin, Card, Modal } from 'antd';
 import { LoadingOutlined } from '@ant-design/icons';
+import { unsetError } from '../../actions/ui';
 
 
 const StepScreen = ({ steps, desc }) => {
     const { Step } = Steps;
     const { step: current, loading, err } = useSelector(({ ui }) => ui);
+    const dispatch = useDispatch();
     
     /**
      useEffect(() => {
@@ -19,11 +21,22 @@ const StepScreen = ({ steps, desc }) => {
      */
     /*General Loader*/
     const antIcon = <LoadingOutlined style={{ fontSize: 24 , color:'red'}} spin />
+    const hideModal = () => {
+        dispatch(unsetError());
+    }
 
     return (
         <div className="stc-content">
             <div className="stc-card-title">
-                {/****/}
+                <Modal
+                    title="Error"
+                    visible={err && true}
+                    onCancel={hideModal}
+                    footer={null}
+                    className="stc-error-modal"
+                >
+                    <p>{err}</p>
+                </Modal>
             </div>
             <Card title={desc} className="stc-card-widget">
                 <Steps
@@ -33,7 +46,8 @@ const StepScreen = ({ steps, desc }) => {
                     status={`${ err ? 'error': 'process'}`}
                 >
                     {steps && steps.map( ( item, idx ) => (
-                        <Step key={item.key} title={`${idx === current && err ? err : ''}`} />
+                        // <Step key={item.key} title={`${idx === current && err ? err : ''}`} />
+                        <Step key={item.key}/>
                     ))}
 
                 </Steps>

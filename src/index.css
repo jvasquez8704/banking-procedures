@@ -30,6 +30,44 @@ h1,h2,h3{
   margin-bottom: 1.4rem;
 }
 
+.stc-error-modal .ant-modal-content, .ant-modal-header, .ant-modal-close {
+  border-radius: 1rem;
+  border-bottom: 0px;
+}
+
+.stc-error-modal .ant-modal-header {
+  padding: 14px 24px 0px;
+}
+
+.stc-error-modal .ant-modal-header .ant-modal-title {
+  color: #ff4d4f;
+}
+
+.stc-error-modal .ant-modal-body {
+  padding: 14px 24px;
+}
+
+.stc-error-modal .ant-modal-close {
+  border: 2px #b3282d solid;
+  border-radius: 4rem;
+  top: -5px;
+  right: -5px;
+  background: white;
+}
+
+.stc-error-modal .ant-modal-close .ant-modal-close-x {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  background: #b3282d;
+  border-radius: 4rem;
+  color: white;
+}
+
+.stc-error-modal .ant-modal-close .ant-modal-close-x .anticon{
+  font-size: 20px;
+}
+
 .ant-layout-header {
   background: #b3282d;
   color: #fff;
