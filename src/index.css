@@ -20,7 +20,14 @@ h1,h2,h3{
 }
 
 .stc-landing-header {
-  max-width: 163px;
+  max-width: 14.375rem;
+}
+
+.stc-main-footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.4rem;
 }
 
 .ant-layout-header {

@@ -1,23 +1,18 @@
 import React from 'react';
-import { Col, Row, Typography } from 'antd';
+import { Col, Row } from 'antd';
 import { FacebookFilled, InstagramFilled, TwitterCircleFilled, YoutubeFilled } from '@ant-design/icons';
 import logo from '../../res/img/white-logo.svg';
 
 
-const { Text, Title } = Typography;
 const CustomFooter = () => {
     return (
         <div className="stc-footer">
-            <Row>
+            <Row className="stc-main-footer-content">
                 <Col xs={24} sm={24} md={8} lg={8} xl={8} xxl={8}>
-                    <img alt="Logo Banco Atlantida" className="stc-landing-header" src={logo} />
+                    {/*Nothing*/}
                 </Col>
                 <Col xs={24} sm={24} md={8} lg={8} xl={8} xxl={8}>
-                    <div className="stc-address">
-                        <Title level={3} className="stc-address-title">Oficina Principal:</Title>
-                        <Text className="stc-address-text">Plaza Bancatlán, Blvd. Centroamérica,</Text>
-                        <Text className="stc-address-text"> Tegucigalpa, Fco. Morazán.</Text>
-                    </div>
+                    <img alt="Logo Banco Atlantida" className="stc-landing-header" src={logo} />
                 </Col>
                 <Col xs={24} sm={24} md={8} lg={8} xl={8} xxl={8}>
                     <Row type="flex" justify="center" className="icons-list">
