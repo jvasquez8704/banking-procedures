@@ -351,7 +351,7 @@ text-align: center;
 }
 
 .stc-tab {
-  background: rgb(236, 230, 230);
+  background: rgb(199 190 190);
   padding: 0.5rem;
   text-align: center;
   cursor: pointer;
@@ -375,9 +375,9 @@ text-align: center;
   -webkit-animation: fadein 4s;
   animation: fadein 4s;
 }
-/* .stc-selected-tab .stc-tab {
-  padding-bottom: 0.3rem;
-} */
+.stc-selected-tab .stc-tab {
+  background: rgb(236, 230, 230); 
+}
 
 /********************************************************** Media queries **********************************************************/
 /* 
