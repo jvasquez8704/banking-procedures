@@ -1,9 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Steps, Spin, Card, Typography } from 'antd';
+import { Steps, Spin, Card } from 'antd';
 import { LoadingOutlined } from '@ant-design/icons';
 
-const { Title } = Typography;
 
 const StepScreen = ({ steps, desc }) => {
     const { Step } = Steps;
@@ -24,9 +23,9 @@ const StepScreen = ({ steps, desc }) => {
     return (
         <div className="stc-content">
             <div className="stc-card-title">
-                <Title level={3}>{desc}</Title>
+                {/****/}
             </div>
-            <Card title="Ingresa tu identidad" className="stc-card-widget">
+            <Card title={desc} className="stc-card-widget">
                 <Steps
                     type="navigation"
                     current={current}
