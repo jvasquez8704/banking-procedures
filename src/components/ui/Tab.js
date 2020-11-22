@@ -12,7 +12,7 @@ const Tab = ({ id, image, desc, getCurrentTab }) => {
         getCurrentTab(id, desc);
     }
     return (
-        <div className={`stc-tab-border ${id === 'tab' + currentTab ? 'stc-selected-tab' : ''}`}>
+        <div className={`stc-tab-border ${id === currentTab ? 'stc-selected-tab' : ''}`}>
             <Card
                 hoverable
                 cover={<img alt={desc || ''} src={image || ''} className="stc-icon-size" />}

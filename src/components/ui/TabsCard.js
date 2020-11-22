@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 import Content from './Content';
@@ -16,34 +16,43 @@ import ResetPassword from '../reset/ResetPassword';
 
 import { setTab, updateStep } from '../../actions/ui';
 import Tabs from '../custom/Tabs';
+import { getModule } from '../../helpers/util';
 
 const TabsCard = () => {
   const dispatch = useDispatch();
-  const [state, setState] = useState({
-    key: 'tab1',
-    description: 'Desbloqueo de usuario de Atlántida Online'
-  });
-
-  const { key, description } = state;
-
   const tabList = [
     {
-      key: 'tab1',
+      key: 1,
       img: img1,
       desc: "Desbloqueo de usuario de Atlántida Online"
     },
     {
-      key: 'tab2',
+      key: 2,
       img: img2,
       desc: "Habilitar transferencias a otros bancos(ACH)"
     },
     {
-      key: 'tab3',
+      key: 3,
       img: img3,
       desc: "Restablecer contraseña de Atlántida Online"
     }
   ];
 
+  const [state, setState] = useState({
+    key: getModule(),
+    description: 'Desbloqueo de usuario de Atlántida Online'
+  });
+
+  useEffect(() => {
+    dispatch(setTab(key));
+    const tab = tabList.filter( item => key === item.key );
+    if(tab.length){
+    setState({...state, description: tab[0].desc});  
+    }
+  }, [getModule])
+
+  const { key, description } = state;
+  
   const unlockJourney = [
     {
       key: 'init',
@@ -98,17 +107,15 @@ const TabsCard = () => {
   ];
 
   const journeys = {
-    tab1: unlockJourney,
-    tab2: achJourney,
-    tab3: resetJourney
+    1: unlockJourney,
+    2: achJourney,
+    3: resetJourney
   };
   
   const onTabChange = (key, description) => {
-    const tab = parseInt(key.replace('tab',''));
     dispatch(updateStep(0));//restar journey 
-    dispatch(setTab(tab));
+    dispatch(setTab(key));
     setState({
-      ...state,
       key,
       description
     });
