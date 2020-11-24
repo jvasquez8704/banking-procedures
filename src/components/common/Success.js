@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { Form, Button } from 'antd';
 import { CheckCircleFilled } from '@ant-design/icons';
 import { unsetError, updateStep } from '../../actions/ui';
+import { getAgree } from '../../actions/ach';
 
 
 const Success = () => {
@@ -13,6 +14,7 @@ const Success = () => {
         e.preventDefault();
         dispatch(updateStep(0));
         dispatch(unsetError());
+        dispatch(getAgree(null));
     }
 
     return (

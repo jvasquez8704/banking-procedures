@@ -82,10 +82,6 @@ const TabsCard = () => {
       content: <EnableACH />,
     },
     {
-      key: 'enrolment',
-      content: <AgreementACH />,
-    },
-    {
       key: 'success',
       content: <Success />,
     },

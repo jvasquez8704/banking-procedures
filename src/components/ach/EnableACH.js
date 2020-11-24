@@ -1,36 +1,49 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'; 
-import { Form, Button } from 'antd';
+import { Form, Button, Checkbox } from 'antd';
 
 import { setError, unsetError, updateStep } from '../../actions/ui';
 import UserInfoTable from './UserInfoTable';
 import CustomSelect from '../ui/form/CustomSelect';
-import { getAgreement, setAchAccount } from '../../actions/ach';
+import { getAgree, getAgreement, getEnroll, setAchAccount } from '../../actions/ach';
 
 const EnableACH = () => {
 
     const dispatch = useDispatch();
-    const info = useSelector(({ ach }) =>  ach );
-    const accounts = info.products ? info.products.productsItems : [];
+    const { token, detail, products, info, selectedAccount } = useSelector(({ ach }) =>  ach );
+    const accounts = products ? products.productsItems : [];
     const [account, setAccount] = useState('');
+    const [approved, setApproved] = useState(false);
 
     const handleSubmit = e => {
         e.preventDefault();
-        const { token } = info;
-        if (account === '') {
-            dispatch(setError('Selecciona una cuenta...'));
-            return;
+        if (!detail) {
+            if (account === '') {
+                dispatch(setError('Selecciona una cuenta'));
+                return;
+            }
+            dispatch(getAgreement(token, account));
+        } else {
+            if (!approved) {
+                dispatch(setError('Debes aceptar los términos'));
+                return;
+            }
+            dispatch(getEnroll(token, selectedAccount));
         }
-        dispatch(getAgreement(token, account)); 
     }
 
     const handleChange = value => {
         dispatch(setAchAccount(value));
         setAccount(value);
     }
+
+    const handleChangeCheckbox = e => {
+        setApproved(e.target.checked);
+    }
     
     const handleBack = () => {
         dispatch(updateStep(1));
+        dispatch(getAgree(null));
         dispatch(unsetError());      
     }
     
@@ -53,7 +66,20 @@ const EnableACH = () => {
                 items={accounts}
                 iHandleSelectChange={handleChange}
             />
-            
+            {
+                detail && (
+                    <div className="agreement-block">
+                        <Form.Item name="info-item">
+                            <p className="text-ach-agreement">{detail}</p>
+                        </Form.Item>
+
+                        <Form.Item name="remember" valuePropName="checked">
+                            <Checkbox onChange={handleChangeCheckbox}>Acepto términos y Condiciones</Checkbox>
+                        </Form.Item>
+                    </div>
+                )
+            }
+
             <Form.Item>
                 <Button type="primary" className="stc-button" htmlType="submit">
                     Siguiente

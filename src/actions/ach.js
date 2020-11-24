@@ -58,7 +58,7 @@ export const getAgreement = ( token, account ) => {
             if (status.code === '0000') {
                 const { detail } = status;
                 dispatch(getAgree(detail));
-                dispatch(updateStep(3));
+                //dispatch(updateStep(3));
                 dispatch(unsetError());
             } else {
                 dispatch(setError(status.message));
@@ -91,7 +91,7 @@ export const getEnroll = ( token, account ) => {
 
             if (status.code === '0000') {
                 dispatch(getEnrollment());
-                dispatch(updateStep(4));
+                dispatch(updateStep(3));
                 dispatch(unsetError());
             } else {
                 dispatch(setError(status.message));
@@ -110,14 +110,14 @@ export const setAchAccount = account => ({
     payload: account
 });
 
+export const getAgree = detail => ({
+    type: types.getAgreement,
+    payload: detail
+});
+
 const getInfo = ( info ) => ({
     type: types.getUserInfo,
     payload: info
-});
-
-const getAgree = detail => ({
-    type: types.getAgreement,
-    payload: detail
 });
 
 const getEnrollment = () => ({

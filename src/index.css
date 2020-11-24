@@ -139,6 +139,14 @@ h1,h2,h3{
   padding: 2.5rem;
 }
 
+.text-ach-agreement {
+  text-align: justify;
+  font-family: 'neo_sans_ltght';
+  padding: 0 2.5rem;
+  margin-top: -2rem;
+  height: 350px;
+  overflow-y: scroll;
+}
 /**************************************************** Content and Steps ***********************************************/
 .stc-content {
   margin: 2rem 0;
