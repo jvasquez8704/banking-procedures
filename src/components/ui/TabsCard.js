@@ -7,12 +7,12 @@ import img1 from '../../res/img/unlock.svg';
 import img2 from '../../res/img/ach.svg';
 import img3 from '../../res/img/reset.svg';
 
-import Verify from '../common/Verify';
+import PreLogin from '../auth/PreLogin';
+import Login from '../auth/Login';
+import ResetPassword from '../auth/ResetPassword';
 import Success from '../common/Success';
-import Unlock from '../unlock/UnlockUser';
 import EnableACH from '../ach/EnableACH';
 import AgreementACH from '../ach/AgreementACH';
-import ResetPassword from '../reset/ResetPassword';
 
 import { setTab, updateStep } from '../../actions/ui';
 import Tabs from '../custom/Tabs';
@@ -56,11 +56,11 @@ const TabsCard = () => {
   const unlockJourney = [
     {
       key: 'init',
-      content: <Verify />,
+      content: <PreLogin />,
     },
     {
       key: 'unlock',
-      content: <Unlock />,
+      content: <Login />,
     },
     {
       key: 'success',
@@ -71,11 +71,11 @@ const TabsCard = () => {
   const achJourney = [
     {
       key: 'init',
-      content: <Verify />,
+      content: <PreLogin />,
     },
     {
       key: 'unlock',
-      content: <Unlock />,
+      content: <Login />,
     },
     {
       key: 'agreement',
@@ -94,7 +94,7 @@ const TabsCard = () => {
   const resetJourney = [
     {
       key: 'init',
-      content: <Verify />,
+      content: <PreLogin />,
     },
     {
       key: 'reset',
