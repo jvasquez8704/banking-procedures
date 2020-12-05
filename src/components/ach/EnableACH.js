@@ -10,7 +10,8 @@ import { getAgree, getAgreement, getEnroll, setAchAccount } from '../../actions/
 const EnableACH = () => {
 
     const dispatch = useDispatch();
-    const { token, detail, products, info, selectedAccount } = useSelector(({ ach }) =>  ach );
+    const data = useSelector(({ ach }) =>  ach );
+    const { token, detail, products, selectedAccount } = data;
     const accounts = products ? products.productsItems : [];
     const [account, setAccount] = useState('');
     const [approved, setApproved] = useState(false);
@@ -22,7 +23,6 @@ const EnableACH = () => {
                 dispatch(setError('Selecciona una cuenta'));
                 return;
             }
-            dispatch(getAgreement(token, account));
         } else {
             if (!approved) {
                 dispatch(setError('Debes aceptar los términos'));
@@ -35,6 +35,7 @@ const EnableACH = () => {
     const handleChange = value => {
         dispatch(setAchAccount(value));
         setAccount(value);
+        dispatch(getAgreement(token, value));
     }
 
     const handleChangeCheckbox = e => {
@@ -55,7 +56,7 @@ const EnableACH = () => {
             onSubmit={handleSubmit}
         >
             <Form.Item name="info-item">
-               <UserInfoTable info={info} />
+               <UserInfoTable info={data} />
             </Form.Item>
             
             <CustomSelect

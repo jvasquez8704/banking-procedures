@@ -50,8 +50,8 @@ h1,h2,h3{
 .stc-error-modal .ant-modal-close {
   border: 2px #b3282d solid;
   border-radius: 4rem;
-  top: -5px;
-  right: -5px;
+  top: -8px;
+  right: -8px;
   background: white;
 }
 

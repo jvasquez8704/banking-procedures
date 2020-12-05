@@ -1,7 +1,7 @@
 import React from 'react';
 import { Descriptions } from 'antd';
 
-const UserInfoTable = info => {
+const UserInfoTable = ({ info }) => {
     const { customerCoreCitizen, customerCoreEmail, customerCoreMarital, customerCoreName, customerCoreNationality, customerCorePhone, customerOCBUser } = info;
     return (
         <Descriptions
