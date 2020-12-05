@@ -257,7 +257,7 @@ h1,h2,h3{
   border-color: #d9272e;
 }
 
-.ant-btn-primary:hover, .ant-btn-primary:focus {
+.ant-btn-primary:hover, .ant-btn-primary:focus, .ant-btn-primary:active, .ant-btn-primary.active {
   color: #fff;
   background: #e64e4e;
   border-color: #e64e4e;
@@ -364,6 +364,14 @@ text-align: center;
   font-size: 1.4rem;
   color: rgba(0,0,0,.85);
   line-height: 1.35;
+}
+
+th.ant-descriptions-item-label.ant-descriptions-item-colon {
+  font-family: 'neo_sans_bld';
+}
+
+.ant-descriptions-title {
+  font-family: 'neo_sans_bld';
 }
 
 .stc-tabs.ant-row.ant-row-center.ant-row-middle {
