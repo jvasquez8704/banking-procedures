@@ -193,6 +193,21 @@ h1,h2,h3{
   color: rgba(0,0,0,.85);
 }
 
+.stc-success-message {
+  font-family: 'neo_sans_ltght';
+  margin: 0;
+}
+
+.stc-static-success-message {
+  font-family: 'neo_sans_bld';
+  width: 28rem;
+  margin: 0 auto;
+}
+
+.stc-success-form .ant-row.ant-form-item {
+  margin-bottom: 0.6rem;
+}
+
 .stc-form input{
   font-family: 'neo_sans_ltght';
   font-weight: 600;
