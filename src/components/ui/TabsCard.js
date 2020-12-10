@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import Content from './Content';
 
+import logo from '../../res/img/logo.svg';
 import img1 from '../../res/img/unlock.svg';
 import img2 from '../../res/img/ach.svg';
 import img3 from '../../res/img/reset.svg';
@@ -12,7 +13,6 @@ import Login from '../auth/Login';
 import ResetPassword from '../auth/ResetPassword';
 import Success from '../common/Success';
 import EnableACH from '../ach/EnableACH';
-import AgreementACH from '../ach/AgreementACH';
 
 import { setTab, updateStep } from '../../actions/ui';
 import Tabs from '../custom/Tabs';
@@ -119,8 +119,11 @@ const TabsCard = () => {
 
   return (
     <div>
+      <div className="stc-header-top-row">
+        <img alt="Logo Banco Atlantida" className="stc-landing-header" src={logo} />
+      </div>
       <Tabs
-        title={"Tus accesos de Banca Personal sin salir de casa"}
+        title={"Accesos Atlántida Online"}
         className="stc-tabs ant-row ant-row-center ant-row-middle"
         tabList={tabList}
         onTabChange={onTabChange}
