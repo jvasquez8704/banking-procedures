@@ -330,6 +330,13 @@ text-align: center;
   text-align: center;
   font-size: 1rem;
 }
+
+.stc-new-footer {
+  text-align: center;
+  font-size: 1rem;
+  padding: 0 25rem;
+}
+
 .stc-address-title { 
   color: #fff !important;
   font-size: 0.9rem !important;
