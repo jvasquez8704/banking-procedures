@@ -1,5 +1,5 @@
 // const baseUrl = process.env.REACT_APP_API_URL;
-const baseUrl = 'http://10.128.254.14:80/LandingPageREST/rest';
+const baseUrl = 'http://150.150.6.114:81/LandingPageREST/rest';
 
 const unsecurefetch = ( endpoint, data, method = 'GET' ) => {
 
