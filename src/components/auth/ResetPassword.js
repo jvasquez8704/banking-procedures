@@ -12,9 +12,10 @@ import CustomInput from '../ui/form/CustomInput';
 const ResetPassword = () => {
     const { handleSubmit, errors , control } = validatorForm();
     const dispatch = useDispatch();
-    const identity = useSelector(({ auth }) => auth.identity);
+    const { identity, customerCoreEmail } = useSelector(({ auth }) => auth);
     //const [{ username, token, telephone, email }, handleInputChange] = useForm({ username: '', token: '', telephone: '', email: '' });
     const [handleInputChange] = useForm({ username: '', token: '', telephone: '', email: '' });
+    const emailTemplate = `Correo Electrónico ${ customerCoreEmail ? ' (' + customerCoreEmail + ')' : '' }`;
 
     const handleLogin = ({ username, token, email, telephone }) => {  
         dispatch(resetUserPassword(identity, username, token, email, telephone));
@@ -108,7 +109,7 @@ const ResetPassword = () => {
                 }}
             />
             <CustomInput fieldName="email"
-                iLabel="Correo Electrónico"
+                iLabel={emailTemplate}
                 errMjs={ errors.email && errors.email.message }
                 iTypeErr={`${ errors.email ? 'error': ''}`}
                 iPlaceholder="Ingresa tu correo electrónico"

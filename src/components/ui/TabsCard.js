@@ -5,7 +5,7 @@ import Content from './Content';
 
 import logo from '../../res/img/logo.svg';
 import img1 from '../../res/img/unlock.svg';
-import img2 from '../../res/img/ach.svg';
+import img2 from '../../res/img/ach2.svg';
 import img3 from '../../res/img/reset.svg';
 
 import PreLogin from '../auth/PreLogin';

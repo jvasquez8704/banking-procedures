@@ -13,12 +13,13 @@ export const verifyCustomer = identity => {
         try {
             const resp = await unsecurefetch('VerifyCustomer', req, 'POST');
             const body = await resp.json();
-            const { response: { status, data: { customerCore, customerOCB } } } = body;
+            const { response: { status, data: { customerCore, customerOCB, customerCoreEmail } } } = body;
 
             dispatch(verify({
                 identity: identity,
                 isInCore: customerCore === '1',
-                isInOcb: customerOCB === '1'
+                isInOcb: customerOCB === '1',
+                customerCoreEmail
             }));
 
             if (status.code === '0000') {
