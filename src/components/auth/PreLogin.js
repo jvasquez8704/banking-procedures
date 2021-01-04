@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch } from 'react-redux'; 
+import { useDispatch, useSelector } from 'react-redux'; 
 import { Form, Button } from 'antd';
 import { useForm as validatorForm } from "react-hook-form";
 
@@ -11,11 +11,12 @@ import CustomInput from '../ui/form/CustomInput';
 const Verify = () => {
     const { register, handleSubmit, errors , control } = validatorForm();
     const dispatch = useDispatch();
+    const tab = useSelector( ({ui}) => ui.tab);
     //const [{ identity }, handleInputChange] = useForm({identity:''});
     const [handleInputChange] = useForm({identity:''});
 
     const handleLogin = ({identity}) => {
-        dispatch(verifyCustomer(identity));
+        dispatch(verifyCustomer(identity, tab === 3));
     }
 
     const handleKeyPress = e => {

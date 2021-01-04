@@ -3,11 +3,12 @@ import { types } from '../constants/types';
 import { requests } from '../constants/requests';
 import { updateStep, setError, unsetError, setLoading } from './ui';
 
-export const verifyCustomer = identity => {
+export const verifyCustomer = (identity, isResetPassWord) => {
     return async (dispatch) => {
 
         let { verifyCustomer: req } = requests;
         req.request.data.id = identity;
+        req.request.header.transaction = isResetPassWord ? 1003 : 1001;
         dispatch(setLoading());
 
         try {

@@ -87,7 +87,7 @@ const ResetPassword = () => {
 
                 }}
             />  
-           <CustomInput fieldName="telephone"
+           {/* <CustomInput fieldName="telephone"
                 iLabel="Teléfono"
                 errMjs={ errors.telephone && errors.telephone.message }
                 iTypeErr={`${ errors.telephone ? 'error': ''}`}
@@ -107,7 +107,7 @@ const ResetPassword = () => {
                     }
 
                 }}
-            />
+            /> */}
             <CustomInput fieldName="email"
                 iLabel={emailTemplate}
                 errMjs={ errors.email && errors.email.message }

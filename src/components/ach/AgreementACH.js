@@ -15,7 +15,7 @@ const AgreementACH = () => {
         e.preventDefault();
         console.log('Approved: ', approved, 'selected Acc: ', selectedAccount);
         if (!approved) {
-            dispatch(setError('Debes aceptar los términos...'));
+            dispatch(setError('Debes aceptar los términos y condiciones'));
             return;
         }
         dispatch(getEnroll(token, selectedAccount)); 

@@ -11,7 +11,7 @@ const MainContent = () => {
         <Layout>
             <Content>
                 <TabsCard />
-                <div class="stc-new-footer">
+                <div className="stc-new-footer">
                     Para dudas o consultas puedes comunicarte a nuestro Call Center a los teléfonos: Tegucigalpa 2280-1010, San Pedro Sula 2580-1010, La Ceiba 2480-1010
                 </div>
             </Content>
