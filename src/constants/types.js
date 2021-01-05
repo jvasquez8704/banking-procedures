@@ -9,6 +9,7 @@ export const types = {
     setError: '[ui] setError',
     unsetError: '[ui] unsetError',
     setLoading: '[ui] setLoading',
+    setModal: '[ui] setModal',
 
 
     getUserInfo:'[ach] getUserInfo',

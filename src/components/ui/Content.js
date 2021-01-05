@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Steps, Spin, Card, Modal } from 'antd';
 import { LoadingOutlined } from '@ant-design/icons';
 import { unsetError } from '../../actions/ui';
+import Popup from '../common/Modal';
 
 
 const StepScreen = ({ steps, desc }) => {
@@ -54,6 +55,7 @@ const StepScreen = ({ steps, desc }) => {
                 <Spin indicator={antIcon} spinning={loading} >
                     {steps && steps[current].content}
                 </Spin>
+                <Popup />
             </Card>
         </div>
     );

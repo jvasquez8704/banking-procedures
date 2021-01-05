@@ -486,6 +486,11 @@ th.ant-descriptions-item-label.ant-descriptions-item-colon {
   background: rgb(236, 230, 230); 
 }
 
+.stc-icon-store-size {
+  width: 140px;
+  margin: 0 auto;
+}
+
 /********************************************************** Media queries **********************************************************/
 /* 
   ##Desktops

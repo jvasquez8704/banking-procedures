@@ -1,7 +1,7 @@
 import { unsecurefetch, secureFetch } from '../helpers/fetch';
 import { types } from '../constants/types';
 import { requests } from '../constants/requests';
-import { updateStep, setError, unsetError, setLoading } from './ui';
+import { updateStep, setError, unsetError, setLoading, activeModal } from './ui';
 
 export const verifyCustomer = (identity, isResetPassWord) => {
     return async (dispatch) => {
@@ -24,12 +24,22 @@ export const verifyCustomer = (identity, isResetPassWord) => {
             }));
 
             if (status.code === '0000') {
-                dispatch(updateStep(1));
+                //dispatch(updateStep(1));
                 dispatch(unsetError());
                 // localStorage.setItem('token', body.token );
                 // localStorage.setItem('token-init-date', new Date().getTime() );
+                if (customerOCB === '1') {
+                    dispatch(updateStep(1));
+                } else {
+                    dispatch(activeModal(true));
+                }
             } else {
-                dispatch(setError(status.message));
+                if (status.code !== '2001') {
+                    dispatch(setError(status.message)); 
+                }else{
+                    dispatch(activeModal(true));
+                }
+                
             }
             dispatch(setLoading());
         } catch (err) {

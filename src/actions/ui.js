@@ -22,3 +22,8 @@ export const setTab = tab => ({
     type: types.setTab,
     payload: tab
 });
+
+export const activeModal = flag => ({
+    type: types.setModal,
+    payload: flag
+});
