@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux'; 
 import { Form, Button } from 'antd';
 import { useForm as validatorForm } from "react-hook-form";
+import validator from 'validator';
 
 import { useForm } from '../../hooks/useForm';
 import { verifyCustomer } from '../../actions/auth';
@@ -20,7 +21,8 @@ const Verify = () => {
     }
 
     const handleKeyPress = e => {
-        if (isNaN(e.key)) {
+        // if (isNaN(e.key)) {
+        if (!validator.isAlphanumeric(e.key)) {
             e.preventDefault();
             return;
         }
@@ -57,7 +59,8 @@ const Verify = () => {
                         message: 'Por favor ingresa una identificación válida'
                     },
                     pattern: {
-                        value: /^[0-9]*$/,
+                        // value: /^[0-9]*$/,
+                        value: /^[A-Za-z0-9]*$/,
                         message: 'Por favor ingresa tu identificación'
                     }
 

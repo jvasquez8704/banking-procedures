@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Form, Button } from 'antd';
 import { useForm as validatorForm } from "react-hook-form";
@@ -17,6 +17,7 @@ const UnlockUser = () => {
     const identity = useSelector(({ auth }) => auth.identity);
     //const [{ username, token }, handleInputChange] = useForm({username: '', token: ''});
     const [handleInputChange] = useForm({ username: '', token: '' });
+    const [temp, setTemp] = useState('');
 
     const handleLogin = ({ username, token }) => {
         if (tab === 1) {
@@ -34,10 +35,31 @@ const UnlockUser = () => {
     }
 
     const handleKeyPress = e => {
+        if (e.target.name === 'token' && temp.length > 7) {
+            e.preventDefault();
+            return;
+        }
+
         if (e.target.name === 'token' && !validator.isNumeric(e.key)) {
             e.preventDefault();
             return;
         }
+        let dataTemp = temp + e.key;
+        e.target.name === 'token' && setTemp(dataTemp);
+    }
+    
+    const handleKeyDown = e => {
+        let key = e.which || e.keyCode || e.charCode;
+        // if (!validator.isNumeric(e.key)) {
+        //     e.preventDefault();
+        //     return;
+        // }
+        if(e.target.name === 'token' && key === 8){
+            let dataTemp = temp;
+            if(dataTemp.length > 0){
+                setTemp(dataTemp.slice(0, -1)); 
+            }
+        }    
     }
 
     return (
@@ -80,6 +102,7 @@ const UnlockUser = () => {
                 iPlaceholder="Ingresa tu Token"
                 ihandleInputChange={handleInputChange}
                 ihandleKeyPress={handleKeyPress}
+                ihandleKeyDown={handleKeyDown}
                 icontrol={control}
                 irules={{
                     validate: value => value.length !== 8 ? 'Por favor ingresa tu token' : undefined,
