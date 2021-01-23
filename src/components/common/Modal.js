@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Modal, Row, Col, Button } from 'antd';
 import { InfoCircleOutlined } from '@ant-design/icons';
 import playstore from '../../res/img/playstore.svg';
@@ -11,7 +11,7 @@ const Popup = ({open}) => {
 
     const dispatch = useDispatch();
     const { openModal } = useSelector(({ ui }) => ui);
-    const [visible, setVisible] = useState(false);
+  // const [visible, setVisible] = useState(false);
 
   //   useEffect(() => {
   //     console.log('Show Modal ', openModal);

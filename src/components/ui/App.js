@@ -4,7 +4,7 @@ import { Layout } from 'antd';
 import TabsCard from './TabsCard';
 //import CustomFooter from './CustomFooter';
 
-const { Header, Footer, Content } = Layout;
+const { Content } = Layout;
 
 const MainContent = () => {
     return (
