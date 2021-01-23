@@ -83,7 +83,7 @@ const EnableACH = () => {
 
             <Form.Item>
                 <Button type="primary" className="stc-button" htmlType="submit">
-                    Siguiente
+                    Confirmar
                 </Button>
             </Form.Item>
             <Form.Item>

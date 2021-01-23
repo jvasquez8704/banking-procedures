@@ -24,23 +24,23 @@ const TabsCard = () => {
     {
       key: 1,
       img: img1,
-      desc: "Desbloqueo de usuario de Atlántida Online"
+      desc: "Desbloqueo de usuario"
     },
     {
       key: 2,
       img: img2,
-      desc: "Habilitar transferencias a otros bancos(ACH)"
+      desc: "Habilitar ACH"
     },
     {
       key: 3,
       img: img3,
-      desc: "Restablecer contraseña de Atlántida Online"
+      desc: "Restablecer contraseña"
     }
   ];
 
   const [state, setState] = useState({
     key: getModule(),
-    description: 'Desbloqueo de usuario de Atlántida Online'
+    description: 'Desbloqueo de usuario'
   });
 
   useEffect(() => {
@@ -123,7 +123,7 @@ const TabsCard = () => {
         <img alt="Logo Banco Atlantida" className="stc-landing-header" src={logo} />
       </div>
       <Tabs
-        title={"Accesos Atlántida Online"}
+        title={"Accesos a tu Banca Digital"}
         className="stc-tabs ant-row ant-row-center ant-row-middle"
         tabList={tabList}
         onTabChange={onTabChange}

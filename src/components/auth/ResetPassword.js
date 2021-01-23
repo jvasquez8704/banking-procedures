@@ -41,7 +41,7 @@ const ResetPassword = () => {
             onSubmit={handleSubmit(handleLogin)}
         >
            <CustomInput fieldName="username"
-                iLabel="Usuario Atlántida Online"
+                iLabel="Usuario de tu Banca Digital"
                 errMjs={ errors.username && errors.username.message }
                 iTypeErr={`${ errors.username ? 'error': ''}`}
                 iPlaceholder="Ingresa tu usuario"
@@ -86,28 +86,7 @@ const ResetPassword = () => {
                     }
 
                 }}
-            />  
-           {/* <CustomInput fieldName="telephone"
-                iLabel="Teléfono"
-                errMjs={ errors.telephone && errors.telephone.message }
-                iTypeErr={`${ errors.telephone ? 'error': ''}`}
-                iPlaceholder="Ingresa tu teléfono"
-                ihandleInputChange={handleInputChange}
-                ihandleKeyPress={handleKeyPress}
-                icontrol={control}
-                irules={{
-                    required: {
-                        value: true,
-                        message: 'Por favor ingresa tu teléfono'
-                    },
-                    validate: value => value.length !== 8 ? 'Por favor ingresa un teléfono valido' : undefined,
-                    pattern: {
-                        value: /^[0-9]*$/,
-                        message: 'Por favor ingresa un teléfono valido'
-                    }
-
-                }}
-            /> */}
+            />
             <CustomInput fieldName="email"
                 iLabel={emailTemplate}
                 errMjs={ errors.email && errors.email.message }
@@ -124,24 +103,23 @@ const ResetPassword = () => {
                     validate: value => !validator.isEmail(value) ? "Por favor ingresa un correo electrónico valido" : undefined
                 }}
             />
+            <Form.Item
+                name="normal-message" className="email-leyend"
+            >
+               <p>
+                    Nota: Si necesitas actualizar tu correo electrónico, llama al Call Center 2280-1010.
+               </p>
+            </Form.Item>
             
             <Form.Item>
                 <Button type="primary" className="stc-button" htmlType="submit">
-                    Siguiente
+                    Confirmar
                 </Button>
             </Form.Item>
             <Form.Item>
                 <Button type="default" className="btn stc-button-default" htmlType="button" onClick={handleBack}>
                     Atrás
                 </Button>
-            </Form.Item>
-
-            <Form.Item
-                name="normal-message"
-            >
-               <p>
-                    Nota: Recuerda que los datos de correo y teléfono son los que anteriormente le has proporcionado a Banco Atlántida para comunicarse contigo.
-               </p>
             </Form.Item>
         </Form>
     );

@@ -18,55 +18,44 @@ const Success = () => {
     }
 
     return (
-        <Form
-            name="basic"
-            layout="vertical"
-            className="stc-form stc-success-form"
-            onSubmit={restartApp}
-        >
-            <Form.Item
-                name="success-icon"
-            >
-               <CheckCircleFilled style={{ fontSize: '6.5rem', color: 'green', marginBottom: '2.5rem' }} />
-            </Form.Item> 
-            
-            <Form.Item
-                name="normal-message"
-            >
-               <p className="stc-success-message">
-                    {
-                        tab === 1 && 'Tu usuario ha sido desbloqueado con éxito.'
-                    }
-                    {
-                        tab === 2 && 'Se habilitó con éxito su cuenta bancaria para realizar transferencias ACH.'
-                    }
-                    {
-                        tab === 3 && 'Se ha enviado una contraseña temporal a tu correo electrónico.'
-                    }
-               </p>
-            </Form.Item>
+      <Form
+        name="basic"
+        layout="vertical"
+        className="stc-form stc-success-form"
+        onSubmit={restartApp}
+      >
+        <Form.Item name="success-icon">
+          <CheckCircleFilled
+            style={{
+              fontSize: "6.5rem",
+              color: "green",
+              marginBottom: "2.5rem",
+            }}
+          />
+        </Form.Item>
 
-            <Form.Item
-                name="normal-message"
-            >
-                {
-                    tab !== 2 && (
-                        <p className="stc-static-success-message">
-                            <strong>
-                                Ahora estás listo para realizar más de 400 transacciones en cualquier momento y en cualquier lugar.
-                            </strong>
-                        </p>
-                    )
-                }
-            </Form.Item>
+        <Form.Item name="normal-message">
+          <p className="stc-static-success-message">
+            {tab === 1 && "Tu usuario ha sido desbloqueado con éxito."}
+            {tab === 2 && "Tu ACH se habilito con éxito."}
+            {tab === 3 && "Revisa tu correo electrónico, te hemos enviado una contraseña temporal. La cual debes personalizar en tu Banca Digital."}
+          </p>
+        </Form.Item>
 
-            <Form.Item>
-                <Button type="primary" className="stc-button" htmlType="submit">
-                    Inicio
-                </Button>
-            </Form.Item>
-        </Form>
+        <Form.Item name="normal-message">
+          {tab !== 2 && (
+            <p className="stc-success-message">
+                Ahora puedes realizar más de 400 transacciones sin necesidad de ir al banco.
+            </p>
+          )}
+        </Form.Item>
 
+        <Form.Item>
+          <Button type="primary" className="stc-button" htmlType="submit">
+            Inicio
+          </Button>
+        </Form.Item>
+      </Form>
     );
 };
 

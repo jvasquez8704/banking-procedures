@@ -36,7 +36,7 @@ const Verify = () => {
             onSubmit={handleSubmit(handleLogin)}
         >
              <CustomInput fieldName="identity"
-                iLabel="Identificación"
+                iLabel="Ingresa tu Identificación"
                 errMjs={ errors.identity && errors.identity.message }
                 iTypeErr={`${ errors.identity ? 'error': ''}`}
                 iPlaceholder="Sin espacios ni guiones"
