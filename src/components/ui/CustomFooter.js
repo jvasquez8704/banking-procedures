@@ -12,7 +12,7 @@ const CustomFooter = () => {
                     {/*Nothing*/}
                 </Col>
                 <Col xs={24} sm={24} md={8} lg={8} xl={8} xxl={8}>
-                    <img alt="Logo Banco Atlantida" className="stc-landing-header" src={logo} />
+                    <img alt="Logo Banco Atlantida" className="stc-landing-logo-header" src={logo} />
                 </Col>
                 <Col xs={24} sm={24} md={8} lg={8} xl={8} xxl={8}>
                     <Row type="flex" justify="center" className="icons-list">

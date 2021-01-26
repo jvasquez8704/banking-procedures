@@ -13,16 +13,44 @@ html {
 h1,h2,h3{
   font-family: 'neo_sans_bld';
 }
+/**************************************** STC Layout  *******************************************/
+/* .ant-layout {
+  background-color: black; 
+}
 
-/* Header */
-.stc-header-top-row {
+.ant-layout-header {
+  background: #b3282d;
+  color: #fff;
+}
+
+.ant-layout-content {
+  /* padding: 4rem 0 1.5rem;
+  padding: 0 0 1.5rem;
+} */
+
+.stc-main-content {
+  min-height: 100vh;
+  background-color: #b3282d;
+  padding: 1rem;
+}
+
+.stc-landing {
+  height: 100%;
+  background-color: #fff;
+  border-radius: 1.5rem;
+}
+
+/* STC Header */
+.stc-landing-top {
   text-align: center;
-  background-color: #d9272e;
+  border-radius: 1.5rem 1.5rem 0 0;
+  /* background-color: #fff; */
   padding-top: 1.5rem;
   padding-bottom: 0rem;
 }
 
-.stc-landing-header {
+.stc-landing-logo-header {
+  /* margin-top: 1rem; */
   max-width: 25rem;
 }
 
@@ -69,19 +97,6 @@ h1,h2,h3{
 
 .stc-error-modal .ant-modal-close .ant-modal-close-x .anticon{
   font-size: 20px;
-}
-.ant-layout {
-  background: white;
-}
-
-.ant-layout-header {
-  background: #b3282d;
-  color: #fff;
-}
-/* Content */
-.ant-layout-content {
-  /* padding: 4rem 0 1.5rem; */
-  padding: 0 0 1.5rem;
 }
 /* ********************************************************************************************************************************************* */
 .steps-action {
@@ -327,6 +342,10 @@ h1,h2,h3{
 .ant-form label {
   font-weight: bolder;
 }
+
+/* .ant-row.ant-form-item.email-leyend {
+  margin-top: -2rem;
+} */
 /************************************************************** Footer *****************************************************************/
 .ant-layout-footer {
   background: #d22630;
@@ -392,13 +411,14 @@ text-align: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: center; 
-  background-color:#d9272e;;
+  /* background-color:#d9272e; */
   /*background-color:#000;
   border-radius:40px */
   border-radius: 3rem;
   width: 83%;
   margin: 0 auto;
-  padding: 1rem;
+  /* padding: 1rem; */
+  padding: 0rem 0rem .5rem;
 }
 
 .stc-main-title {
@@ -426,17 +446,18 @@ th.ant-descriptions-item-label.ant-descriptions-item-colon {
 }
 
 .stc-tabs.ant-row.ant-row-center.ant-row-middle {
-  /* background-color: green; */
-  background-color: #d9272e;
-  padding: 0 0 1rem;
+  background-color: #fff;
+  /* padding: 0 0 1rem; */
+  padding: 0;
 }
 
 .stc-tabs.ant-row.ant-row-center.ant-row-middle .stc-main-title h1 {
   font-size: 2.4rem;
   text-align: center;
-  margin-top: 2rem;
-  margin-bottom: 0;
-  color: #fff;
+  margin-top: 1rem;
+  /* margin-bottom: 0; */
+  /* color: #fff; */
+  color: rgba(120 119 122);
   line-height: 1.23;
   white-space: initial;
 }
@@ -449,18 +470,20 @@ th.ant-descriptions-item-label.ant-descriptions-item-colon {
 }
 
 .stc-icon-size {
-  height: 100px;
-  width: 100px;
+  /* height: 100px; */
+  /* width: 100px; */
+  width: 4.2rem;
   margin: 0 auto;
 }
 
 .stc-tab {
-  background: rgb(199 190 190);
-  padding: 0.5rem;
+  /* background: rgb(199 190 190); */
+  background: rgba(120,119, 122);
+  /* padding: 0.5rem; */
   text-align: center;
   cursor: pointer;
-  border-radius: 40px;
-  border: 5px solid #d9272e;
+  border-radius: 20px;
+  /* border: 5px solid #d9272e; */
 }
 
 .stc-tab .ant-card-meta-title {
@@ -470,7 +493,7 @@ th.ant-descriptions-item-label.ant-descriptions-item-colon {
   font-size: 1.13rem;
   /* font-weight: 700; */
   /* color: #495057; */
-  color: rgba(120,119, 122);
+  color: #fff;
 }
 
 .stc-selected-tab .stc-card-selected-border {
@@ -478,12 +501,12 @@ th.ant-descriptions-item-label.ant-descriptions-item-colon {
   width: 60%;
   margin: 0 auto;
   border-bottom: 3px solid #fff;
-  padding: .4rem;
+  padding: .2rem;
   -webkit-animation: fadein 4s;
   animation: fadein 4s;
 }
 .stc-selected-tab .stc-tab {
-  background: rgb(236, 230, 230); 
+  background: #b3282d; 
 }
 
 .stc-icon-store-size {
@@ -491,13 +514,33 @@ th.ant-descriptions-item-label.ant-descriptions-item-colon {
   margin: 0 auto;
 }
 
+.stc-tab .ant-card-cover {
+  /* background-color: blueviolet; */
+  display:inline-block;
+}
+.stc-tab .ant-card-body {
+  /* background-color: gold; */
+  display:inline-block;
+  padding: 20px;
+  width: 60%;
+} 
 /********************************************************** Media queries **********************************************************/
+
+@media (min-width: 2560px) {
+  /* CSS */
+  .ant-col-xl-6 {
+    width: 12%;
+  }
+}
 /* 
   ##Desktops
   ##Screen = 1281px to higher resolution desktops
 */
-@media (min-width: 1281px) {
+@media (min-width: 1281px) and (max-width: 2559px) {
   /* CSS */
+  .ant-col-xl-6 {
+    width: 22%;
+  }
 }
 
 /* 
@@ -513,6 +556,10 @@ th.ant-descriptions-item-label.ant-descriptions-item-colon {
  .stc-new-footer {
   padding: 0 12rem;
  }
+ .ant-col-lg-12 {
+  width: 32;
+ }
+
 }
 
 /* 
@@ -536,6 +583,9 @@ th.ant-descriptions-item-label.ant-descriptions-item-colon {
   }
   .stc-content .ant-card.stc-card-widget.ant-card-bordered .ant-card-head-title{
     font-size: 1.6rem;
+  }
+  .ant-col-lg-12 {
+    width: 43%;
   }
 }
 
@@ -575,9 +625,7 @@ th.ant-descriptions-item-label.ant-descriptions-item-colon {
   .stc-tab {
     border-radius: 20px;
   }
-  .stc-tab .ant-card-body {
-    display: none;
-  }
+
   .stc-icon-size {
     height: 55px;
     width: 55px;
@@ -611,6 +659,18 @@ th.ant-descriptions-item-label.ant-descriptions-item-colon {
 
   .stc-content .ant-card.stc-card-widget.ant-card-bordered .ant-card-head-title{
     font-size: 0.78rem;
+  }
+
+  .stc-tab .ant-card-cover {
+    display:block;
+  }
+  .stc-tab .ant-card-body {
+    display:block;
+    /* padding: 20px;
+    width: 60%; */
+  }
+  .stc-tab .ant-card-meta-title {
+    font-size: 1.1rem;
   }
 }
 
@@ -657,9 +717,7 @@ th.ant-descriptions-item-label.ant-descriptions-item-colon {
   .stc-tab {
     border-radius: 20px;
   }
-  .stc-tab .ant-card-body {
-    display: none;
-  }
+
   .stc-icon-size {
     height: 55px;
     width: 55px;
@@ -701,15 +759,36 @@ th.ant-descriptions-item-label.ant-descriptions-item-colon {
     background-color: transparent;
   }
 
-  .stc-landing-header{
+  .stc-landing-logo-header{
     max-width: 12rem;
   }
   .stc-head-tabs {
-    padding: 0 1rem;
+    /* padding: 0 1rem; */
+    padding: 0;
   }
 
   .stc-tabs.ant-row.ant-row-center.ant-row-middle{
     padding: 0 0 0.5rem;
+  }
+
+  .stc-tab .ant-card-cover {
+    display:block;
+  }
+  .stc-tab .ant-card-body {
+    padding: 8px;
+    display:block;
+    width: 100%;
+    height: 2.5rem;
+  }
+  .stc-tab-border {
+    padding: 1.5px 4px;
+  }
+  .stc-tab .ant-card-meta-title {
+    font-size: .7rem;
+  }
+
+  .ant-col.ant-form-item-label label{
+    font-size: 0.78rem;
   }
 }
 

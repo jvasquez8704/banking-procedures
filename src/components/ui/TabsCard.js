@@ -3,10 +3,10 @@ import { useDispatch } from 'react-redux';
 
 import Content from './Content';
 
-import logo from '../../res/img/logo.svg';
-import img1 from '../../res/img/unlock.svg';
-import img2 from '../../res/img/ach2.svg';
-import img3 from '../../res/img/reset.svg';
+import logo from '../../res/img/logo_red.svg';
+import img1 from '../../res/img/unlock-icon.svg';
+import img2 from '../../res/img/ach-icon.svg';
+import img3 from '../../res/img/resetpass-icon.svg';
 
 import PreLogin from '../auth/PreLogin';
 import Login from '../auth/Login';
@@ -29,7 +29,7 @@ const TabsCard = () => {
     {
       key: 2,
       img: img2,
-      desc: "Habilitar ACH"
+      desc: "Habilitar \r\n \r\n ACH"
     },
     {
       key: 3,
@@ -119,8 +119,8 @@ const TabsCard = () => {
 
   return (
     <div>
-      <div className="stc-header-top-row">
-        <img alt="Logo Banco Atlantida" className="stc-landing-header" src={logo} />
+      <div className="stc-landing-top">
+        <img alt="Logo Banco Atlantida" className="stc-landing-logo-header" src={logo} />
       </div>
       <Tabs
         title={"Accesos a tu Banca Digital"}
