@@ -83,10 +83,10 @@ const UnlockUser = () => {
               value: true,
               message: "Por favor ingresa tu usuario",
             },
-            validate: (value) =>
-              !validator.isAlphanumeric(value)
-                ? "Por favor ingresa un usuario valido"
-                : undefined,
+            pattern: {
+              value: /^([a-zA-Z0-9]|#|\-|\.|\_|\#|Ñ|ñ)*$/,
+              message: "Por favor ingresa un token valido",
+            },
             maxLength: {
               value: 20,
               message: "Por favor ingresa un usuario valido",
