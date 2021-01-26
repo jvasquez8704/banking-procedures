@@ -4,6 +4,7 @@ import { Steps, Spin, Card, Modal } from 'antd';
 import { LoadingOutlined } from '@ant-design/icons';
 import { unsetError } from '../../actions/ui';
 import Popup from '../common/Modal';
+import iconErr from '../../res/img/alert_icon.svg';
 
 
 const StepScreen = ({ steps, desc }) => {
@@ -36,6 +37,8 @@ const StepScreen = ({ steps, desc }) => {
                     footer={null}
                     className="stc-error-modal"
                 >
+                    <img alt="Error img" className="stc-err-icon" src={iconErr} />
+                    <p className="stc-err-title">¡Error!</p>
                     <p>{err}</p>
                 </Modal>
             </div>

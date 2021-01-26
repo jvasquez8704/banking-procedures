@@ -67,36 +67,51 @@ h1,h2,h3{
 }
 
 .stc-error-modal .ant-modal-header {
-  padding: 14px 24px 0px;
+  padding: 0 24px 0px;
 }
 
 .stc-error-modal .ant-modal-header .ant-modal-title {
-  color: #ff4d4f;
+  color: #fff;
 }
 
 .stc-error-modal .ant-modal-body {
-  padding: 14px 24px;
+  padding: 0 24px 10px;
+  text-align: center;
 }
 
-.stc-error-modal .ant-modal-close {
+/* .stc-error-modal .ant-modal-close {
   border: 2px #b3282d solid;
   border-radius: 4rem;
   top: -8px;
   right: -8px;
   background: white;
-}
+} */
 
-.stc-error-modal .ant-modal-close .ant-modal-close-x {
+/* .stc-error-modal .ant-modal-close .ant-modal-close-x {
   width: 30px;
   height: 30px;
   line-height: 30px;
   background: #b3282d;
   border-radius: 4rem;
   color: white;
-}
+} */
 
 .stc-error-modal .ant-modal-close .ant-modal-close-x .anticon{
-  font-size: 20px;
+  font-size: 15px;
+  font-family: 'neo_sans_bld';
+}
+
+.ant-modal.stc-error-modal {
+  width: 16rem !important;
+}
+
+.stc-err-icon {
+  width: 65%;
+}
+.stc-err-title{
+  font-family: 'neo_sans_bld';
+  color: #b3282d;
+  margin-top: -20px;
 }
 /* ********************************************************************************************************************************************* */
 .steps-action {
