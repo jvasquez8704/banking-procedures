@@ -15,6 +15,16 @@ const getModule = () => {
     return (param && !isNaN(param) && param > 0 && param <= 3) ? parseInt(param) : 1; 
 }
 
+const getIdType = type => {
+    const types = new Map();
+    types.set('HN01', 'Identidad');
+    types.set('HN02', 'RTN');
+    types.set('HN03', 'Carnet de residente');
+    types.set('HN04', 'Pasaporte');
+    return types.get(type) || 'Identificación'; 
+}
+
 export {
-    getModule
+    getModule,
+    getIdType
 }

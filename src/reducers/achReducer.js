@@ -10,7 +10,7 @@ export const achReducer = (state = {}, action) => {
         case types.getAgreement:
             return {
                 ...state,
-                detail: action.payload
+                agreement: action.payload
             }
         case types.setAccount:
             return {

@@ -11,14 +11,14 @@ const EnableACH = () => {
 
     const dispatch = useDispatch();
     const data = useSelector(({ ach }) =>  ach );
-    const { token, detail, products, selectedAccount } = data;
+    const { token, agreement, products, selectedAccount } = data;
     const accounts = products ? products.productsItems : [];
     const [account, setAccount] = useState('');
     const [approved, setApproved] = useState(false);
 
     const handleSubmit = e => {
         e.preventDefault();
-        if (!detail) {
+        if (!agreement) {
             if (account === '') {
                 dispatch(setError('Selecciona una cuenta'));
                 return;
@@ -68,10 +68,10 @@ const EnableACH = () => {
                 iHandleSelectChange={handleChange}
             />
             {
-                detail && (
+                agreement && (
                     <div className="agreement-block">
                         <Form.Item name="info-item">
-                            <p className="text-ach-agreement">{detail}</p>
+                            <p className="text-ach-agreement">{agreement}</p>
                         </Form.Item>
 
                         <Form.Item name="remember" valuePropName="checked">

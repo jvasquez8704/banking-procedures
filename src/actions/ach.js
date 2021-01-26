@@ -22,8 +22,8 @@ export const getUserInfo = (identity, username, token) => {
             const { response: { status, data } } = body;
 
             if (status.code === '0000') {
-                const { token } = status;
-                dispatch(getInfo({...data, token}));
+                const { token, detail } = status;
+                dispatch(getInfo({...data, token, detail }));
                 dispatch(updateStep(2));
                 dispatch(unsetError());
             } else {
