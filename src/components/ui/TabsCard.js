@@ -24,23 +24,35 @@ const TabsCard = () => {
     {
       key: 1,
       img: img1,
-      desc: "Desbloqueo de usuario"
+      desc: {
+        title: "Desbloqueo de usuario",
+        subtitle: "Desbloqueo de Usuario de tu Banca Digital"
+      },
     },
     {
       key: 2,
       img: img2,
-      desc: "Habilitar \r\n \r\n ACH"
+      desc: { 
+        title: "Habilitar ACH",
+        subtitle: "Habilitar transferencias a otros bancos (ACH)" 
+      },
     },
     {
       key: 3,
       img: img3,
-      desc: "Restablecer contraseña"
-    }
+      desc: {
+        title: "Restablecer contraseña",
+        subtitle: "Restablecer contraseña de tu Banca Digital"
+      },
+    },
   ];
 
   const [state, setState] = useState({
     key: getModule(),
-    description: 'Desbloqueo de usuario'
+    description: {
+      title: "Desbloqueo de usuario",
+      subtitle: "Desbloqueo de usuario etc..."
+    }
   });
 
   useEffect(() => {
@@ -116,20 +128,24 @@ const TabsCard = () => {
       description
     });
   };
+  const { subtitle } = description;
 
   return (
     <div>
       <div className="stc-landing-top">
-        <img alt="Logo Banco Atlantida" className="stc-landing-logo-header" src={logo} />
+        <img
+          alt="Logo Banco Atlantida"
+          className="stc-landing-logo-header"
+          src={logo}
+        />
       </div>
       <Tabs
         title={"Accesos a tu Banca Digital"}
         className="stc-tabs ant-row ant-row-center ant-row-middle"
         tabList={tabList}
         onTabChange={onTabChange}
-      >
-      </Tabs>
-      <Content steps={journeys[key]} desc={description} />
+      ></Tabs>
+      <Content steps={journeys[key]} desc={subtitle} />
     </div>
   );
 };

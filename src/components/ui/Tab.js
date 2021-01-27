@@ -15,11 +15,11 @@ const Tab = ({ id, image, desc, getCurrentTab }) => {
         <div className={`stc-tab-border ${id === currentTab ? 'stc-selected-tab' : ''}`}>
             <Card
                 hoverable
-                cover={<img alt={desc || ''} src={image || ''} className="stc-icon-size" />}
+                cover={<img alt={desc.title || ''} src={image || ''} className="stc-icon-size" />}
                 className="stc-tab"
                 onClick={onTab}
             >
-                <Meta title={desc || ''} />
+                <Meta title={desc.title || ''} />
             </Card>
             <div className="stc-card-selected-border"></div>
         </div>
