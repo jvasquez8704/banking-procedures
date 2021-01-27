@@ -84,7 +84,7 @@ const UnlockUser = () => {
               message: "Por favor ingresa tu usuario",
             },
             pattern: {
-              value: /^([a-zA-Z0-9]|#|\-|\.|\_|\#|Ñ|ñ)*$/,
+              value: /^([a-zA-Z0-9]|#|-|\.|_|#|Ñ|ñ)*$/,
               message: "Por favor ingresa un token valido",
             },
             maxLength: {

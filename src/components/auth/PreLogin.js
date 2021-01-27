@@ -65,6 +65,7 @@ const Verify = () => {
                     }
 
                 }}
+                iToolTip={"(Número de Identidad, Pasaporte o Carné de Residente)"}
             />
 
             <Form.Item>
