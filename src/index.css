@@ -60,6 +60,50 @@ h1,h2,h3{
   align-items: center;
   margin-bottom: 1.4rem;
 }
+/* mobile */
+/* .ant-modal {
+  width: 22rem !important;
+} */
+
+.stc-modal-horizontal .ant-modal-body {
+  padding-top: 0 !important;
+}
+
+.ant-modal-content {
+  border-radius: 30px;
+}
+
+div#rcDialogTitle0{
+  display: none;
+}
+
+.ant-modal h1 {
+  color: #d9272e;
+}
+.ant-modal p {
+  font-family: 'neo_sans_rglr';
+  text-align: justify;
+}
+
+.ant-divider-dashed {
+  background: none;
+  border-style: dashed;
+  border-width: 2px 0 0;
+  border-color: rgba(120,119,122,0.48);
+}
+
+.ant-modal-footer {
+  display: none;
+}
+
+.stc-modal-horizontal .ant-divider, .ant-divider-vertical {
+  height: 12.9em;
+  background: rgba(120,119,122,0.48);
+  width: 2px;
+}
+
+
+/* mobile */
 
 .stc-error-modal .ant-modal-content, .ant-modal-header, .ant-modal-close {
   border-radius: 1rem;
@@ -345,6 +389,16 @@ h1,h2,h3{
   text-transform: uppercase;
   border-radius: 10px;
 }
+.stc-button-1 {
+  color: #fff;
+  border-radius: 10px;
+  /* font-size: medium; */
+  font-family: 'neo_sans_bld';
+  padding: 0.4rem 1.2em 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 10px;
+}
 
 .stc-button-default {
   border-radius: 10px;
@@ -441,6 +495,7 @@ text-align: center;
 
 .stc-link, .stc-link:hover {
   color: #fff;
+  margin: 0 3px;
 }
 .stc-footer-icon {
   font-size: 2.25rem;
@@ -560,6 +615,15 @@ th.ant-descriptions-item-label.ant-descriptions-item-colon {
 
 .stc-icon-store-size {
   width: 140px;
+  margin: 0 auto;
+  /* margin: 0.5rem; */
+}
+.stc-icon-store-size-1 {
+  width: 95px;
+  margin: 0 auto;
+}
+.stc-icon-store-size-2 {
+  width: 108px;
   margin: 0 auto;
 }
 
