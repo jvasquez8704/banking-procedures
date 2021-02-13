@@ -21,7 +21,7 @@ const UserInfoTable = ({ info }) => {
             <Descriptions.Item label="Nacionalidad">{customerCoreNationality}</Descriptions.Item>
             <Descriptions.Item label="Teléfono">{customerCorePhone}</Descriptions.Item>
            
-            <Descriptions.Item label="Usuario de tu Banca Digital." span={3}>
+            <Descriptions.Item label="Usuario de tu Banca Digital" span={3}>
                 {customerOCBUser}
             </Descriptions.Item>
         </Descriptions>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux'; 
 import { Form, Button } from 'antd';
-import { CheckCircleFilled } from '@ant-design/icons';
+import { CheckCircleFilled, CheckCircleOutlined } from '@ant-design/icons';
 import { unsetError, updateStep } from '../../actions/ui';
 import { getAgree } from '../../actions/ach';
 
@@ -25,7 +25,7 @@ const Success = () => {
         onSubmit={restartApp}
       >
         <Form.Item name="success-icon">
-          <CheckCircleFilled
+          <CheckCircleOutlined
             style={{
               fontSize: "6.5rem",
               color: "green",
@@ -37,7 +37,7 @@ const Success = () => {
         <Form.Item name="normal-message">
           <p className="stc-static-success-message">
             {tab === 1 && "Tu usuario ha sido desbloqueado con éxito."}
-            {tab === 2 && "Tu ACH se habilito con éxito."}
+            {tab === 2 && "Tu ACH se habilitó con éxito."}
             {tab === 3 && "Revisa tu correo electrónico, te hemos enviado una contraseña temporal. La cual debes personalizar en tu Banca Digital."}
           </p>
         </Form.Item>

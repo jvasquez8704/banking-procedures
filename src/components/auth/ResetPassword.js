@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Form, Button } from 'antd';
 import { useForm as validatorForm } from "react-hook-form";
@@ -13,6 +13,7 @@ const ResetPassword = () => {
     const { handleSubmit, errors , control } = validatorForm();
     const dispatch = useDispatch();
     const { identity, customerCoreEmail } = useSelector(({ auth }) => auth);
+    const [temp, setTemp] = useState('');
     //const [{ username, token, telephone, email }, handleInputChange] = useForm({ username: '', token: '', telephone: '', email: '' });
     const [handleInputChange] = useForm({ username: '', token: '', telephone: '', email: '' });
     const emailTemplate = `Correo Electrónico ${ customerCoreEmail ? ' (' + customerCoreEmail + ')' : '' }`;
@@ -27,10 +28,24 @@ const ResetPassword = () => {
     }
 
     const handleKeyPress = e => {
-        if (e.target.name === 'token' && !validator.isNumeric(e.key)) {
+        const { name } = e.target
+        if (name === 'token' && temp.length > 7) {
             e.preventDefault();
             return;
         }
+
+        if (name === 'token' && !validator.isNumeric(e.key)) {
+            e.preventDefault();
+            return;
+        }
+
+        name === 'token' && setTemp(temp + e.key);
+    }
+
+    const handleKeyDown = e => {
+        let key = e.which || e.keyCode || e.charCode;
+        const { name } = e.target;
+        name === 'token' && key === 8 && setTemp(temp.slice(0, -1)); 
     }
 
     return (
@@ -73,6 +88,7 @@ const ResetPassword = () => {
                 iPlaceholder="Ingresa tu Token"
                 ihandleInputChange={handleInputChange}
                 ihandleKeyPress={handleKeyPress}
+                ihandleKeyDown={handleKeyDown}
                 icontrol={control}
                 irules={{
                     validate: value => value.length !== 8 ? 'Por favor ingresa tu token' : undefined,
@@ -107,7 +123,7 @@ const ResetPassword = () => {
                 name="normal-message" className="email-leyend"
             >
                <p>
-                    Nota: Si necesitas actualizar tu correo electrónico, llama al Call Center 2280-1010.
+                    Nota: Si necesitas actualizar tu correo electrónico, llama al Call Center.
                </p>
             </Form.Item>
             
