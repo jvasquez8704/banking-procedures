@@ -123,7 +123,7 @@ const ResetPassword = () => {
                 name="normal-message" className="email-leyend"
             >
                <p>
-                    Nota: Si necesitas actualizar tu correo electrónico, llama al Call Center.
+                    <strong style={{fontFamily:'neo_sans_bld'}}>Nota:</strong> Si necesitas actualizar tu correo electrónico, llama al Call Center.
                </p>
             </Form.Item>
             

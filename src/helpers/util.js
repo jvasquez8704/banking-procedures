@@ -19,7 +19,7 @@ const getIdType = type => {
     const types = new Map();
     types.set('HN01', 'Identidad');
     types.set('HN02', 'RTN');
-    types.set('HN03', 'Carnet de residente');
+    types.set('HN03', 'Carné de residente');
     types.set('HN04', 'Pasaporte');
     return types.get(type) || 'Identificación'; 
 }
