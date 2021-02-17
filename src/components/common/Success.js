@@ -1,7 +1,8 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux'; 
 import { Form, Button } from 'antd';
-import { CheckCircleFilled, CheckCircleOutlined } from '@ant-design/icons';
+import Icon, { CheckCircleFilled, CheckCircleOutlined } from '@ant-design/icons';
+import ATLCheck from '../../res/img/check.svg';
 import { unsetError, updateStep } from '../../actions/ui';
 import { getAgree } from '../../actions/ach';
 
@@ -25,11 +26,11 @@ const Success = () => {
         onSubmit={restartApp}
       >
         <Form.Item name="success-icon">
-          <CheckCircleOutlined
+          <img alt='success process' src={ATLCheck}
             style={{
-              fontSize: "6.5rem",
+              width: "6.5rem",
               color: "green",
-              marginBottom: "2.5rem",
+              marginBottom: "2rem",
             }}
           />
         </Form.Item>

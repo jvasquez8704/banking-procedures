@@ -76,7 +76,7 @@ const ResetPassword = () => {
                     },
                     minLength: {
                         value: 6,
-                        message: 'Por favor ingresa nu usuario valido'
+                        message: 'Por favor ingresa un usuario valido'
                     }
 
                 }}

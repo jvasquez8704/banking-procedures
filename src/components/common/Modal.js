@@ -2,8 +2,9 @@ import React from 'react';
 import { Modal, Row, Col, Button, Divider } from 'antd';
 import { InfoCircleOutlined } from '@ant-design/icons';
 import { useMediaQuery } from 'react-responsive';
-import playstore from '../../res/img/playstore.svg';
+import playstore from '../../res/img/googleplay.svg';
 import appstore from '../../res/img/appstore.svg';
+import appgallery from '../../res/img/appgallery.svg';
 import activa from '../../res/img/Telefono-Activa-Banca.png';
 import { useSelector, useDispatch } from 'react-redux';
 import { activeModal } from '../../actions/ui';
@@ -112,7 +113,7 @@ const Popup = ({open}) => {
                         <img alt="AppStore Banco Atlantida" className="stc-icon-store-size-1" src={appstore} />
                       </a>
                       <a href="https://play.google.com/store/apps/details?id=hn.com.enterprise.bancatlanapp" target="_blank" rel="noopener noreferrer" className="stc-link">
-                        <img alt="PlayStore Banco Atlantida" className="stc-icon-store-size-1" src={playstore} />
+                        <img alt="App Gallery Banco Atlantida" className="stc-icon-store-size-1" src={appgallery} />
                       </a>
                     </Col>
                   </Row>
