@@ -5,9 +5,8 @@ import { useForm as validatorForm } from "react-hook-form";
 import validator from 'validator';
 
 import { useForm } from '../../hooks/useForm';
-import { startLogin } from '../../actions/auth';
+import { LoginCustomer, startLogin } from '../../actions/auth';
 import { unsetError, updateStep } from '../../actions/ui';
-import { getUserInfo } from '../../actions/ach';
 import CustomInput from '../ui/form/CustomInput';
 
 const UnlockUser = () => {
@@ -20,13 +19,7 @@ const UnlockUser = () => {
     const [temp, setTemp] = useState('');
 
     const handleLogin = ({ username, token }) => {
-        if (tab === 1) {
-            dispatch(startLogin(identity, username, token));
-        } if (tab === 2) {
-            dispatch(getUserInfo(identity, username, token));
-        } else {
-            console.log(`You are un tab ${tab}, no action for Unlock User`);
-        }
+      dispatch(LoginCustomer({identity, username, token}, tab));
     }
 
     const handleBack = () => {

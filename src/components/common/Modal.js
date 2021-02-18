@@ -14,7 +14,6 @@ const Popup = ({open}) => {
     const dispatch = useDispatch();
     const { openModal } = useSelector(({ ui }) => ui);
     const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
-    console.log('Is mobile', isMobile);
   // const [visible, setVisible] = useState(false);
 
   //   useEffect(() => {

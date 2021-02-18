@@ -7,6 +7,16 @@ const getTabBySign = sing => {
     return tabs.get(sing);
 }
 
+const getTrxBackend = featureId => {
+    const txns = new Map();
+    txns.set(1,2010);
+    txns.set(2,2011);
+    txns.set(3,2008);
+    txns.set(4,2009);
+    txns.set(5,2012);
+    return txns.get(featureId);
+}
+
 const getModule = () => {
     const search = window.location.search.substring(1);
     const params = new URLSearchParams(search);
@@ -26,5 +36,6 @@ const getIdType = type => {
 
 export {
     getModule,
-    getIdType
+    getIdType,
+    getTrxBackend
 }

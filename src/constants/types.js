@@ -17,6 +17,9 @@ export const types = {
     getEnrolment:'[ach] getEnrolment',
     setAccount:'[ach] setAccount',
 
+    setStateCountryList:'[service] setStateCountryList',
+    setCityList:'[service] setCityList',
+
     resetPassword:'[reset] resetPassword',
 
 }
