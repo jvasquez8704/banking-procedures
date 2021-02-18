@@ -1,0 +1,1 @@
+export const baseUrl = 'http://150.150.6.114:81/LandingPageREST/rest';

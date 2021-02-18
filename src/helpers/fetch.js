@@ -1,5 +1,4 @@
-// const baseUrl = process.env.REACT_APP_API_URL;
-const baseUrl = 'http://150.150.6.114:81/LandingPageREST/rest';
+import { baseUrl } from "../constants/constants";
 
 const unsecurefetch = ( endpoint, data, method = 'GET' ) => {
 
