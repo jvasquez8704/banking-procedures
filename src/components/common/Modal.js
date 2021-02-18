@@ -43,7 +43,7 @@ const Popup = ({open}) => {
         {
           isMobile ? (
             <Modal
-            title={<div><span><InfoCircleOutlined style={{ fontSize: '22px', color: '#d9272e', marginRight: '5px'}}/></span> Atlántida</div>}
+            title={<div><span></span></div>}
             centered
             // visible={visible}
             visible={openModal}
@@ -90,7 +90,7 @@ const Popup = ({open}) => {
           </Modal>
           ):(
             <Modal
-                title="Vertically centered modal dialog"
+                title={<div><span></span></div>}
                 width={620}
                 centered
                 visible={openModal}
