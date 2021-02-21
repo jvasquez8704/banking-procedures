@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import Content from './Content';
 
-import logo from '../../res/img/logo_red.svg';
+import logo from '../../res/img/logo-basa.svg';
 import img1 from '../../res/img/unlock-icon.svg';
 import img2 from '../../res/img/ach-icon.svg';
 import img3 from '../../res/img/resetpass-icon.svg';

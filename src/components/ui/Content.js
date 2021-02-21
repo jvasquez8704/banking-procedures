@@ -39,7 +39,7 @@ const StepScreen = ({ steps, desc }) => {
                 >
                     <img alt="Error img" className="stc-err-icon" src={iconErr} />
                     <p className="stc-err-title">¡Error!</p>
-                    <p style={{textAlign:'center'}}>{err}</p>
+                    <p>{err}</p>
                 </Modal>
             </div>
             <Card title={desc} className="stc-card-widget">
