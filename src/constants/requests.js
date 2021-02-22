@@ -44,5 +44,26 @@ export const requests = {
                     otp:"99999999"
             }
         }
+    },
+    generic:{
+        request: {
+            header: {
+                system: "2283",
+                user: "USERAPP",
+                channel: "117",
+                token: "?",
+                date: "20200617",
+                time: "13:10:42",
+                language: "ES",
+                ip: "127.0.0.1",
+                transaction:"2001",
+                step:"2"
+            },
+            data: 
+            {
+                    id:null,
+                    value:null
+            }
+        }
     }
 }
