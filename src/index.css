@@ -85,6 +85,11 @@ div#rcDialogTitle0{
   text-align: justify;
 }
 
+.ant-modal .stc-modal p {
+  font-family: 'neo_sans_rglr';
+  text-align: center;
+}
+
 .ant-divider-dashed {
   background: none;
   border-style: dashed;
@@ -156,6 +161,9 @@ div#rcDialogTitle0{
   font-family: 'neo_sans_bld';
   color: #b3282d;
   margin-top: -20px;
+}
+.stc-modal p {
+  text-align: center;
 }
 /* ********************************************************************************************************************************************* */
 .steps-action {

@@ -35,7 +35,7 @@ const StepScreen = ({ steps, desc }) => {
                     visible={err && true}
                     onCancel={hideModal}
                     footer={null}
-                    className="stc-error-modal"
+                    className="stc-error-modal stc-modal"
                 >
                     <img alt="Error img" className="stc-err-icon" src={iconErr} />
                     <p className="stc-err-title">¡Error!</p>

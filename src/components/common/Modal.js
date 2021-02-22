@@ -58,7 +58,7 @@ const Popup = ({open}) => {
             <Row type="flex" justify="center" className="icons-list">
               <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24}>
                 <h1>Activa tu Banca Digital</h1>
-                <p style={{ fontFamily: 'neo_sans_rglr'}}>Si deseas crear tu usuario de Atlántida Online o abrir una cuenta de ahorro <strong style={{fontFamily:'neo_sans_bld'}}>descarga Atlántida Móvil</strong> y selecciona la opción Activa tu Banca Digital.</p>
+                <p style={{ fontFamily: 'neo_sans_rglr'}}>Si deseas crear tu usuario o una nueva cuenta de ahorro <strong style={{fontFamily:'neo_sans_bld'}}>descarga Atlántida Móvil</strong> en tu celular y selecciona la opción Activa tu Banca Digital.</p>
               </Col>
               <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24} style={{textAlign:'center'}}>
                 <a href="https://play.google.com/store/apps/details?id=hn.com.enterprise.bancatlanapp" target="_blank" rel="noopener noreferrer" className="stc-link">
@@ -69,8 +69,8 @@ const Popup = ({open}) => {
                 </a>
               </Col>
               <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24} style={{textAlign:'center', marginTop:'4px'}}>
-                <a href="https://play.google.com/store/apps/details?id=hn.com.enterprise.bancatlanapp" target="_blank" rel="noopener noreferrer" className="stc-link">
-                  <img alt="PlayStore Banco Atlantida" className="stc-icon-store-size" src={playstore} />
+                <a href="https://appgallery.huawei.com/#/app/C102238497?locale=es_US&source=appshare&subsource=C102238497" target="_blank" rel="noopener noreferrer" className="stc-link">
+                  <img alt="App Gallery Banco Atlantida" className="stc-icon-store-size" src={appgallery} />
                 </a>
               </Col>
               <Divider dashed />
@@ -102,7 +102,7 @@ const Popup = ({open}) => {
                   <Row style={{paddingRight:'1.6rem', paddingLeft:'1.6rem'}}>
                     <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24}>
                       <h1>Activa tu Banca Digital</h1>
-                      <p style={{ fontFamily: 'neo_sans_rglr'}}>Si deseas crear tu usuario de Atlántida Online o abrir una cuenta de ahorro <strong style={{fontFamily:'neo_sans_bld'}}>descarga Atlántida Móvil</strong>  y selecciona la opción Activa tu Banca Digital.</p>
+                      <p style={{ fontFamily: 'neo_sans_rglr'}}>Si deseas crear tu usuario o una nueva cuenta de ahorro <strong style={{fontFamily:'neo_sans_bld'}}>descarga Atlántida Móvil</strong> en tu celular y selecciona la opción Activa tu Banca Digital.</p>
                     </Col>
                     <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24} style={{textAlign:'center'}}>
                       <a href="https://play.google.com/store/apps/details?id=hn.com.enterprise.bancatlanapp" target="_blank" rel="noopener noreferrer" className="stc-link">
@@ -111,7 +111,7 @@ const Popup = ({open}) => {
                       <a href="https://apps.apple.com/ar/app/atl%C3%A1ntida-m%C3%B3vil/id603339165" target="_blank" rel="noopener noreferrer" className="stc-link">
                         <img alt="AppStore Banco Atlantida" className="stc-icon-store-size-1" src={appstore} />
                       </a>
-                      <a href="https://play.google.com/store/apps/details?id=hn.com.enterprise.bancatlanapp" target="_blank" rel="noopener noreferrer" className="stc-link">
+                      <a href="https://appgallery.huawei.com/#/app/C102238497?locale=es_US&source=appshare&subsource=C102238497" target="_blank" rel="noopener noreferrer" className="stc-link">
                         <img alt="App Gallery Banco Atlantida" className="stc-icon-store-size-1" src={appgallery} />
                       </a>
                     </Col>
