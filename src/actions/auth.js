@@ -4,12 +4,12 @@ import { requests } from '../constants/requests';
 import { updateStep, setError, unsetError, setLoading, activeModal } from './ui';
 import { getTrxBackend } from '../helpers/util';
 
-export const verifyCustomer = (identity, isResetPassWord) => {
+export const verifyCustomer = (identity) => {
     return async (dispatch) => {
 
         let { verifyCustomer: req } = requests;
         req.request.data.id = identity;
-        req.request.header.transaction = isResetPassWord ? 1003 : 1001;
+        req.request.header.transaction = 1001;
         dispatch(setLoading());
 
         try {

@@ -17,7 +17,7 @@ const Verify = () => {
     const [handleInputChange] = useForm({identity:''});
 
     const handleLogin = ({identity}) => {
-        dispatch(verifyCustomer(identity, tab === 3));
+        dispatch(verifyCustomer(identity));
     }
 
     const handleKeyPress = e => {
