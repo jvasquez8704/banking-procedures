@@ -451,7 +451,8 @@ div#rcDialogTitle0{
 }
 
 .ant-row.ant-form-item.email-leyend {
-  margin-top: -2rem;
+  /* margin-top: -2rem; */
+  margin-top: -0.7rem;
 }
 /************************************************************** Footer *****************************************************************/
 .ant-layout-footer {
