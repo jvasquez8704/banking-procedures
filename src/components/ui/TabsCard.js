@@ -64,7 +64,7 @@ const TabsCard = () => {
       img: img4,
       desc: {
         title: "Modificación límite crédito",
-        subtitle: "Modificación de límite de crédito de tus tarjetas"
+        subtitle: "Modificación de límite de crédito tarjeta adicional"
       },
     },
   ];

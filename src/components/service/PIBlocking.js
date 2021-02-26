@@ -73,7 +73,7 @@ const PIBlocking = () => {
 
         <CustomSelect
           fieldName="account-item"
-          iLabel="Selecciona Tarjeta"
+          iLabel="Selección de tarjeta"
           errMjs="Por favor selecciona una tarjeta"
           iPlaceholder="Selecciona tarjeta"
           items={accounts}

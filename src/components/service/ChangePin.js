@@ -108,7 +108,7 @@ const ChangePin = () => {
 
             <CustomSelect
                 fieldName="account-item"
-                iLabel="Selecciona tarjeta"
+                iLabel="Selección de tarjeta"
                 errMjs="Por favor selecciona una tarjeta"
                 iPlaceholder="Selecciona tarjeta"
                 items={accounts}
