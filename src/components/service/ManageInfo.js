@@ -38,20 +38,20 @@ const InfoUpdater = () => {
         const { identity } = auth;
         const { token } = info;
 
-        if (maritalStatus === '') {
-          dispatch(setError('Selecciona estado civil'));
-          return;
-        }
+        // if (maritalStatus === '') {
+        //   dispatch(setError('Selecciona estado civil'));
+        //   return;
+        // }
 
-        if (countryState === '') {
-          dispatch(setError('Selecciona un departamento'));
-          return;
-        }
+        // if (countryState === '') {
+        //   dispatch(setError('Selecciona un departamento'));
+        //   return;
+        // }
 
-        if (city === '') {
-          dispatch(setError('Selecciona ciudad'));
-          return;
-        }
+        // if (city === '') {
+        //   dispatch(setError('Selecciona ciudad'));
+        //   return;
+        // }
 
         dispatch(setUserInfo(identity, token, {address, workAddress, mobile, telephone, email, maritalStatus, countryState, city, shippingAddress}));
     } 
@@ -162,12 +162,12 @@ const InfoUpdater = () => {
           ihandleKeyPress={handleKeyPress}
           ihandleKeyDown={handleKeyDown}
           icontrol={control}
-          irules={{
-            required: {
-              value: true,
-              message: "Por favor ingresa dirección de domicilio",
-            },
-          }}
+          // irules={{
+          //   required: {
+          //     value: true,
+          //     message: "Por favor ingresa dirección de domicilio",
+          //   },
+          // }}
         />
         <CustomInput
           fieldName="workAddress"
@@ -179,12 +179,12 @@ const InfoUpdater = () => {
           ihandleKeyPress={handleKeyPress}
           ihandleKeyDown={handleKeyDown}
           icontrol={control}
-          irules={{
-            required: {
-              value: true,
-              message: "Por favor ingresa dirección de trabajo",
-            },
-          }}
+          // irules={{
+          //   required: {
+          //     value: true,
+          //     message: "Por favor ingresa dirección de trabajo",
+          //   },
+          // }}
         />
         <CustomInput
           fieldName="mobile"
@@ -197,12 +197,12 @@ const InfoUpdater = () => {
           ihandleKeyDown={handleKeyDown}
           icontrol={control}
           idefaultValue={customerCorePhone}
-          irules={{
-            required: {
-              value: true,
-              message: "Por favor ingresa teléfono celular",
-            },
-          }}
+          // irules={{
+          //   required: {
+          //     value: true,
+          //     message: "Por favor ingresa teléfono celular",
+          //   },
+          // }}
         />
         <CustomInput
           fieldName="telephone"
@@ -214,12 +214,12 @@ const InfoUpdater = () => {
           ihandleKeyPress={handleKeyPress}
           ihandleKeyDown={handleKeyDown}
           icontrol={control}
-          irules={{
-            required: {
-              value: true,
-              message: "Por favor ingresa teléfono de casa",
-            },
-          }}
+          // irules={{
+          //   required: {
+          //     value: true,
+          //     message: "Por favor ingresa teléfono de casa",
+          //   },
+          // }}
         />
         <CustomInput
           fieldName="email"
@@ -232,12 +232,12 @@ const InfoUpdater = () => {
           ihandleKeyDown={handleKeyDown}
           idefaultValue={customerCoreEmail}
           icontrol={control}
-          irules={{
-            required: {
-              value: true,
-              message: "Por favor ingresa correo electrónico",
-            },
-          }}
+          // irules={{
+          //   required: {
+          //     value: true,
+          //     message: "Por favor ingresa correo electrónico",
+          //   },
+          // }}
         />
 
         <CustomSelect
@@ -247,30 +247,13 @@ const InfoUpdater = () => {
           iPlaceholder="Selecciona estado civil"
           items={maritalStatuses}
           iHandleSelectChange={handleChangeMaritalStatus}
-          irules={{
-            required: {
-              value: true,
-              message: "Se requiere estado civil",
-            },
-          }}
+          // irules={{
+          //   required: {
+          //     value: true,
+          //     message: "Se requiere estado civil",
+          //   },
+          // }}
         />
-        {/* <CustomInput
-          fieldName="countryState"
-          iLabel="Departamento"
-          errMjs={errors.countryState && errors.countryState.message}
-          iTypeErr={`${errors.countryState ? "error" : ""}`}
-          iPlaceholder="Ingresa departamento"
-          ihandleInputChange={handleInputChange}
-          ihandleKeyPress={handleKeyPress}
-          ihandleKeyDown={handleKeyDown}
-          icontrol={control}
-          irules={{
-            required: {
-              value: true,
-              message: "Por favor ingresa departamento",
-            },
-          }}
-        /> */}
 
         <SelectList
           fieldName="countryState"
@@ -286,24 +269,6 @@ const InfoUpdater = () => {
             },
           }}
         />
-
-        {/* <CustomInput
-          fieldName="city"
-          iLabel="Ciudad"
-          errMjs={errors.city && errors.city.message}
-          iTypeErr={`${errors.city ? "error" : ""}`}
-          iPlaceholder="Ingresa ciudad"
-          ihandleInputChange={handleInputChange}
-          ihandleKeyPress={handleKeyPress}
-          ihandleKeyDown={handleKeyDown}
-          icontrol={control}
-          irules={{
-            required: {
-              value: true,
-              message: "Por favor ingresa ciudad",
-            },
-          }}
-        /> */}
 
         <SelectList
           fieldName="city"
@@ -330,12 +295,12 @@ const InfoUpdater = () => {
           ihandleKeyPress={handleKeyPress}
           ihandleKeyDown={handleKeyDown}
           icontrol={control}
-          irules={{
-            required: {
-              value: true,
-              message: "Por favor ingresa dirección de envío",
-            },
-          }}
+          // irules={{
+          //   required: {
+          //     value: true,
+          //     message: "Por favor ingresa dirección de envío",
+          //   },
+          // }}
           iToolTip={"Colocar dirección física o correo electrónico"}
         />
 
