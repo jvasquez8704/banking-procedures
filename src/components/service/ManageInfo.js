@@ -66,13 +66,11 @@ const InfoUpdater = () => {
     }
 
     const handleChangeStatuses = value => {
-      console.log('Depto: ', value);
       setCountryState(value);
       dispatch(getCities(value));
     }
     
     const handleChangeCities = value => {
-      console.log('Ciudad', value);
       setCity(value);
     }
 
@@ -190,10 +188,10 @@ const InfoUpdater = () => {
         />
         <CustomInput
           fieldName="mobile"
-          iLabel="Telefono celular"
+          iLabel="Teléfono celular"
           errMjs={errors.mobile && errors.mobile.message}
           iTypeErr={`${errors.mobile ? "error" : ""}`}
-          iPlaceholder="Ingresa telefono celular"
+          iPlaceholder="Ingresa teléfono celular"
           ihandleInputChange={handleInputChange}
           ihandleKeyPress={handleKeyPress}
           ihandleKeyDown={handleKeyDown}
@@ -202,16 +200,16 @@ const InfoUpdater = () => {
           irules={{
             required: {
               value: true,
-              message: "Por favor ingresa telefono celular",
+              message: "Por favor ingresa teléfono celular",
             },
           }}
         />
         <CustomInput
           fieldName="telephone"
-          iLabel="Telefono de casa"
+          iLabel="Teléfono de casa"
           errMjs={errors.telephone && errors.telephone.message}
           iTypeErr={`${errors.telephone ? "error" : ""}`}
-          iPlaceholder="Ingresa telefono de casa"
+          iPlaceholder="Ingresa teléfono de casa"
           ihandleInputChange={handleInputChange}
           ihandleKeyPress={handleKeyPress}
           ihandleKeyDown={handleKeyDown}
@@ -219,7 +217,7 @@ const InfoUpdater = () => {
           irules={{
             required: {
               value: true,
-              message: "Por favor ingresa telefono de casa",
+              message: "Por favor ingresa teléfono de casa",
             },
           }}
         />
@@ -338,7 +336,7 @@ const InfoUpdater = () => {
               message: "Por favor ingresa dirección de envío",
             },
           }}
-          itoolTip={'Colocar dirección física o correo electrónico'}
+          iToolTip={"Colocar dirección física o correo electrónico"}
         />
 
         <Form.Item>

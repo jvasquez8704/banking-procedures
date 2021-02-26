@@ -32,39 +32,39 @@ const TabsCard = () => {
       img: img1,
       desc: {
         title: "Cambio de PIN",
-        subtitle: "Cambio de PIN"
-      },
-    },
-    {
-      key: 2,
-      img: img2,
-      desc: { 
-        title: "Actualización de Datos",
-        subtitle: "Actualización de Datos" 
-      },
-    },
-    {
-      key: 3,
-      img: img3,
-      desc: {
-        title: "Bloqueo Tarjeta",
-        subtitle: "Bloqueo Tarjeta"
-      },
-    }, 
-    {
-      key: 4,
-      img: img4,
-      desc: {
-        title: "Límite de Crédito",
-        subtitle: "Límite de Crédito"
+        subtitle: "Cambio de PIN de tus tarjetas"
       },
     },
     {
       key: 5,
       img: img5,
       desc: {
-        title: "Consulta de Saldos",
-        subtitle: "Consulta de Saldos"
+        title: "Consulta de saldos",
+        subtitle: "Consulta de movimientos de tus tarjetas"
+      },
+    },
+    {
+      key: 2,
+      img: img2,
+      desc: { 
+        title: "Actualización de datos",
+        subtitle: "Actualización de datos de tus tarjetas" 
+      },
+    },
+    {
+      key: 3,
+      img: img3,
+      desc: {
+        title: "Bloqueo y desbloqueo",
+        subtitle: "Bloqueo y desbloqueo de tus tarjetas"
+      },
+    }, 
+    {
+      key: 4,
+      img: img4,
+      desc: {
+        title: "Modificación límite crédito",
+        subtitle: "Modificación de límite de crédito de tus tarjetas"
       },
     },
   ];
@@ -72,8 +72,8 @@ const TabsCard = () => {
   const [state, setState] = useState({
     key: getModule(),
     description: {
-      title: "Desbloqueo de usuario",
-      subtitle: "Desbloqueo de usuario etc..."
+      title: "Cambio de PIN",
+      subtitle: "Cambio de PIN de tus tarjetas"
     }
   });
 
@@ -206,7 +206,7 @@ const TabsCard = () => {
         />
       </div>
       <Tabs
-        title={"Gestión de Tarjetas Atlántida"}
+        title={"Gestión de tarjetas Atlántida"}
         className="stc-tabs ant-row ant-row-center ant-row-middle"
         tabList={tabList}
         onTabChange={onTabChange}

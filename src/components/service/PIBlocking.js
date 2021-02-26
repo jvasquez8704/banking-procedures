@@ -81,7 +81,7 @@ const PIBlocking = () => {
           irules={{
             required: {
               value: true,
-              message: "Se ocupa la tarjeta",
+              message: "Se requiere una tarjeta",
             },
           }}
         />

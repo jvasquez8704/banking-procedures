@@ -13,7 +13,6 @@ const CustomInput = ({fieldName, iLabel, iTypeErr, errMjs, iPlaceholder, ihandle
                 help={errMjs}
                 className={`${ icenterText ? 'stc-center-text' : ''}`}
             >
-                {/* { iToolTip && <p className="stc-tooltip">{ iToolTip }</p> } */}
                 { iToolTip && <p className={`stc-tooltip ${ icenterText ? 'stc-center-text' : ''}`}>{ iToolTip }</p> }
                  <Controller
                         as={Input}

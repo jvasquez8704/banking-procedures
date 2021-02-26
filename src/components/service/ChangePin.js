@@ -32,7 +32,7 @@ const ChangePin = () => {
         }
 
         if (pin !== confirmedPin) {
-            dispatch(setError('El pin confirmado no es igual al nuevo pin'));
+            dispatch(setError('Valida confirmación de PIN, nuevo PIN y confirmación de PIN deben ser iguales'));
             return;
         }
 
@@ -108,9 +108,9 @@ const ChangePin = () => {
 
             <CustomSelect
                 fieldName="account-item"
-                iLabel="Selecciona tarjeta para cambio de Pin"
+                iLabel="Selecciona tarjeta"
                 errMjs="Por favor selecciona una tarjeta"
-                iPlaceholder="Selecciona tarjeta para cambio de Pin"
+                iPlaceholder="Selecciona tarjeta"
                 items={accounts}
                 iHandleSelectChange={handleChangeCard}
                 irules={{
@@ -154,10 +154,10 @@ const ChangePin = () => {
             /> */}
 
             <CustomInput fieldName="pin"
-                iLabel="Digita tu nuevo Pin"
+                iLabel="Digita tu nuevo PIN"
                 errMjs={ errors.pin && errors.pin.message }
                 iTypeErr={`${ errors.pin ? 'error': ''}`}
-                iPlaceholder="Digita nuevo Pin"
+                iPlaceholder="Digita nuevo PIN"
                 ihandleInputChange={handleInputChange}
                 ihandleKeyPress={handleKeyPress}
                 ihandleKeyDown={handleKeyDown}
@@ -165,24 +165,24 @@ const ChangePin = () => {
                 irules={{
                     required: {
                         value: true,
-                        message: 'Por favor ingresa nuevo pin'
+                        message: 'Por favor ingresa nuevo PIN'
                     },
                     maxLength: {
                         value: 4,
-                        message: 'Por favor ingresa un pin valido'
+                        message: 'Por favor ingresa un PIN valido'
                     },
                     minLength: {
                         value: 4,
-                        message: 'Por favor ingresa un pin valido'
+                        message: 'Por favor ingresa un PIN valido'
                     }
                 }}
             />
 
             <CustomInput fieldName="confirmedPin"
-                iLabel="Confirma tu nuevo Pin"
+                iLabel="Confirma tu nuevo PIN"
                 errMjs={ errors.confirmedPin && errors.confirmedPin.message }
                 iTypeErr={`${ errors.confirmedPin ? 'error': ''}`}
-                iPlaceholder="Confirma nuevo Pin"
+                iPlaceholder="Confirma nuevo PIN"
                 ihandleInputChange={handleInputChange}
                 ihandleKeyPress={handleKeyPress}
                 ihandleKeyDown={handleKeyDown}
@@ -190,15 +190,15 @@ const ChangePin = () => {
                 irules={{
                     required: {
                         value: true,
-                        message: 'Por favor ingresa confirmación de nuevo pin'
+                        message: 'Por favor ingresa confirmación de nuevo PIN'
                     },
                     maxLength: {
                         value: 4,
-                        message: 'Por favor ingresa un pin valido'
+                        message: 'Por favor ingresa un PIN valido'
                     },
                     minLength: {
                         value: 4,
-                        message: 'Por favor ingresa un pin valido'
+                        message: 'Por favor ingresa un PIN valido'
                     }
                 }}
             />

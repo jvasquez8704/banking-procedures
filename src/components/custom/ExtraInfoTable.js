@@ -9,26 +9,26 @@ const ExtraInfoTable = ({ info }) => {
     return (
         <>
             <Descriptions
-                title="Moneda Local"
+                title="Moneda local"
                 layout="vertical"
                 size="small"
                 column={{ xxl: 4, xl: 4, lg: 4, md: 2, sm: 1, xs: 1 }}
                 bordered
             >
-                <Descriptions.Item label="Limite">{extralocallimit}</Descriptions.Item>
+                <Descriptions.Item label="Límite">{extralocallimit}</Descriptions.Item>
                 <Descriptions.Item label="Saldo inicial">{extralocalinitial}</Descriptions.Item>
                 <Descriptions.Item label="Saldo final">{extralocalfinal}</Descriptions.Item>
                 <Descriptions.Item label="Disponible">{extralocalavailable}</Descriptions.Item>
             </Descriptions>
             <br></br>
             <Descriptions
-                title="Moneda Extranjera"
+                title="Moneda extranjera"
                 layout="vertical"
                 size="small"
                 column={{ xxl: 4, xl: 4, lg: 4, md: 3, sm: 1, xs: 1 }}
                 bordered
             >
-                <Descriptions.Item label="Limite">{extrainterlimit}</Descriptions.Item>
+                <Descriptions.Item label="Límite">{extrainterlimit}</Descriptions.Item>
                 <Descriptions.Item label="Saldo inicial">{extrainterinitial}</Descriptions.Item>
                 <Descriptions.Item label="Saldo final">{extrainterfinal}</Descriptions.Item>
                 <Descriptions.Item label="Disponible">{extrainteravailable}</Descriptions.Item>

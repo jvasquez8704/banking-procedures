@@ -34,16 +34,28 @@ const Success = () => {
 
         <Form.Item name="normal-message">
           <p className="stc-static-success-message">
-            {tab === 1 && "Tu usuario ha sido desbloqueado con éxito."}
-            {tab === 2 && "Tu ACH se habilitó con éxito."}
-            {tab === 3 && "Revisa tu correo electrónico, te hemos enviado una contraseña temporal. La cual debes personalizar en tu Banca Digital."}
+                    {
+                        tab === 1 && 'Cambio de Pin exitoso.'
+                    }
+                    {
+                        tab === 2 && 'Tus datos han sido actualizados con éxito.'
+                    }
+                    {
+                        tab === 3 && 'Gestión exitosa.'
+                    }
+                    {
+                        tab === 4 && 'El límite de crédido de la tarjeta ha sido gestionado con éxito.'
+                    }
+                    {
+                        tab === 5 && 'Consulta de movimientos exitosa.'
+                    }
           </p>
         </Form.Item>
 
         <Form.Item name="normal-message">
           {tab !== 2 && (
             <p className="stc-success-message">
-                Ahora puedes realizar más de 400 transacciones sin necesidad de ir al banco.
+                Puedes seguir disfrutando de los beneficios de tus tarjetas.
             </p>
           )}
         </Form.Item>

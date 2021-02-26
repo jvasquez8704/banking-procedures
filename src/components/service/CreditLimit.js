@@ -140,7 +140,7 @@ const ManagementPin = () => {
         {
           reason === '3008' && (
             <Form.Item name="normal-message" className="decrease-leyend">
-              <p>EL monto debe ser mayor o igual a $100.00</p>
+              <p>El monto debe ser mayor o igual a $100.00</p>
             </Form.Item>
           )
         }
