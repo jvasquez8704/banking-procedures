@@ -1,6 +1,6 @@
 import React from 'react';
 import { Modal, Row, Col, Button, Divider } from 'antd';
-import { InfoCircleOutlined } from '@ant-design/icons';
+// import { InfoCircleOutlined } from '@ant-design/icons';
 import { useMediaQuery } from 'react-responsive';
 import playstore from '../../res/img/googleplay.svg';
 import appstore from '../../res/img/appstore.svg';
@@ -14,7 +14,6 @@ const Popup = ({open}) => {
     const dispatch = useDispatch();
     const { openModal } = useSelector(({ ui }) => ui);
     const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
-    console.log('Is mobile', isMobile);
   // const [visible, setVisible] = useState(false);
 
   //   useEffect(() => {
