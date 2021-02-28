@@ -35,31 +35,20 @@ const UnlockUser = () => {
     }
 
     const handleKeyPress = e => {
-        if (e.target.name === 'token' && temp.length > 7) {
+      let key = e.which || e.keyCode || e.charCode;
+      if (e.target.name === 'token' && !validator.isNumeric(e.key)) {
+        e.preventDefault();
+        return;
+      }
+        
+      if (e.target.name === 'token' && e.target.value.length > 7 && key !== 8) {
             e.preventDefault();
             return;
-        }
-
-        if (e.target.name === 'token' && !validator.isNumeric(e.key)) {
-            e.preventDefault();
-            return;
-        }
-        let dataTemp = temp + e.key;
-        e.target.name === 'token' && setTemp(dataTemp);
+      }
     }
     
     const handleKeyDown = e => {
-        let key = e.which || e.keyCode || e.charCode;
-        // if (!validator.isNumeric(e.key)) {
-        //     e.preventDefault();
-        //     return;
-        // }
-        if(e.target.name === 'token' && key === 8){
-            let dataTemp = temp;
-            if(dataTemp.length > 0){
-                setTemp(dataTemp.slice(0, -1)); 
-            }
-        }    
+        let key = e.which || e.keyCode || e.charCode;   
     }
 
     return (
