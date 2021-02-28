@@ -1,6 +1,6 @@
 import React from 'react';
 import { Modal, Row, Col, Button, Divider } from 'antd';
-import { InfoCircleOutlined } from '@ant-design/icons';
+// import { InfoCircleOutlined } from '@ant-design/icons';
 import { useMediaQuery } from 'react-responsive';
 import playstore from '../../res/img/googleplay.svg';
 import appstore from '../../res/img/appstore.svg';
