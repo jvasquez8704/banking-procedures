@@ -16,6 +16,7 @@ const InfoUpdater = () => {
     const [maritalStatus, setMaritalStatus] = useState('')
     const [mobileLength, setMobileLength] = useState('');
     const [telephoneLength, setTelephoneLength] = useState('');
+    const [workTelephoneLength, setWorkTelephoneLength] = useState('');
     const [addressLength, setAddressLength] = useState('');
     const [workAddressLength, setWorkAddressLength] = useState('');
     const [emailLength, setEmailLength] = useState('');
@@ -34,7 +35,7 @@ const InfoUpdater = () => {
       !stateCountryList &&  dispatch(getStatesCountry());
     }, [countryState])
 
-    const handleOnSubmit = ({address, workAddress, mobile, telephone, email, shippingAddress }) => {
+    const handleOnSubmit = ({address, workAddress, mobile, telephone, workTelephone, email, shippingAddress }) => {
         const { identity } = auth;
         const { token } = info;
 
@@ -53,7 +54,7 @@ const InfoUpdater = () => {
         //   return;
         // }
 
-        dispatch(setUserInfo(identity, token, {address, workAddress, mobile, telephone, email, maritalStatus, countryState, city, shippingAddress}));
+        dispatch(setUserInfo(identity, token, {address, workAddress, mobile, telephone, workTelephone, email, maritalStatus, countryState, city, shippingAddress}));
     } 
 
     const handleBack = () => {
@@ -82,6 +83,11 @@ const InfoUpdater = () => {
         }
         
         if (name === 'telephone' && telephoneLength.length > 7) {
+            e.preventDefault();
+            return;
+        }
+
+        if (name === 'workTelephone' && workTelephoneLength.length > 7) {
             e.preventDefault();
             return;
         }
@@ -116,13 +122,14 @@ const InfoUpdater = () => {
           return;
         }
 
-        if ((name === 'mobile' || name === 'telephone') && isNaN(e.key)) {
+        if ((name === 'mobile' || name === 'telephone' || name === 'workTelephone') && isNaN(e.key)) {
             e.preventDefault();
             return;
         }
 
         name === 'mobile' && setMobileLength(mobileLength + e.key);
         name === 'telephone' && setTelephoneLength(telephoneLength + e.key);
+        name === 'workTelephone' && setWorkTelephoneLength(workTelephoneLength + e.key);
         name === 'address' && setAddressLength(addressLength + e.key)
         name === 'workAddress' && setWorkAddressLength(workAddressLength + e.key)
         name === 'email' && setEmailLength(emailLength + e.key)
@@ -136,6 +143,7 @@ const InfoUpdater = () => {
         let { name } = e.target;
         name === 'mobile' && key === 8 && setMobileLength(mobileLength.slice(0, -1));
         name === 'telephone' && key === 8 && setTelephoneLength(telephoneLength.slice(0, -1));
+        name === 'workTelephone' && key === 8 && setWorkTelephoneLength(workTelephoneLength.slice(0, -1));
         name === 'address' && key === 8 && setAddressLength(addressLength.slice(0, -1)); 
         name === 'workAddress' && key === 8 && setWorkAddressLength(workAddressLength.slice(0, -1));
         name === 'email' && key === 8 && setEmailLength(emailLength.slice(0, -1));           
@@ -220,6 +228,17 @@ const InfoUpdater = () => {
           //     message: "Por favor ingresa teléfono de casa",
           //   },
           // }}
+        />
+        <CustomInput
+          fieldName="workTelephone"
+          iLabel="Teléfono del trabajo"
+          errMjs={errors.workTelephone && errors.workTelephone.message}
+          iTypeErr={`${errors.workTelephone ? "error" : ""}`}
+          iPlaceholder="Ingresa teléfono del trabajo"
+          ihandleInputChange={handleInputChange}
+          ihandleKeyPress={handleKeyPress}
+          ihandleKeyDown={handleKeyDown}
+          icontrol={control}
         />
         <CustomInput
           fieldName="email"

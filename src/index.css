@@ -524,7 +524,7 @@ text-align: center;
   /*background-color:#000;
   border-radius:40px */
   border-radius: 3rem;
-  width: 83%;
+  width: 90%;
   margin: 0 auto;
   /* padding: 1rem; */
   padding: 0rem 0rem .5rem;
@@ -642,7 +642,7 @@ th.ant-descriptions-item-label.ant-descriptions-item-colon {
 .stc-tab .ant-card-body {
   display:inline-block;
   padding: 2px;
-  width: 55%;
+  width: 66%;
   min-height: 4.6rem;
   display: flex;
   justify-content: center;
@@ -913,12 +913,14 @@ th.ant-descriptions-item-label.ant-descriptions-item-colon {
   .stc-tab .ant-card-meta-title {
     font-size: .7rem;
   }
-
   .ant-col.ant-form-item-label label{
     font-size: 0.78rem;
   }
   .ant-steps-horizontal.ant-steps-label-horizontal > .ant-steps-item:not(:last-child) > .ant-steps-item-container > .ant-steps-item-tail {
     display: none;
+  }
+  .ant-card-meta {
+    margin: -10px 0;
   }
 }
 

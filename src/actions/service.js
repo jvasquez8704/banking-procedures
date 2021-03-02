@@ -1,7 +1,8 @@
 import { unsecurefetch } from '../helpers/fetch';
 import { types } from '../constants/types';
+import { mjs } from '../constants/constants';
 import { requests } from '../constants/requests';
-import { updateStep , setError, unsetError, setLoading } from './ui';
+import { updateStep , setError, unsetError, setLoading, setMessage } from './ui';
 
 export const setStatusCard = (identity, token, card) => {
     return async( dispatch ) => {
@@ -17,7 +18,7 @@ export const setStatusCard = (identity, token, card) => {
         req.request.data.state = card.status === "00" ? "28" : "00";
         req.request.data.reason = 'AA';
         req.request.data.user = 'ATH03278';
-
+        const message = card.status === "00" ? mjs.successLock: mjs.successUnlock;
         dispatch(setLoading());
 
         try {
@@ -30,6 +31,7 @@ export const setStatusCard = (identity, token, card) => {
                 dispatch(getInfo({...data, token}));
                 dispatch(updateStep(3));
                 dispatch(unsetError());
+                dispatch(setMessage(message));
             } else {
                 dispatch(setError(status.message));
             }
@@ -131,7 +133,7 @@ export const setUserInfo = (identity, token, userInfo) => {
         req.request.data.addressWork = userInfo.workAddress;
         req.request.data.phoneMobile = userInfo.mobile;
         req.request.data.phoneHouse = userInfo.telephone;
-        req.request.data.phoneWork = userInfo.mobile;
+        req.request.data.phoneWork = userInfo.workTelephone;
         req.request.data.emailEC = userInfo.email;
 
         req.request.data.maritalStatus = userInfo.maritalStatus;

@@ -63,7 +63,7 @@ const TabsCard = () => {
       key: 4,
       img: img4,
       desc: {
-        title: "Modificación límite crédito",
+        title: "Modificación de límite de crédito",
         subtitle: "Modificación de límite de crédito tarjeta adicional"
       },
     },
@@ -206,7 +206,7 @@ const TabsCard = () => {
         />
       </div>
       <Tabs
-        title={"Gestión de tarjetas Atlántida"}
+        title={"Tarjetas"}
         className="stc-tabs ant-row ant-row-center ant-row-middle"
         tabList={tabList}
         onTabChange={onTabChange}

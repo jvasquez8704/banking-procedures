@@ -10,6 +10,11 @@ export const setError = err => ({
     payload: err
 });
 
+export const setMessage = mjs => ({
+    type: types.setMjs,
+    payload: mjs
+});
+
 export const unsetError = () => ({
     type: types.unsetError
 });

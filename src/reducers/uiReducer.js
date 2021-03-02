@@ -5,7 +5,8 @@ const initialState = {
     step: 0,
     loading: false,
     err: null,
-    openModal: false
+    openModal: false,
+    mjs:''
 };
 
 export const uiReducer = (state = initialState, action) => {
@@ -40,6 +41,11 @@ export const uiReducer = (state = initialState, action) => {
                 ...state,
                 openModal: action.payload
             } 
+        case types.setMjs:
+            return {
+                ...state,
+                mjs: action.payload
+            }
         default:
             return state;
     }
