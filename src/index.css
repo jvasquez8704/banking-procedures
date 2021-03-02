@@ -917,6 +917,9 @@ th.ant-descriptions-item-label.ant-descriptions-item-colon {
   .ant-col.ant-form-item-label label{
     font-size: 0.78rem;
   }
+  .ant-steps-horizontal.ant-steps-label-horizontal > .ant-steps-item:not(:last-child) > .ant-steps-item-container > .ant-steps-item-tail {
+    display: none;
+  }
 }
 
 
