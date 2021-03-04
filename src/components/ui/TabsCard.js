@@ -32,7 +32,7 @@ const TabsCard = () => {
       img: img1,
       desc: {
         title: "Cambio de PIN",
-        subtitle: "Cambio de PIN de tus tarjetas"
+        subtitle: "Cambio de PIN"
       },
     },
     {
@@ -40,7 +40,7 @@ const TabsCard = () => {
       img: img5,
       desc: {
         title: "Consulta de saldos",
-        subtitle: "Consulta de movimientos de tus tarjetas"
+        subtitle: "Consulta de saldos"
       },
     },
     {
@@ -48,7 +48,7 @@ const TabsCard = () => {
       img: img2,
       desc: { 
         title: "Actualización de datos",
-        subtitle: "Actualización de datos de tus tarjetas" 
+        subtitle: "Actualización de datos" 
       },
     },
     {
@@ -56,7 +56,7 @@ const TabsCard = () => {
       img: img3,
       desc: {
         title: "Bloqueo y desbloqueo",
-        subtitle: "Bloqueo y desbloqueo de tus tarjetas"
+        subtitle: "Bloqueo y desbloqueo"
       },
     }, 
     {

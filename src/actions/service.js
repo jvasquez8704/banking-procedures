@@ -72,7 +72,8 @@ export const setLimitCard = (identity, token, card, amount) => {
                 const { token } = status;
                 dispatch(getInfo({...data, token}));
                 dispatch(updateStep(3));
-                dispatch(unsetError());
+                dispatch(unsetError());                
+                dispatch(setMessage(mjs.successCreditLimit));               
             } else {
                 dispatch(setError(status.message));
             }
@@ -108,6 +109,7 @@ export const getCardInfo = (identity, token, card, queryType) => {
             if (status.code === '0000') {
                 dispatch(getInfo({...data, query:queryType }));
                 dispatch(unsetError());
+                dispatch(setMessage(mjs.successInquiry))
             } else {
                 dispatch(setError(status.message));
             }
@@ -152,6 +154,7 @@ export const setUserInfo = (identity, token, userInfo) => {
                 dispatch(getInfo({...data, token}));
                 dispatch(updateStep(3));
                 dispatch(unsetError());
+                dispatch(setMessage(mjs.successManageInfo));
             } else {
                 const mjs = (!status.message || status.message === '') ? 'Error en el servicio' : status.message 
                 dispatch(setError(status.message));
@@ -192,6 +195,7 @@ export const setPin = (identity, token, card, pin) => {
                 dispatch(getInfo({...data, token}));
                 dispatch(updateStep(3));
                 dispatch(unsetError());
+                dispatch(setMessage(mjs.successPinChange));
             } else {
                 dispatch(setError(status.message));
             }

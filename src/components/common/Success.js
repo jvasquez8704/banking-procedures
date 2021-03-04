@@ -2,7 +2,6 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux'; 
 import { Form, Button } from 'antd';
 import { mjs as _mjs } from '../../constants/constants';
-// import Icon, { CheckCircleFilled, CheckCircleOutlined } from '@ant-design/icons';
 import ATLCheck from '../../res/img/check.svg';
 import { unsetError, updateStep } from '../../actions/ui';
 
@@ -36,36 +35,14 @@ const Success = () => {
 
         <Form.Item name="normal-message">
           <p className="stc-static-success-message">
-                    {
-                        tab === 1 && 'Cambio de Pin exitoso.'
-                    }
-                    {
-                        tab === 2 && 'Tus datos han sido actualizados con éxito.'
-                    }
-                    {
-                        tab === 3 && mjs
-                    }
-                    {
-                        tab === 4 && 'El límite de crédido de la tarjeta ha sido gestionado con éxito.'
-                    }
-                    {
-                        tab === 5 && 'Consulta de movimientos exitosa.'
-                    }
+                    { mjs }
           </p>
         </Form.Item>
 
         <Form.Item name="normal-message">
-          {tab !== 3 && (
             <p className="stc-success-message">
-              {`${_mjs._success}`}
+              {`${ tab !== 3 ? _mjs._success : mjs === _mjs.successLock ? _mjs._successLock : _mjs._success }`} 
             </p>
-          )}
-          {tab === 3 && (
-            <p className="stc-success-message">
-              {`${ mjs === _mjs.successLock ? _mjs._successLock : _mjs._success }`}
-               
-            </p>
-          )}
         </Form.Item>
 
         <Form.Item>
