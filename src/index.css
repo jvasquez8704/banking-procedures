@@ -280,7 +280,7 @@ div#rcDialogTitle0{
 
 .stc-content .ant-card.stc-card-widget.ant-card-bordered .ant-card-head {
   /* background: #d22630; */
-  /* padding: 1rem; */
+  padding: 0;
   border-radius: 3rem 3rem 0 0;
   border-bottom: 0;
 }
@@ -315,7 +315,6 @@ div#rcDialogTitle0{
 
 .stc-static-success-message {
   font-family: 'neo_sans_bld';
-  width: 28rem;
   margin: 0 auto;
 }
 
