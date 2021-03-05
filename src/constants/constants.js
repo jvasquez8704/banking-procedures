@@ -9,3 +9,17 @@ export const mjs = {
     _successLock: 'Si desea realizar reposición de su tarjeta deberá llamar al Contact Center 2280-1010 o visitar la agencia de su preferencia.',
     _success: 'Puedes seguir disfrutando de los beneficios de tus tarjetas.',
 }
+export const title = {
+    main : 'Tarjetas',
+    branding : 'Logo Banco Atlantida',
+    inquirySubtitle: 'Consulta de saldos',
+    inquiryTitle: 'Consulta de saldos',
+    changePINSubtitle: 'Cambio de PIN',
+    changePINTitle: 'Cambio de PIN',
+    creditLimitSubtitle: 'Modificación de límite de crédito tarjeta adicional',
+    creditLimitTitle: 'Modificación de límite de crédito',
+    infoSubtitle: 'Actualización de datos',
+    infoTitle: 'Actualización de datos',
+    lockingSubtitle: 'Bloqueo y desbloqueo temporal',
+    lockingTitle: 'Bloqueo y desbloqueo',
+}

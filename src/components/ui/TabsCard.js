@@ -9,6 +9,7 @@ import img2 from '../../res/img/updateUserInfo.svg';
 import img3 from '../../res/img/blockingCard.svg';
 import img4 from '../../res/img/creditLimit.svg';
 import img5 from '../../res/img/inquiryStatement.svg';
+import { title } from '../../constants/constants';
 
 import PreLogin from '../auth/PreLogin';
 import Login from '../auth/Login';
@@ -31,40 +32,40 @@ const TabsCard = () => {
       key: 1,
       img: img1,
       desc: {
-        title: "Cambio de PIN",
-        subtitle: "Cambio de PIN"
+        title: title.changePINTitle,
+        subtitle: title.changePINSubtitle
       },
     },
     {
       key: 5,
       img: img5,
       desc: {
-        title: "Consulta de saldos",
-        subtitle: "Consulta de saldos"
+        title: title.inquiryTitle,
+        subtitle: title.inquirySubtitle
       },
     },
     {
       key: 2,
       img: img2,
       desc: { 
-        title: "Actualización de datos",
-        subtitle: "Actualización de datos" 
+        title: title.infoTitle,
+        subtitle: title.infoSubtitle 
       },
     },
     {
       key: 3,
       img: img3,
       desc: {
-        title: "Bloqueo y desbloqueo",
-        subtitle: "Bloqueo y desbloqueo"
+        title: title.lockingTitle,
+        subtitle: title.lockingSubtitle
       },
     }, 
     {
       key: 4,
       img: img4,
       desc: {
-        title: "Modificación de límite de crédito",
-        subtitle: "Modificación de límite de crédito tarjeta adicional"
+        title: title.creditLimitTitle,
+        subtitle: title.creditLimitSubtitle
       },
     },
   ];
@@ -72,8 +73,8 @@ const TabsCard = () => {
   const [state, setState] = useState({
     key: getModule(),
     description: {
-      title: "Cambio de PIN",
-      subtitle: "Cambio de PIN de tus tarjetas"
+      title: title.changePINTitle,
+      subtitle: title.changePINSubtitle
     }
   });
 
@@ -200,13 +201,13 @@ const TabsCard = () => {
     <div>
       <div className="stc-landing-top">
         <img
-          alt="Logo Banco Atlantida"
+          alt={title.branding}
           className="stc-landing-logo-header"
           src={logo}
         />
       </div>
       <Tabs
-        title={"Tarjetas"}
+        title={title.main}
         className="stc-tabs ant-row ant-row-center ant-row-middle"
         tabList={tabList}
         onTabChange={onTabChange}
