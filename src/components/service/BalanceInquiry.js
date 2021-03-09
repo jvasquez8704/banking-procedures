@@ -73,6 +73,7 @@ const BalanceInquiry = () => {
           iPlaceholder="Selecciona tarjeta a consultar"
           items={accounts}
           iHandleSelectChange={handleChangeCard}
+          isRequired={true}
           irules={{
             required: {
               value: true,
@@ -88,6 +89,7 @@ const BalanceInquiry = () => {
           iPlaceholder="Selecciona un tipo de consulta"
           items={queryTypes}
           iHandleSelectChange={handleChange}
+          isRequired={true}
           irules={{
             required: {
               value: true,

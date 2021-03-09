@@ -266,6 +266,7 @@ const InfoUpdater = () => {
           iPlaceholder="Selecciona estado civil"
           items={maritalStatuses}
           iHandleSelectChange={handleChangeMaritalStatus}
+          isRequired={false}
           // irules={{
           //   required: {
           //     value: true,
@@ -281,6 +282,7 @@ const InfoUpdater = () => {
           iPlaceholder="Selecciona departamento"
           items={stateCountryList}
           iHandleSelectChange={handleChangeStatuses}
+          isRequired={false}
           irules={{
             required: {
               value: true,
@@ -296,6 +298,7 @@ const InfoUpdater = () => {
           iPlaceholder="Selecciona ciudad"
           items={cityList}
           iHandleSelectChange={handleChangeCities}
+          isRequired={false}
           irules={{
             required: {
               value: true,

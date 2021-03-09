@@ -114,6 +114,7 @@ const ManagementPin = () => {
           iPlaceholder="Selecciona tarjeta"
           items={accounts}
           iHandleSelectChange={handleChangeCard}
+          isRequired={true}
           irules={{
             required: {
               value: true,
@@ -129,6 +130,7 @@ const ManagementPin = () => {
           iPlaceholder="Selecciona un motivo"
           items={reasonUpdateLimit}
           iHandleSelectChange={handleChangeReason}
+          isRequired={true}
           irules={{
             required: {
               value: true,

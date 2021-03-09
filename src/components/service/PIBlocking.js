@@ -78,6 +78,7 @@ const PIBlocking = () => {
           iPlaceholder="Selecciona tarjeta"
           items={accounts}
           iHandleSelectChange={handleChangeCard}
+          isRequired={true}
           irules={{
             required: {
               value: true,
