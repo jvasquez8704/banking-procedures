@@ -227,8 +227,9 @@ div#rcDialogTitle0{
 
 
 .ant-steps {
-  width: 30%;
+  width: 35%;
   margin: 0 auto;
+  padding-left: 2.3rem;
 }
 /* ********************************************************************************************************************************************** */
 /* general steps */
@@ -699,7 +700,8 @@ th.ant-descriptions-item-label.ant-descriptions-item-colon {
     padding: 0 4rem;
   }
   .ant-steps {
-    width: 45%;
+    width: 50%;
+    padding-left: 2rem;
   }
   .ant-steps-navigation .ant-steps-item.ant-steps-item-active::before{
     width: 60%;
@@ -827,8 +829,9 @@ th.ant-descriptions-item-label.ant-descriptions-item-colon {
     display: flex;
   }
   .ant-steps {
-    display: flex;
-    width: 70%;
+    /* display: flex; */
+    width: 100%;
+    padding: 0 0 0 2.7rem;
   }
   .ant-steps-navigation .ant-steps-item {
     overflow: visible !important;
