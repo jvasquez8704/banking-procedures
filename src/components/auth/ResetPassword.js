@@ -28,24 +28,20 @@ const ResetPassword = () => {
     }
 
     const handleKeyPress = e => {
-        const { name } = e.target
-        if (name === 'token' && temp.length > 7) {
-            e.preventDefault();
-            return;
+        let key = e.which || e.keyCode || e.charCode;
+        if (e.target.name === 'token' && !validator.isNumeric(e.key)) {
+          e.preventDefault();
+          return;
         }
-
-        if (name === 'token' && !validator.isNumeric(e.key)) {
-            e.preventDefault();
-            return;
+          
+        if (e.target.name === 'token' && e.target.value.length > 7 && key !== 8) {
+              e.preventDefault();
+              return;
         }
-
-        name === 'token' && setTemp(temp + e.key);
     }
 
     const handleKeyDown = e => {
         let key = e.which || e.keyCode || e.charCode;
-        const { name } = e.target;
-        name === 'token' && key === 8 && setTemp(temp.slice(0, -1)); 
     }
 
     return (
