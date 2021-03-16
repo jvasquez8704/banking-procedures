@@ -309,10 +309,10 @@ const InfoUpdater = () => {
 
         <CustomInput
           fieldName="shippingAddress"
-          iLabel="Dirección de envío"
+          iLabel="Dirección de envío de estado de cuenta"
           errMjs={errors.shippingAddress && errors.shippingAddress.message}
           iTypeErr={`${errors.shippingAddress ? "error" : ""}`}
-          iPlaceholder="Ingresa dirección de envío"
+          iPlaceholder="Ingresa dirección de envío de estado de cuenta"
           ihandleInputChange={handleInputChange}
           ihandleKeyPress={handleKeyPress}
           ihandleKeyDown={handleKeyDown}
