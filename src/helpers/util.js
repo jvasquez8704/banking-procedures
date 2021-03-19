@@ -1,3 +1,26 @@
+import { endpoinds, transactions } from "../constants/constants";
+/**
+ *Doc about groupBy function
+ *https://gist.github.com/JamieMason/0566f8412af9fe6a1d470aa1e089a752
+ */
+ const groupBy = key => array =>
+ array.reduce(
+     (objectsByKeyValue, obj) => ({
+         ...objectsByKeyValue,
+         [obj[key]]: (objectsByKeyValue[obj[key]] || []).concat(obj)
+     }),
+     {}
+ );
+
+const groupByYear = groupBy('year');
+
+const getKeys = function(obj){
+ var keys = [];
+ for(var key in obj){
+    keys.push(key);
+ }
+ return keys;
+}
 
 const getTabBySign = sing => {
     const tabs = new Map();
@@ -25,17 +48,37 @@ const getModule = () => {
     return (param && !isNaN(param) && param > 0 && param <= 3) ? parseInt(param) : 1; 
 }
 
-const getIdType = type => {
-    const types = new Map();
-    types.set('HN01', 'Identidad');
-    types.set('HN02', 'RTN');
-    types.set('HN03', 'Carné de residente');
-    types.set('HN04', 'Pasaporte');
-    return types.get(type) || 'Identificación'; 
+const getMonthNameByNumber = number => {
+    var months = new Map();
+    months.set("01", "Enero");
+    months.set("02", "Febrero");
+    months.set("03", "Marzo");
+    months.set("04", "Abril");
+    months.set("05", "Mayo");
+    months.set("06", "Junio");
+    months.set("07", "Julio");
+    months.set("08", "Agosto");
+    months.set("09", "Septiembre");
+    months.set("10", "Octubre");
+    months.set("11", "Noviembre");
+    months.set("12", "Diciembre");
+
+    return months.get(number);
+}
+
+const getEndPoint = txnId => {
+    var target = new Map();
+    target.set(transactions.trxGetImage, endpoinds.endPonintGetImage);
+    target.set(transactions.trxGetDoc, endpoinds.endPointGetDoc);
+
+    return target.get(txnId);
 }
 
 export {
     getModule,
-    getIdType,
-    getTrxBackend
+    getTrxBackend,
+    groupByYear,
+    getKeys,
+    getMonthNameByNumber,
+    getEndPoint
 }

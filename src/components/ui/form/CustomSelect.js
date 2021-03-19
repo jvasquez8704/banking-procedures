@@ -3,19 +3,21 @@ import { Col, Form, Row, Select } from 'antd';
 
 const { Option } = Select;
 
-const CustomSelect = ({fieldName, iLabel, errMjs, iPlaceholder, items, getAccount, iHandleSelectChange, isRequired }) => {
+const CustomSelect = ({fieldName, iLabel, errMjs, iPlaceholder, items, getAccount, iHandleSelectChange, isRequired, mainError, mainErrorMjs }) => {
     return (
         <Row type="flex" justify="center">
             <Col xs={22} sm={22} md={16} lg={16} xl={14} xxl={14}>
                 <Form.Item
                     name={fieldName}
                     label={iLabel}
-                    rules={[
-                        {
-                            required: isRequired,
-                            message: errMjs,
-                        },
-                    ]}
+                    validateStatus={mainError}
+                    help={mainErrorMjs}
+                    // rules={[
+                    //     {
+                    //         required: isRequired,
+                    //         message: errMjs,
+                    //     },
+                    // ]}
                     className="noah"
                     required={isRequired}
                 >

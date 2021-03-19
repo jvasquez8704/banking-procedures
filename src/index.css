@@ -454,6 +454,9 @@ div#rcDialogTitle0{
   /* margin-top: -2rem; */
   margin-top: -0.7rem;
 }
+.ant-form-vertical .ant-form-explain {
+  margin-top: -2px;
+}
 /************************************************************** Footer *****************************************************************/
 .ant-layout-footer {
   background: #d22630;

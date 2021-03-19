@@ -46,6 +46,11 @@ export const uiReducer = (state = initialState, action) => {
                 ...state,
                 mjs: action.payload
             }
+        case types.activeDowload:
+            return {
+                ...state,
+                download: action.payload
+            }
         default:
             return state;
     }

@@ -11,6 +11,7 @@ export const types = {
     setLoading: '[ui] setLoading',
     setModal: '[ui] setModal',
     setMjs: '[ui] setMjs',
+    activeDowload: '[ui] setDowload',
 
 
     getUserInfo:'[ach] getUserInfo',

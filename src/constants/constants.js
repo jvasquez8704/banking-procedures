@@ -23,3 +23,13 @@ export const title = {
     lockingSubtitle: 'Bloqueo y desbloqueo temporal',
     lockingTitle: 'Bloqueo y desbloqueo',
 }
+
+export const transactions = {
+    trxGetImage: '2004',
+    trxGetDoc: '2006',
+}
+
+export const endpoinds = {
+    endPonintGetImage: 'ChequeTruncado',
+    endPointGetDoc: 'EstadoCuentaCheque',
+}

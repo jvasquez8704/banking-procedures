@@ -5,21 +5,18 @@ import { useForm as validatorForm } from "react-hook-form";
 import validator from 'validator';
 
 import { useForm } from '../../hooks/useForm';
-import { LoginCustomer, startLogin } from '../../actions/auth';
+import { LoginCustomer } from '../../actions/auth';
 import { unsetError, updateStep } from '../../actions/ui';
 import CustomInput from '../ui/form/CustomInput';
 
 const UnlockUser = () => {
     const { handleSubmit, errors , control } = validatorForm();
-    const tab = useSelector( ({ui}) => ui.tab);
     const dispatch = useDispatch();
     const identity = useSelector(({ auth }) => auth.identity);
-    //const [{ username, token }, handleInputChange] = useForm({username: '', token: ''});
     const [handleInputChange] = useForm({ username: '', token: '' });
-    const [temp, setTemp] = useState('');
 
     const handleLogin = ({ username, token }) => {
-      dispatch(LoginCustomer({identity, username, token}, tab));
+      dispatch(LoginCustomer({identity, username, token}));
     }
 
     const handleBack = () => {
@@ -109,11 +106,7 @@ const UnlockUser = () => {
             htmlType="submit"
             style={{ background: "#d9272e" }}
           >
-            {`${
-              tab === 1
-                ? "Confirmar"
-                : "Siguiente"
-            }`}
+            Siguiente
           </Button>
         </Form.Item>
         <Form.Item>

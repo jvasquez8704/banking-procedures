@@ -32,3 +32,8 @@ export const activeModal = flag => ({
     type: types.setModal,
     payload: flag
 });
+
+export const activeDownload = flag => ({
+    type: types.activeDowload,
+    payload: flag
+});

@@ -5,7 +5,7 @@ import { useForm as validatorForm } from "react-hook-form";
 import validator from 'validator';
 
 import { useForm } from '../../hooks/useForm';
-import { verifyCustomer } from '../../actions/auth';
+import { preLogin } from '../../actions/auth';
 import CustomInput from '../ui/form/CustomInput';
 
 
@@ -17,7 +17,7 @@ const Verify = () => {
     const [handleInputChange] = useForm({identity:''});
 
     const handleLogin = ({identity}) => {
-        dispatch(verifyCustomer(identity));
+        dispatch(preLogin(identity));
     }
 
     const handleKeyPress = e => {
