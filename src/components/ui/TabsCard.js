@@ -7,7 +7,6 @@ import logo from '../../res/img/logo-basa.svg';
 import img1 from '../../res/img/pinChange.svg';
 import { title } from '../../constants/constants';
 
-import PreLogin from '../auth/PreLogin';
 import Login from '../auth/Login';
 import Success from '../common/Success';
 
@@ -50,10 +49,6 @@ const TabsCard = () => {
 
   const changePinJourney = [
     {
-      key: 'pre-login',
-      content: <PreLogin />,
-    },
-    {
       key: 'login',
       content: <Login />,
     },
@@ -80,7 +75,10 @@ const TabsCard = () => {
           src={logo}
         />
       </div>
-      <Content steps={journeys[key]} desc="Consulta de Cheques Personal" />
+      <Content steps={journeys[key]} 
+        // desc="Consulta de Cheques Banca Corporativa"
+        desc="Consulta de Cheques Comercial Pyme"
+      />
     </div>
   );
 };

@@ -87,7 +87,7 @@ const CheckManager = () => {
         }
         const { token, customerOCBUser } = info;
         dispatch(getAgreement(token, account, customerOCBUser, year, month, type)); 
-        dispatch(updateStep(2));
+        // dispatch(updateStep(2));
     }
 
     const handleChange = value => {

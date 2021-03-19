@@ -6,7 +6,7 @@ const initialState = {
     maritalStatuses : [{ product: 'C', mask: 'Casado' }, { product: 'D', mask: 'Divorciado' }, { product: 'S', mask: 'Soltero' }, { product: 'V', mask: 'Viudo'}, { product:'U', mask: 'Unión libre'}, { product: 'N' , mask: 'No aplica'}],
     reasonBlock : [{ product: '3005', mask: 'Bloqueo' }, { product: '3006', mask: 'Desbloqueo' }],
     reasonUpdateLimit : [{ product: '3007', mask: 'Aumento' }, { product: '3008', mask: 'Disminución' }],
-    docTypes : [{ product: '2004', mask: 'Imágenes de cheques' }, { product: '2006', mask: 'Estado de cuenta' }]
+    docTypes : [{ product: '2005', mask: 'Imágenes de cheques' }, { product: '2007', mask: 'Estado de cuenta' }]
 }
 
 export const serviceReducer = (state = initialState, action) => {

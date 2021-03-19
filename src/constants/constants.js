@@ -25,8 +25,8 @@ export const title = {
 }
 
 export const transactions = {
-    trxGetImage: '2004',
-    trxGetDoc: '2006',
+    trxGetImage: '2005',
+    trxGetDoc: '2007',
 }
 
 export const endpoinds = {
