@@ -10,6 +10,7 @@ export const types = {
     unsetError: '[ui] unsetError',
     setLoading: '[ui] setLoading',
     setModal: '[ui] setModal',
+    setAdvertisement: '[ui] setAdvertisement',
 
 
     getUserInfo:'[ach] getUserInfo',

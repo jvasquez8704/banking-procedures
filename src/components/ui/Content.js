@@ -4,6 +4,7 @@ import { Steps, Spin, Card, Modal } from 'antd';
 import { LoadingOutlined } from '@ant-design/icons';
 import { unsetError } from '../../actions/ui';
 import Popup from '../common/Modal';
+import Advertisement from '../common/Advertisement';
 import iconErr from '../../res/img/alert_icon.svg';
 
 
@@ -59,6 +60,7 @@ const StepScreen = ({ steps, desc }) => {
                     {steps && steps[current].content}
                 </Spin>
                 <Popup />
+                <Advertisement />
             </Card>
         </div>
     );

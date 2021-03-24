@@ -1,7 +1,7 @@
 import { unsecurefetch, secureFetch } from '../helpers/fetch';
 import { types } from '../constants/types';
 import { requests } from '../constants/requests';
-import { updateStep, setError, unsetError, setLoading, activeModal } from './ui';
+import { updateStep, setError, unsetError, setLoading, activeModal, activeAdvertisement } from './ui';
 
 export const verifyCustomer = (identity, isResetPassWord) => {
     return async (dispatch) => {
@@ -34,10 +34,14 @@ export const verifyCustomer = (identity, isResetPassWord) => {
                     dispatch(activeModal(true));
                 }
             } else {
-                if (status.code !== '2001') {
-                    dispatch(setError(status.message)); 
-                }else{
+                if (status.code === '2001') {
                     dispatch(activeModal(true));
+                }
+                else if (status.code === '0090' || status.code === '0091') {
+                    dispatch(activeAdvertisement(true));
+                }                
+                else {
+                    dispatch(setError(status.message)); 
                 }
                 
             }

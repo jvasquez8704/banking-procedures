@@ -27,3 +27,8 @@ export const activeModal = flag => ({
     type: types.setModal,
     payload: flag
 });
+
+export const activeAdvertisement = flag => ({
+    type: types.setAdvertisement,
+    payload: flag
+});

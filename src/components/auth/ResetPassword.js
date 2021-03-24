@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Form, Button } from 'antd';
 import { useForm as validatorForm } from "react-hook-form";
@@ -13,7 +13,7 @@ const ResetPassword = () => {
     const { handleSubmit, errors , control } = validatorForm();
     const dispatch = useDispatch();
     const { identity, customerCoreEmail } = useSelector(({ auth }) => auth);
-    const [temp, setTemp] = useState('');
+    // const [temp, setTemp] = useState('');
     //const [{ username, token, telephone, email }, handleInputChange] = useForm({ username: '', token: '', telephone: '', email: '' });
     const [handleInputChange] = useForm({ username: '', token: '', telephone: '', email: '' });
     const emailTemplate = `Correo Electrónico ${ customerCoreEmail ? ' (' + customerCoreEmail + ')' : '' }`;
@@ -41,7 +41,7 @@ const ResetPassword = () => {
     }
 
     const handleKeyDown = e => {
-        let key = e.which || e.keyCode || e.charCode;
+        // let key = e.which || e.keyCode || e.charCode;
     }
 
     return (

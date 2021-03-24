@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Form, Button } from 'antd';
 import { useForm as validatorForm } from "react-hook-form";
@@ -17,7 +17,7 @@ const UnlockUser = () => {
     const identity = useSelector(({ auth }) => auth.identity);
     //const [{ username, token }, handleInputChange] = useForm({username: '', token: ''});
     const [handleInputChange] = useForm({ username: '', token: '' });
-    const [temp, setTemp] = useState('');
+    // const [temp, setTemp] = useState('');
 
     const handleLogin = ({ username, token }) => {
         if (tab === 1) {
@@ -48,7 +48,7 @@ const UnlockUser = () => {
     }
     
     const handleKeyDown = e => {
-        let key = e.which || e.keyCode || e.charCode;   
+        // let key = e.which || e.keyCode || e.charCode;   
     }
 
     return (

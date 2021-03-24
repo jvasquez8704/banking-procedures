@@ -5,7 +5,8 @@ const initialState = {
     step: 0,
     loading: false,
     err: null,
-    openModal: false
+    openModal: false,
+    openAdvertisement: false
 };
 
 export const uiReducer = (state = initialState, action) => {
@@ -39,6 +40,11 @@ export const uiReducer = (state = initialState, action) => {
             return {
                 ...state,
                 openModal: action.payload
+            }
+        case types.setAdvertisement:
+            return {
+                ...state,
+                openAdvertisement: action.payload
             } 
         default:
             return state;
