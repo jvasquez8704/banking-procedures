@@ -1,15 +1,19 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Card } from 'antd';
-
+import { activeAdvertisement } from '../../actions/ui';
 const { Meta } = Card;
 
 const Tab = ({ id, image, desc, getCurrentTab }) => {
 
     const currentTab = useSelector(({ ui }) => ui.tab);
+    const dispatch = useDispatch();
     
     const onTab = () => {
         getCurrentTab(id, desc);
+        if( id!== 2 ) {
+            dispatch(activeAdvertisement(true));
+        }
     }
     return (
         <div className={`stc-tab-border ${id === currentTab ? 'stc-selected-tab' : ''}`}>

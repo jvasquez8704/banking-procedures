@@ -13,15 +13,17 @@ const Advertisement = () => {
     const col1Size = isMobile ? 24 : 15;
     const col2Size = isMobile ? 24 : 1;
     const col3Size = isMobile ? 24 : 8;
-    const widthSize = isMobile ? 354 : 620;
+    const widthSize = isMobile ? 354 : 710;
     const size24 = 24;
+    const size12 = 12;
+    const colSize = isMobile ? size24 : size12;
 
     const closeModal = () => {
         dispatch(activeAdvertisement(false));
     }
     
     const handleClick = () => {
-       window.open('https://aolweb.bancatlan.hn/ocbretail', "_blank");
+       window.open('https://aolweb.bancatlan.hn/ocbretail', "_self");
     }
 
     return (
@@ -39,11 +41,17 @@ const Advertisement = () => {
                    <Row style={{paddingRight:'1.6rem', paddingLeft:'1.6rem'}}>
                        <Col xs={size24} sm={size24} md={size24} lg={size24} xl={size24} xxl={size24}>
                            <h1>Aviso</h1>
-                           <p style={{ fontFamily: 'neo_sans_rglr'}}>Te informamos que actualizamos la plataforma de Atlántida Online.</p>
-                           <p style={{ fontFamily: 'neo_sans_rglr'}}>Para<strong style={{fontFamily:'neo_sans_bld'}}>{ tab === tabs.resetPassword ? ' restablecer tu contraseña ': ' desbloquear tu usuario '}</strong>presiona.</p>
+                           <p style={{ fontFamily: 'neo_sans_rglr'}}>Te informamos que actualizamos la plataforma de Atlántida Online para<strong style={{fontFamily:'neo_sans_bld'}}>{ tab === tabs.resetPassword ? ' Restablecer la contraseña de tu usuario ': ' Desbloquear tu usuario '}</strong> puedes realizarlo a través de</p>
                        </Col>
-                       <Col xs={size24} sm={size24} md={size24} lg={size24} xl={size24} xxl={size24} style={{textAlign:'center'}}>
-                           <Button type="primary" className="stc-button-1" onClick={handleClick} size="default">Continuar</Button>
+                       <Col xs={size24} sm={size24} md={size24} lg={size24} xl={size24} xxl={size24}>                         
+                            <Row>
+                                <Col xs={colSize} sm={colSize} md={colSize} lg={colSize} xl={colSize} xxl={colSize} style={{textAlign:'center', marginBottom: '5px'}}>
+                                    <Button type="primary" className="stc-button-1" onClick={closeModal} size="default">Plataforma Actual</Button>
+                                </Col>
+                                <Col xs={colSize} sm={colSize} md={colSize} lg={colSize} xl={colSize} xxl={colSize} style={{textAlign:'center', float: 'right',}}>
+                                    <Button type="primary" className="stc-button-1" onClick={handleClick} size="default">Plataforma Nueva</Button>
+                                </Col>
+                            </Row>
                        </Col>
                    </Row>
                </Col> 
