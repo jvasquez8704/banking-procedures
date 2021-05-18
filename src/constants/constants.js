@@ -7,6 +7,7 @@ export const mjs = {
     successCreditLimit: 'El límite de crédido de la tarjeta ha sido gestionado con éxito.',
     successInquiry: 'Consulta de movimientos exitosa.',
     _successLock: 'Si desea realizar reposición de su tarjeta deberá llamar al Contact Center 2280-1010 o visitar la agencia de su preferencia.',
+    _successPinChange: 'Este proceso puede demorar unos minutos, agradecemos tu preferencia y confianza en nuestros servicios.',
     _success: 'Puedes seguir disfrutando de los beneficios de tus tarjetas.',
 }
 export const title = {

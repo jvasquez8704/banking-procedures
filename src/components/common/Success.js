@@ -41,7 +41,7 @@ const Success = () => {
 
         <Form.Item name="normal-message">
             <p className="stc-success-message">
-              {`${ tab !== 3 ? _mjs._success : mjs === _mjs.successLock ? _mjs._successLock : _mjs._success }`} 
+              {`${ tab !== 3 ? tab === 1 ? _mjs._successPinChange : _mjs._success : mjs === _mjs.successLock ? _mjs._successLock : _mjs._success }`} 
             </p>
         </Form.Item>
 
