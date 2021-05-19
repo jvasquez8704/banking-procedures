@@ -1,20 +1,21 @@
 import React from 'react';
 import { Layout } from 'antd';
 
-import TabsCard from './TabsCard';
+import { useSelector } from 'react-redux';
 
+import TabsCard from './TabsCard';
+import { footer } from '../../constants/constants'
 const { Content } = Layout;
 
 const MainContent = () => {
+    const {tab, mjs} = useSelector( ({ui}) => ui);
     return (
       <Layout>
         <Content className="stc-main-content">
           <div className="stc-landing">
             <TabsCard />
             <div className="stc-new-footer">
-              Para dudas o consultas puedes comunicarte a nuestro Call Center a
-              los teléfonos: Tegucigalpa 2280-1010, San Pedro Sula 2580-1010, La
-              Ceiba 2480-1010
+              {`${ tab !== 1 ? footer.common : footer.pinChange }`} 
             </div>
           </div>
         </Content>

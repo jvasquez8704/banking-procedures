@@ -24,3 +24,8 @@ export const title = {
     lockingSubtitle: 'Bloqueo y desbloqueo temporal',
     lockingTitle: 'Bloqueo y desbloqueo',
 }
+
+export const footer = {
+    common : 'Para dudas o consultas puedes comunicarte a nuestro Call Center a los teléfonos: Tegucigalpa 2280-1010, San Pedro Sula 2580-1010, La Ceiba 2480-1010',
+    pinChange : 'Esta gestión te permite realizar cambio de PIN para tarjetas de crédito Mastercard y tarjetas de débito Visa Chip Sin Contacto',
+}
