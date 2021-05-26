@@ -8,7 +8,7 @@ import UserInfoTable from '../custom/UserInfoTable';
 import CustomSelect from '../ui/form/CustomSelect';
 import { setPin, setAchAccount } from '../../actions/service';
 import { useForm } from '../../hooks/useForm';
-import CustomInput from '../ui/form/CustomInput';
+import CustomInput from '../ui/form/PasswordInput';
 
 const ChangePin = () => {
     const { handleSubmit, errors , control } = validatorForm();

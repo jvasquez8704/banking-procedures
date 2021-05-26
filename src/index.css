@@ -441,6 +441,9 @@ div#rcDialogTitle0{
   box-shadow: 0 0 0 2px rgb(255 24 99 / 20%);
 }
 
+.ant-input-affix-wrapper:hover .ant-input:not(.ant-input-disabled) {
+  border-color: #d9272ec4;
+}
 .stc-button-default:hover, .stc-button-default:focus {
   color: #e64e4e;
   border-color: #e64e4e;
