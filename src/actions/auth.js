@@ -4,12 +4,13 @@ import { requests } from '../constants/requests';
 import { updateStep, setError, unsetError, setLoading, activeModal } from './ui';
 import { getTrxBackend } from '../helpers/util';
 
-export const verifyCustomer = (identity) => {
+export const verifyCustomer = (identity, featureUiId) => {
     return async (dispatch) => {
 
         let { verifyCustomer: req } = requests;
         req.request.data.id = identity;
-        req.request.header.transaction = 1001;
+        // req.request.header.transaction = 1001;
+        req.request.header.transaction = getTrxBackend(featureUiId);;
         dispatch(setLoading());
 
         try {
@@ -182,7 +183,7 @@ export const LoginCustomer = (user, featureUiId) => {
     return async( dispatch ) => {
         
         let { unlockUser : req } = requests;
-        req.request.header.transaction = getTrxBackend(featureUiId);;
+        req.request.header.transaction = getTrxBackend(featureUiId);
         req.request.header.step = 2;
         
         req.request.data.id = user.identity;
