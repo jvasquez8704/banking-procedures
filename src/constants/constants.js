@@ -1,12 +1,12 @@
 export const baseUrl = 'http://150.150.6.114:81/LandingPageREST/rest';
 export const mjs = {
-    successPinChange: 'Cambio de Pin exitoso.',
+    successPinChange: 'Cambio de PIN exitoso.',
     successManageInfo: 'Tus datos han sido actualizados con éxito.',
     successLock: 'Bloqueo temporal exitoso.',
     successUnlock: 'Desbloqueo exitoso.',
     successCreditLimit: 'El límite de crédido de la tarjeta ha sido gestionado con éxito.',
     successInquiry: 'Consulta de movimientos exitosa.',
-    _successLock: 'Si desea realizar reposición de su tarjeta deberá llamar al Contact Center 2280-1010 o visitar la agencia de su preferencia.',
+    _successLock: 'Si deseas realizar reposición de tu tarjeta deberás llamar al Call Center 2280-1010 o visitar la agencia de tu preferencia.',
     _successPinChange: 'Este proceso puede demorar unos minutos, agradecemos tu preferencia y confianza en nuestros servicios.',
     _success: 'Puedes seguir disfrutando de los beneficios de tus tarjetas.',
 }
@@ -18,7 +18,7 @@ export const title = {
     changePINSubtitle: 'Cambio de PIN',
     changePINTitle: 'Cambio de PIN',
     creditLimitSubtitle: 'Modificación de límite de crédito tarjeta adicional',
-    creditLimitTitle: 'Modificación de límite de crédito',
+    creditLimitTitle: 'Modificación de límite de Crédito',
     infoSubtitle: 'Actualización de datos',
     infoTitle: 'Actualización de datos',
     lockingSubtitle: 'Bloqueo y desbloqueo temporal',

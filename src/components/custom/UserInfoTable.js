@@ -13,7 +13,7 @@ const UserInfoTable = ({ info }) => {
         >
             <Descriptions.Item label="Identidad">{customerCoreCitizen}</Descriptions.Item>
             <Descriptions.Item label="Correo eléctronico">{customerCoreEmail}</Descriptions.Item>
-            <Descriptions.Item label="Estado civil">{customerCoreMarital}</Descriptions.Item>
+            <Descriptions.Item label="Estado Civil">{customerCoreMarital}</Descriptions.Item>
 
             <Descriptions.Item label="Nombre">{customerCoreName}</Descriptions.Item>
             <Descriptions.Item label="Nacionalidad">{customerCoreNationality}</Descriptions.Item>
