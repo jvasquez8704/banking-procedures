@@ -261,7 +261,7 @@ const InfoUpdater = () => {
 
         <CustomSelect
           fieldName="marital-statuses"
-          iLabel="Estado Civil"
+          iLabel="Estado civil"
           errMjs="Por favor selecciona estado civil"
           iPlaceholder="Selecciona estado civil"
           items={maritalStatuses}

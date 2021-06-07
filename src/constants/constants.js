@@ -4,11 +4,11 @@ export const mjs = {
     successManageInfo: 'Tus datos han sido actualizados con éxito.',
     successLock: 'Bloqueo temporal exitoso.',
     successUnlock: 'Desbloqueo exitoso.',
-    successCreditLimit: 'El límite de crédido de la tarjeta ha sido gestionado con éxito.',
+    successCreditLimit: 'El límite de crédito de la tarjeta ha sido gestionado con éxito.',
     successInquiry: 'Consulta de movimientos exitosa.',
     _successLock: 'Si deseas realizar reposición de tu tarjeta deberás llamar al Call Center 2280-1010 o visitar la agencia de tu preferencia.',
     _successPinChange: 'Este proceso puede demorar unos minutos, agradecemos tu preferencia y confianza en nuestros servicios.',
-    _success: 'Puedes seguir disfrutando de los beneficios de tus tarjetas.',
+    _success: 'Puedes seguir disfrutando de los beneficios de tu tarjetas.',
 }
 export const title = {
     main : 'Tarjetas',
