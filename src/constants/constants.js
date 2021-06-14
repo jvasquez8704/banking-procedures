@@ -8,7 +8,7 @@ export const mjs = {
     successInquiry: 'Consulta de movimientos exitosa.',
     _successLock: 'Si deseas realizar reposición de tu tarjeta deberás llamar al Call Center 2280-1010 o visitar la agencia de tu preferencia.',
     _successPinChange: 'Este proceso puede demorar unos minutos, agradecemos tu preferencia y confianza en nuestros servicios.',
-    _success: 'Puedes seguir disfrutando de los beneficios de tu tarjetas.',
+    _success: 'Puedes seguir disfrutando de los beneficios de tu tarjeta.',
 }
 export const title = {
     main : 'Tarjetas',
