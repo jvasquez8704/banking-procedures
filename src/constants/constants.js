@@ -1,4 +1,4 @@
-export const baseUrl = 'http://150.150.6.114:81/LandingPageREST/rest';
+export const baseUrl = 'https://slat.bancatlan.hn/LandingPageREST/rest';
 export const mjs = {
     successPinChange: 'Cambio de PIN exitoso.',
     successManageInfo: 'Tus datos han sido actualizados con éxito.',
