@@ -67,11 +67,11 @@ const UnlockUser = () => {
               message: "Por favor ingresa un token valido",
             },
             maxLength: {
-              value: 20,
+              value: 10,
               message: "Por favor ingresa un usuario valido",
             },
             minLength: {
-              value: 6,
+              value: 4,
               message: "Por favor ingresa un usuario valido",
             },
           }}
