@@ -4,11 +4,9 @@ import { Form, Button } from 'antd';
 import { useForm as validatorForm } from "react-hook-form";
 
 import { setError, unsetError, updateStep } from '../../actions/ui';
-import UserInfoTable from '../custom/UserInfoTable';
 import CustomSelect from '../ui/form/CustomSelect';
 import { setLimitCard, setAchAccount } from '../../actions/service';
 import CustomInput from '../ui/form/MaskInput';
-import { useMask } from '../../hooks/useMask';
 
 const ManagementPin = () => {
     const { handleSubmit, errors , control } = validatorForm();
@@ -103,9 +101,6 @@ const ManagementPin = () => {
         className="stc-form"
         onSubmit={handleSubmit(handleOnSubmit)}
       >
-        {/* <Form.Item name="info-item">
-          <UserInfoTable info={info} />
-        </Form.Item> */}
 
         <CustomSelect
           fieldName="account-item"

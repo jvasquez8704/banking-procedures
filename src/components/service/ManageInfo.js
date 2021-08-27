@@ -160,6 +160,9 @@ const InfoUpdater = () => {
         className="stc-form"
         onSubmit={handleSubmit(handleOnSubmit)}
       >
+        <Form.Item name="normal-message">
+          <p> Nota: Los datos que ingresarás reemplazaran los que brindaste al adquirir tu tarjeta, asegúrate que al cambiarlos estén correctos.</p>
+        </Form.Item>
         <CustomInput
           fieldName="address"
           iLabel="Dirección de domicilio"
@@ -328,7 +331,7 @@ const InfoUpdater = () => {
 
         <Form.Item>
           <Button type="primary" className="stc-button" htmlType="submit">
-            Siguiente
+            Actualizar
           </Button>
         </Form.Item>
         <Form.Item>
@@ -340,14 +343,6 @@ const InfoUpdater = () => {
           >
             Atrás
           </Button>
-        </Form.Item>
-
-        <Form.Item name="normal-message">
-          <p>
-            Nota: Recuerda que los datos de correo y teléfono son los que
-            anteriormente le has proporcionado a Banco Atlántida para
-            comunicarse contigo.
-          </p>
         </Form.Item>
       </Form>
     );

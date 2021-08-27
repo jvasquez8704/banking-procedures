@@ -11,9 +11,9 @@ export const mjs = {
     _success: 'Puedes seguir disfrutando de los beneficios de tu tarjeta.',
 }
 export const title = {
-    main : 'Tarjetas',
+    main : 'Gestión de Tarjetas',
     branding : 'Logo Banco Atlantida',
-    inquirySubtitle: 'Consulta de saldos',
+    inquirySubtitle: 'Consulta de saldos gestión de Tarjetas',
     inquiryTitle: 'Consulta de saldos',
     changePINSubtitle: 'Cambio de PIN',
     changePINTitle: 'Cambio de PIN',
