@@ -1,3 +1,4 @@
+// export const baseUrl = 'http://150.150.6.114:81/LandingPageREST/rest';
 export const baseUrl = 'https://slat.bancatlan.hn/LandingPageREST/rest';
 export const mjs = {
     successPinChange: 'Cambio de PIN exitoso.',
@@ -13,7 +14,7 @@ export const mjs = {
 export const title = {
     main : 'Gestión de Tarjetas',
     branding : 'Logo Banco Atlantida',
-    inquirySubtitle: 'Consulta de saldos gestión de Tarjetas',
+    inquirySubtitle: 'Consulta de saldos tarjetas de crédito',
     inquiryTitle: 'Consulta de saldos',
     changePINSubtitle: 'Cambio de PIN',
     changePINTitle: 'Cambio de PIN',
