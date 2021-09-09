@@ -19,7 +19,7 @@ export const title = {
     changePINSubtitle: 'Cambio de PIN',
     changePINTitle: 'Cambio de PIN',
     creditLimitSubtitle: 'Modificación de límite de crédito tarjeta adicional',
-    creditLimitTitle: 'Modificación de límite de Crédito',
+    creditLimitTitle: 'Modificación de límite de crédito',
     infoSubtitle: 'Actualización de datos',
     infoTitle: 'Actualización de datos',
     lockingSubtitle: 'Bloqueo y desbloqueo temporal',
