@@ -7,12 +7,12 @@ const getTabBySign = sing => {
     return tabs.get(sing);
 }
 
-const getModule = () => {
+const getModule = (initialTab = 1) => {
     const search = window.location.search.substring(1);
     const params = new URLSearchParams(search);
     //const param = params.get('module');
     const param = getTabBySign(params.get('module'));
-    return (param && !isNaN(param) && param > 0 && param <= 3) ? parseInt(param) : 1; 
+    return (param && !isNaN(param) && param > 0 && param <= 3) ? parseInt(param) : initialTab; 
 }
 
 const getIdType = type => {

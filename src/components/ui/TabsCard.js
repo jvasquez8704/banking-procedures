@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Content from './Content';
 
@@ -19,16 +19,17 @@ import Tabs from '../custom/Tabs';
 import { getModule } from '../../helpers/util';
 
 const TabsCard = () => {
+  const { tab: initialTab } = useSelector(({ ui }) => ui);
   const dispatch = useDispatch();
   const tabList = [
-    {
-      key: 1,
-      img: img1,
-      desc: {
-        title: "Desbloqueo de usuario",
-        subtitle: "Desbloqueo de Usuario de tu Banca Digital"
-      },
-    },
+    // {
+    //   key: 1,
+    //   img: img1,
+    //   desc: {
+    //     title: "Desbloqueo de usuario",
+    //     subtitle: "Desbloqueo de Usuario de tu Banca Digital"
+    //   },
+    // },
     {
       key: 2,
       img: img2,
@@ -36,19 +37,19 @@ const TabsCard = () => {
         title: "Habilitar ACH",
         subtitle: "Habilitar transferencias a otros bancos (ACH)" 
       },
-    },
-    {
-      key: 3,
-      img: img3,
-      desc: {
-        title: "Restablecer contraseña",
-        subtitle: "Restablecer contraseña de tu Banca Digital"
-      },
-    },
+    }
+    // {
+    //   key: 3,
+    //   img: img3,
+    //   desc: {
+    //     title: "Restablecer contraseña",
+    //     subtitle: "Restablecer contraseña de tu Banca Digital"
+    //   },
+    // }
   ];
 
   const [state, setState] = useState({
-    key: getModule(),
+    key: getModule(initialTab),
     description: {
       title: "Desbloqueo de usuario",
       subtitle: "Desbloqueo de usuario etc..."

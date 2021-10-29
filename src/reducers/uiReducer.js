@@ -1,7 +1,7 @@
 import { types } from '../constants/types';
 
 const initialState = {
-    tab: 1,
+    tab: 2,
     step: 0,
     loading: false,
     err: null,
