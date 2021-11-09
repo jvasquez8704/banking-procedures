@@ -43,7 +43,7 @@ export const getAgreement = ( token, account ) => {
         
         let { unlockUser : req } = requests;
         req.request.header.transaction = 2002;
-        req.request.header.step = 3;
+        req.request.header.step = 'F';
         req.request.header.token = token;
         
         req.request.data.account = account;
@@ -77,7 +77,7 @@ export const getEnroll = ( token, account ) => {
         
         let { unlockUser : req } = requests;
         req.request.header.transaction = 2002;
-        req.request.header.step = 4;
+        req.request.header.step = 'V';
         req.request.header.token = token;
         
         req.request.data.account = account;

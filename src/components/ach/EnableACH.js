@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux'; 
-import { Form, Button, Checkbox } from 'antd';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Form, Button, Modal } from 'antd';
 
 import { setError, unsetError, updateStep } from '../../actions/ui';
 import UserInfoTable from './UserInfoTable';
@@ -10,11 +10,48 @@ import { getAgree, getAgreement, getEnroll, setAchAccount } from '../../actions/
 const EnableACH = () => {
 
     const dispatch = useDispatch();
-    const data = useSelector(({ ach }) =>  ach );
+    const data = useSelector(({ ach }) => ach);
     const { token, agreement, products, selectedAccount } = data;
     const accounts = products ? products.productsItems : [];
     const [account, setAccount] = useState('');
     const [approved, setApproved] = useState(false);
+    const [visibility, setVisibility] = useState(false);
+
+    useEffect(() => {
+        window.addEventListener('message', receiveMessage, true);
+
+        // Receive message listener
+        function receiveMessage(event) {
+            var origin = event.origin || event.originalEvent.origin;
+            var data = event.data;
+            if (typeof data === "string")
+                console.log(data, origin);
+
+            switch (data) {
+                case 'ESL:MESSAGE:REGISTER':
+                    event.source.postMessage('ESL:MESSAGE:ACTIVATE_EVENTS', origin);
+                    break;
+
+                case 'ESL:MESSAGE:SUCCESS:SIGNER_COMPLETE':
+                    event.source.postMessage('ESL:MESSAGE:SUCCESS:SIGNER_COMPLETE', origin);
+                    setApproved(true);
+                    break;
+
+                case 'ESL:MESSAGE:STARTED:SIGNER_COMPLETE_REVIEWED':
+                    event.source.postMessage('ESL:MESSAGE:STARTED:SIGNER_COMPLETE_REVIEWED', origin);
+                    break;
+
+                default:
+                    event.source.postMessage(data, origin)
+                    break;
+            }
+        }
+    })
+
+    useEffect(() => {
+        console.log("agreement: ", agreement)
+        setVisibility(!!agreement)
+    }, [agreement])
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -38,27 +75,26 @@ const EnableACH = () => {
         dispatch(getAgreement(token, value));
     }
 
-    const handleChangeCheckbox = e => {
-        setApproved(e.target.checked);
-    }
-    
     const handleBack = () => {
         dispatch(updateStep(1));
         dispatch(getAgree(null));
-        dispatch(unsetError());      
+        dispatch(unsetError());
     }
-    
+
+    const handleNext = () => {
+        dispatch(getEnroll(token, selectedAccount));
+        setVisibility(false)
+    }
+
     return (
-        <Form
-            name="basic"
+        <Form name="basic"
             layout="vertical"
             className="stc-form"
-            onSubmit={handleSubmit}
-        >
+            onSubmit={handleSubmit}>
             <Form.Item name="info-item">
-               <UserInfoTable info={data} />
+                <UserInfoTable info={data} />
             </Form.Item>
-            
+
             <CustomSelect
                 fieldName="account-item"
                 iLabel="Selecciona una cuenta"
@@ -67,25 +103,20 @@ const EnableACH = () => {
                 items={accounts}
                 iHandleSelectChange={handleChange}
             />
-            {
-                agreement && (
-                    <div className="agreement-block">
-                        <Form.Item name="info-item">
-                            <p className="text-ach-agreement">{agreement}</p>
-                        </Form.Item>
 
-                        <Form.Item name="remember" valuePropName="checked">
-                            <Checkbox onChange={handleChangeCheckbox}>Acepto términos y Condiciones</Checkbox>
-                        </Form.Item>
-                    </div>
-                )
-            }
+            <Modal title="Términos y Condiciones" visible={visibility} width={1000} height={700}
+                footer={[approved && <Button key="submit" type="primary" onClick={handleNext}>
+                        Continuar
+                    </Button>]}>
+                <iframe title="Agreement"
+                    className="agreement_frame"
+                    width="100%"
+                    height="400"
+                    frameborder="0"
+                    scrolling="yes"
+                    allowTransparency="true" src={agreement}></iframe>
+            </Modal>
 
-            <Form.Item>
-                <Button type="primary" className="stc-button" htmlType="submit">
-                    Confirmar
-                </Button>
-            </Form.Item>
             <Form.Item>
                 <Button type="default" className="btn stc-button-default" htmlType="button" onClick={handleBack}>
                     Atrás
