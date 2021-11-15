@@ -11,16 +11,7 @@ const StepScreen = ({ steps, desc }) => {
     const { Step } = Steps;
     const { step: current, loading, err } = useSelector(({ ui }) => ui);
     const dispatch = useDispatch();
-    
-    /**
-     useEffect(() => {
-        console.log('Capturando error => ', err);
-    }, [err]);
 
-    const onChange = current => {
-        console.log(current);
-    };
-     */
     /*General Loader*/
     const antIcon = <LoadingOutlined style={{ fontSize: 24 , color:'red'}} spin />
     const hideModal = () => {
@@ -50,7 +41,6 @@ const StepScreen = ({ steps, desc }) => {
                     status={`${ err ? 'error': 'process'}`}
                 >
                     {steps && steps.map( ( item, idx ) => (
-                        // <Step key={item.key} title={`${idx === current && err ? err : ''}`} />
                         <Step key={item.key}/>
                     ))}
 
