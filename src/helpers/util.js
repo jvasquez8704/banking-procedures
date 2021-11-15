@@ -43,7 +43,6 @@ const getTrxBackend = featureId => {
 const getModule = () => {
     const search = window.location.search.substring(1);
     const params = new URLSearchParams(search);
-    //const param = params.get('module');
     const param = getTabBySign(params.get('module'));
     return (param && !isNaN(param) && param > 0 && param <= 3) ? parseInt(param) : 1; 
 }

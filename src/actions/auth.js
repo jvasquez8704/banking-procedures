@@ -1,8 +1,7 @@
-import { unsecurefetch, secureFetch } from '../helpers/fetch';
+import { unsecurefetch } from '../helpers/fetch';
 import { types } from '../constants/types';
 import { requests } from '../constants/requests';
-import { updateStep, setError, unsetError, setLoading, activeModal } from './ui';
-import { getTrxBackend } from '../helpers/util';
+import { updateStep, setError, unsetError, setLoading } from './ui';
 
 export const LoginCustomer = user => {
     return async( dispatch ) => {
