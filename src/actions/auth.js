@@ -24,10 +24,7 @@ export const verifyCustomer = (identity, isResetPassWord) => {
             }));
 
             if (status.code === '0000') {
-                //dispatch(updateStep(1));
                 dispatch(unsetError());
-                // localStorage.setItem('token', body.token );
-                // localStorage.setItem('token-init-date', new Date().getTime() );
                 if (customerOCB === '1') {
                     dispatch(updateStep(1));
                 } else {

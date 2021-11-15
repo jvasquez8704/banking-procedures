@@ -15,7 +15,6 @@ const UnlockUser = () => {
     const tab = useSelector( ({ui}) => ui.tab);
     const dispatch = useDispatch();
     const identity = useSelector(({ auth }) => auth.identity);
-    //const [{ username, token }, handleInputChange] = useForm({username: '', token: ''});
     const [handleInputChange] = useForm({ username: '', token: '' });
     const [temp, setTemp] = useState('');
 

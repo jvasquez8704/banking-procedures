@@ -13,7 +13,6 @@ const Verify = () => {
     const { register, handleSubmit, errors , control } = validatorForm();
     const dispatch = useDispatch();
     const tab = useSelector( ({ui}) => ui.tab);
-    //const [{ identity }, handleInputChange] = useForm({identity:''});
     const [handleInputChange] = useForm({identity:''});
 
     const handleLogin = ({identity}) => {
@@ -21,7 +20,6 @@ const Verify = () => {
     }
 
     const handleKeyPress = e => {
-        // if (isNaN(e.key)) {
         if (!validator.isAlphanumeric(e.key)) {
             e.preventDefault();
             return;
@@ -59,7 +57,6 @@ const Verify = () => {
                         message: 'Por favor ingresa una identificación válida'
                     },
                     pattern: {
-                        // value: /^[0-9]*$/,
                         value: /^[A-Za-z0-9]*$/,
                         message: 'Por favor ingresa tu identificación'
                     }

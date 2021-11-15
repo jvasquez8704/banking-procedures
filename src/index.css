@@ -14,20 +14,6 @@ h1,h2,h3{
   font-family: 'neo_sans_bld';
 }
 /**************************************** STC Layout  *******************************************/
-/* .ant-layout {
-  background-color: black; 
-}
-
-.ant-layout-header {
-  background: #b3282d;
-  color: #fff;
-}
-
-.ant-layout-content {
-  /* padding: 4rem 0 1.5rem;
-  padding: 0 0 1.5rem;
-} */
-
 .stc-main-content {
   min-height: 100vh;
   background-color: #d9272e;
@@ -44,13 +30,11 @@ h1,h2,h3{
 .stc-landing-top {
   text-align: center;
   border-radius: 1.5rem 1.5rem 0 0;
-  /* background-color: #fff; */
   padding-top: 2.5rem;
   padding-bottom: 0rem;
 }
 
 .stc-landing-logo-header {
-  /* margin-top: 1rem; */
   max-width: 22rem;
 }
 
@@ -60,10 +44,6 @@ h1,h2,h3{
   align-items: center;
   margin-bottom: 1.4rem;
 }
-/* mobile */
-/* .ant-modal {
-  width: 22rem !important;
-} */
 
 .stc-modal-horizontal .ant-modal-body {
   padding-top: 0 !important;
@@ -127,23 +107,6 @@ div#rcDialogTitle0{
   padding: 0 24px 10px;
   text-align: center;
 }
-
-/* .stc-error-modal .ant-modal-close {
-  border: 2px #b3282d solid;
-  border-radius: 4rem;
-  top: -8px;
-  right: -8px;
-  background: white;
-} */
-
-/* .stc-error-modal .ant-modal-close .ant-modal-close-x {
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
-  background: #b3282d;
-  border-radius: 4rem;
-  color: white;
-} */
 
 .stc-error-modal .ant-modal-close .ant-modal-close-x .anticon{
   font-size: 15px;
@@ -231,15 +194,9 @@ div#rcDialogTitle0{
   margin: 0 auto;
   padding-left: 2.3rem;
 }
-/* ********************************************************************************************************************************************** */
+/* ************** */
 /* general steps */
 /* ************ */
-
-/* #components-layout-demo-side .logo {
-  height: 32px;
-  background: rgba(255, 255, 255, 0.2);
-  margin: 16px;
-} */
 
 /* ach feature */
 .text-agreement {
@@ -257,14 +214,12 @@ div#rcDialogTitle0{
 }
 /**************************************************** Content and Steps ***********************************************/
 .stc-content {
-  /* margin: 2rem 0; */
   margin: 0;
 }
 
 .stc-content .ant-card.stc-card-widget.ant-card-bordered .ant-card-head-title {
   font-size: 1.8rem;
   font-weight: bolder;
-  /* color: white; */
   color: rgba(120 119 122);
   text-align: center;
   font-family: 'neo_sans_bld';
@@ -272,15 +227,12 @@ div#rcDialogTitle0{
 }
 
 .stc-content .ant-card.stc-card-widget.ant-card-bordered {
-  /* box-shadow: 0 0 5px 5px rgba(0,0,0,.03);
-  border-radius: 3rem 3rem 3rem 3rem; */
   border-color: white;
   width: 84%;
   margin: 0 auto;
 }
 
 .stc-content .ant-card.stc-card-widget.ant-card-bordered .ant-card-head {
-  /* background: #d22630; */
   padding: 0;
   border-radius: 3rem 3rem 0 0;
   border-bottom: 0;
@@ -292,20 +244,14 @@ div#rcDialogTitle0{
 
 /********************************************** Wrapper and form ****************************************************/
 .stc-form {
-  /* border: 1px dashed #e9e9e9; */
   border-radius: 20px;
-  /* background-color: #fafafa; */
-  /* min-height: 200px; */
   text-align: center;
-  /* padding: 3rem 0; */
-  /* margin: 2rem 8rem 3rem; */
   margin: 2rem 8rem 0rem;
 }
 
 .stc-form label{
   font-family: 'neo_sans_bld';
   font-size: 1.1rem;
-  /* color: rgba(0,0,0,.85); */
   color: rgba(120,119,122);
 }
 
@@ -329,7 +275,6 @@ div#rcDialogTitle0{
 }
 
 .stc-form input{
-  /* font-family: 'neo_sans_ltght'; */
   font-weight: 600;
 }
 
@@ -339,10 +284,6 @@ div#rcDialogTitle0{
 .stc-center-text .ant-col.ant-form-item-label{
   text-align: center !important;
 }
-
-/* .stc-center-text label {
-  text-align: center !important;
-} */
 
 .stc-tooltip{
   margin-top: -.3rem;
@@ -365,10 +306,6 @@ div#rcDialogTitle0{
   float: none;
 }
 
-/* .ant-form-vertical .ant-form-item-control{
-  line-height: 0;
-} */
-
 .form-content {
   padding-top: 16px;
   border: 1px dashed #e9e9e9;
@@ -378,10 +315,6 @@ div#rcDialogTitle0{
   text-align: center;
   min-height: 31rem;
 }
-
-/* .form-content .noah {
-  margin: 2rem 14rem;
-} */
 
 .form-content .ant-descriptions-item-label {
   font-weight: bold;
@@ -400,7 +333,6 @@ div#rcDialogTitle0{
 .stc-button-1 {
   color: #fff;
   border-radius: 10px;
-  /* font-size: medium; */
   font-family: 'neo_sans_bld';
   padding: 0.4rem 1.2em 1.5rem;
   font-weight: 700;
@@ -451,7 +383,6 @@ div#rcDialogTitle0{
 }
 
 .ant-row.ant-form-item.email-leyend {
-  /* margin-top: -2rem; */
   margin-top: -0.7rem;
 }
 /************************************************************** Footer *****************************************************************/
@@ -478,7 +409,6 @@ text-align: center;
 }
 
 .stc-footer-site{
-  /* margin-top: 1rem; */
   text-align: center;
   font-size: 1rem;
 }
@@ -520,13 +450,9 @@ text-align: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: center; 
-  /* background-color:#d9272e; */
-  /*background-color:#000;
-  border-radius:40px */
   border-radius: 3rem;
   width: 83%;
   margin: 0 auto;
-  /* padding: 1rem; */
   padding: 0rem 0rem .5rem;
 }
 
@@ -537,7 +463,6 @@ text-align: center;
 
 .stc-card-title {
   text-align: center;
-  /* background: pink; */
 }
 
 .stc-card-title h3 {
@@ -556,7 +481,6 @@ th.ant-descriptions-item-label.ant-descriptions-item-colon {
 
 .stc-tabs.ant-row.ant-row-center.ant-row-middle {
   background-color: #fff;
-  /* padding: 0 0 1rem; */
   padding: 0;
 }
 
@@ -565,7 +489,6 @@ th.ant-descriptions-item-label.ant-descriptions-item-colon {
   text-align: center;
   margin-top: 2rem;
   margin-bottom: 1.5rem;
-  /* color: #fff; */
   color: rgba(120 119 122);
   line-height: 1.23;
   white-space: initial;
@@ -579,8 +502,6 @@ th.ant-descriptions-item-label.ant-descriptions-item-colon {
 }
 
 .stc-icon-size {
-  /* height: 100px; */
-  /* width: 100px; */
   width: 3.5rem;
   margin: 0 auto;
 }
@@ -589,34 +510,19 @@ th.ant-descriptions-item-label.ant-descriptions-item-colon {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background: rgb(199 190 190); */
   background: rgba(120,119, 122);
-  /* padding: 0.5rem; */
   text-align: center;
   cursor: pointer;
   border-radius: 20px;
-  /* border: 5px solid #d9272e; */
 }
 
 .stc-tab .ant-card-meta-title {
   white-space: initial;
-  /* font-family: 'neo_sans_rglr'; */
   font-family: 'neo_sans_bld';
   font-size: 1.13rem;
-  /* font-weight: 700; */
-  /* color: #495057; */
   color: #fff;
 }
 
-/* .stc-selected-tab .stc-card-selected-border {
-  text-align: center;
-  width: 60%;
-  margin: 0 auto;
-  border-bottom: 3px solid #fff;
-  padding: .2rem;
-  -webkit-animation: fadein 4s;
-  animation: fadein 4s;
-} */
 .stc-selected-tab .stc-tab {
   background: #d9272e;
   margin-top: -0.4rem; 
@@ -625,7 +531,6 @@ th.ant-descriptions-item-label.ant-descriptions-item-colon {
 .stc-icon-store-size {
   width: 140px;
   margin: 0 auto;
-  /* margin: 0.5rem; */
 }
 .stc-icon-store-size-1 {
   width: 95px;
@@ -693,7 +598,6 @@ th.ant-descriptions-item-label.ant-descriptions-item-colon {
 
 @media (min-width: 768px) and (max-width: 1024px) {
   .stc-form {
-    /* margin: 0; */
     margin: 1.5rem 0rem 0rem;
   }
   .stc-new-footer {
@@ -749,7 +653,6 @@ th.ant-descriptions-item-label.ant-descriptions-item-colon {
   /* ******************** */
   .stc-tab {
     border-radius: 20px;
-    /* display: block; */
   }
 
   .stc-icon-size {
@@ -761,9 +664,6 @@ th.ant-descriptions-item-label.ant-descriptions-item-colon {
   .ant-row.stc-head-tabs {
     width: 100%;
   }
-  /* .stc-selected-tab .stc-card-selected-border {
-    padding: 0.3rem;
-  } */
   .stc-new-footer {
     padding: 0 6rem;
   } 
@@ -792,8 +692,6 @@ th.ant-descriptions-item-label.ant-descriptions-item-colon {
   }
   .stc-tab .ant-card-body {
     display:block;
-    /* padding: 20px;
-    width: 60%; */
   }
   .stc-tab .ant-card-meta-title {
     font-size: 1.1rem;
@@ -821,7 +719,6 @@ th.ant-descriptions-item-label.ant-descriptions-item-colon {
     margin-top: -12px;
   }  
   .stc-form {
-    /* margin: 0; */
     margin: 0.6rem 0rem 0rem;
   }
   /* *****************************************************+ */
@@ -829,7 +726,6 @@ th.ant-descriptions-item-label.ant-descriptions-item-colon {
     display: flex;
   }
   .ant-steps {
-    /* display: flex; */
     width: 100%;
     padding: 0 0 0 2.7rem;
   }
@@ -858,9 +754,6 @@ th.ant-descriptions-item-label.ant-descriptions-item-colon {
   .ant-row.stc-head-tabs {
     width: 100%;
   }
-  /* .stc-selected-tab .stc-card-selected-border {
-    padding: 0.2rem;
-  }  */
 
   .ant-steps-item-finish > .ant-steps-item-container > .ant-steps-item-tail::after {
     background-color: #d9272e;
@@ -891,7 +784,6 @@ th.ant-descriptions-item-label.ant-descriptions-item-colon {
     max-width: 12rem;
   }
   .stc-head-tabs {
-    /* padding: 0 1rem; */
     padding: 0;
   }
 

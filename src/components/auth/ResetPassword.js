@@ -14,7 +14,6 @@ const ResetPassword = () => {
     const dispatch = useDispatch();
     const { identity, customerCoreEmail } = useSelector(({ auth }) => auth);
     const [temp, setTemp] = useState('');
-    //const [{ username, token, telephone, email }, handleInputChange] = useForm({ username: '', token: '', telephone: '', email: '' });
     const [handleInputChange] = useForm({ username: '', token: '', telephone: '', email: '' });
     const emailTemplate = `Correo Electrónico ${ customerCoreEmail ? ' (' + customerCoreEmail + ')' : '' }`;
 

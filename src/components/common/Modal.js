@@ -1,6 +1,5 @@
 import React from 'react';
 import { Modal, Row, Col, Button, Divider } from 'antd';
-// import { InfoCircleOutlined } from '@ant-design/icons';
 import { useMediaQuery } from 'react-responsive';
 import playstore from '../../res/img/googleplay.svg';
 import appstore from '../../res/img/appstore.svg';
@@ -14,15 +13,8 @@ const Popup = ({open}) => {
     const dispatch = useDispatch();
     const { openModal } = useSelector(({ ui }) => ui);
     const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
-  // const [visible, setVisible] = useState(false);
-
-  //   useEffect(() => {
-  //     console.log('Show Modal ', openModal);
-  //     setVisible(openModal);
-  // }, [openModal])
 
     const closeModal = () => {
-        // setVisible(flag);
         dispatch(activeModal(false));
     }
     
@@ -30,13 +22,6 @@ const Popup = ({open}) => {
        window.open('https://atla.hn/tutoriales', "_blank");
     }
 
-    // useEffect(() => {
-    //     setVisible(open);
-    // }, [open])
-
-
-    
-     
     return (
         <>
         {
@@ -44,7 +29,6 @@ const Popup = ({open}) => {
             <Modal
             title={<div><span></span></div>}
             centered
-            // visible={visible}
             visible={openModal}
             onOk={closeModal}
             width={354}
@@ -78,9 +62,6 @@ const Popup = ({open}) => {
                   <img alt="Activa tu Banca Digital" className="stc-icon-store-size" src={activa} />
               </Col>
               <Col xs={24} sm={24} md={24} lg={24} xl={24} xxl={24} style={{textAlign:'center'}}>
-                {/* <Button type="primary" className="stc-button" onClick={handleClick} icon="play-circle">
-                   Ver Tutoriales
-                </Button> */}
                 <Button type="primary" className="stc-button" onClick={handleClick}>
                    Ver Tutoriales
                 </Button>

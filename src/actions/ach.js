@@ -58,7 +58,6 @@ export const getAgreement = ( token, account ) => {
             if (status.code === '0000') {
                 const { detail } = status;
                 dispatch(getAgree(detail));
-                //dispatch(updateStep(3));
                 dispatch(unsetError());
             } else {
                 dispatch(setError(status.message));
