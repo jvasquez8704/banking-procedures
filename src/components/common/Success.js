@@ -41,6 +41,9 @@ const Success = () => {
             {tab === 2 && "Tu ACH se habilitó con éxito."}
             {tab === 3 && "Revisa tu correo electrónico, te hemos enviado una contraseña temporal. La cual debes personalizar en tu Banca Digital."}
           </p>
+          <p className="stc-static-success-message">
+            {tab === 2 && "Te hemos enviado la documentación firmada a tu correo electrónico."}
+          </p>
         </Form.Item>
 
         <Form.Item name="normal-message">

@@ -89,7 +89,7 @@ export const getEnroll = ( token, account ) => {
             const body = await resp.json();
             const { response: { status } } = body;
 
-            if (status.code === '0000') {
+            if (status.code !== '0000') {
                 dispatch(getEnrollment());
                 dispatch(updateStep(3));
                 dispatch(unsetError());

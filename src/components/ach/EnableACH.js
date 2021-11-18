@@ -25,7 +25,7 @@ const EnableACH = () => {
             var origin = event.origin || event.originalEvent.origin;
             var data = event.data;
             if (typeof data === "string")
-                console.log(data, origin);
+                console.log('data => origin:',{data}, {origin});
 
             switch (data) {
                 case 'ESL:MESSAGE:REGISTER':
@@ -38,10 +38,16 @@ const EnableACH = () => {
                     break;
 
                 case 'ESL:MESSAGE:STARTED:SIGNER_COMPLETE_REVIEWED':
-                    event.source.postMessage('ESL:MESSAGE:STARTED:SIGNER_COMPLETE_REVIEWED', origin);
+                    // event.source.postMessage('ESL:MESSAGE:STARTED:SIGNER_COMPLETE_REVIEWED', origin);
+                    console.log('SIGNER_COMPLETE_REVIEWED 3', {event});
+                    dispatch(getEnroll(token, selectedAccount));
+                    setTimeout(() => {                        
+                        setVisibility(false); 
+                    }, 10000);        
                     break;
 
                 default:
+                    console.log('default => ', {event});
                     event.source.postMessage(data, origin)
                     break;
             }
@@ -49,7 +55,7 @@ const EnableACH = () => {
     })
 
     useEffect(() => {
-        console.log("agreement: ", agreement)
+        console.log("Cristian agreement: ", agreement)
         setVisibility(!!agreement)
     }, [agreement])
 
@@ -104,14 +110,14 @@ const EnableACH = () => {
                 iHandleSelectChange={handleChange}
             />
 
-            <Modal title="Términos y Condiciones" visible={visibility} width={1000} height={700}
+            <Modal title="Términos y Condiciones" visible={visibility} width={1000} height={500}
                 footer={[approved && <Button key="submit" type="primary" onClick={handleNext}>
                         Continuar
                     </Button>]}>
                 <iframe title="Agreement"
                     className="agreement_frame"
                     width="100%"
-                    height="400"
+                    height="500"
                     frameborder="0"
                     scrolling="yes"
                     allowTransparency="true" src={agreement}></iframe>
