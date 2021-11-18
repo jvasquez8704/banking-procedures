@@ -6,6 +6,7 @@ import Content from './Content';
 import logo from '../../res/img/logo-basa.svg';
 import img1 from '../../res/img/unlock-icon.svg';
 import img2 from '../../res/img/ach-icon.svg';
+import Ach_Icon from '../../res/img/ach-new-icon.svg';
 import img3 from '../../res/img/resetpass-icon.svg';
 
 import PreLogin from '../auth/PreLogin';
@@ -35,7 +36,7 @@ const TabsCard = () => {
       img: img2,
       desc: { 
         title: "Habilitar ACH",
-        subtitle: "Habilitar transferencias a otros bancos (ACH)" 
+        subtitle: "Habilitar transferencias a otros bancos" 
       },
     }
     // {
@@ -140,13 +141,23 @@ const TabsCard = () => {
           src={logo}
         />
       </div>
-      <Tabs
+      {/* <Tabs
         title={"Accesos a tu Banca Digital"}
         className="stc-tabs ant-row ant-row-center ant-row-middle"
         tabList={tabList}
         onTabChange={onTabChange}
-      ></Tabs>
-      <Content steps={journeys[key]} desc={subtitle} />
+      ></Tabs> */}
+      <div class="stc-landing-title-option">
+       {subtitle}
+      </div>
+      <div className="stc-landing-option-logo">
+        <img alt='success process' src={Ach_Icon}
+          style={{
+            width: "10rem"
+          }}
+        />
+      </div>
+      <Content steps={journeys[key]} desc={""} />
     </div>
   );
 };

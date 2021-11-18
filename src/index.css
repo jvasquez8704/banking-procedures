@@ -49,6 +49,21 @@ h1,h2,h3{
   padding-bottom: 0rem;
 }
 
+.stc-landing-option-logo {
+  text-align: center;
+  border-radius: 1.5rem 1.5rem 0 0;
+  padding-bottom: 0rem;
+}
+.stc-landing-title-option {
+    font-size: 1.8rem;
+    font-weight: bolder;
+    color: rgba(120 119 122);
+    text-align: center;
+    font-family: 'neo_sans_bld';
+    margin-top: 3rem;
+    margin-bottom: -1rem;
+}
+
 .stc-landing-logo-header {
   /* margin-top: 1rem; */
   max-width: 22rem;
