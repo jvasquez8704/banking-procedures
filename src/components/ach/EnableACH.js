@@ -6,6 +6,7 @@ import { setError, unsetError, updateStep } from '../../actions/ui';
 import UserInfoTable from './UserInfoTable';
 import CustomSelect from '../ui/form/CustomSelect';
 import { getAgree, getAgreement, getEnroll, setAchAccount } from '../../actions/ach';
+import Logo from '../../res/img/logo_red.svg';
 
 const EnableACH = () => {
 
@@ -110,10 +111,19 @@ const EnableACH = () => {
                 iHandleSelectChange={handleChange}
             />
 
-            <Modal title="Términos y Condiciones" visible={visibility} width={1000} height={500}
+            <Modal visible={visibility} width={1000} height={500}
                 footer={[approved && <Button key="submit" type="primary" onClick={handleNext}>
                         Continuar
                     </Button>]}>
+                <div className="stc-landing-option-logo">
+                    <img alt='one span atl logo' src={Logo}
+                        style={{
+                            width: "10rem",
+                            display:"block",
+                            marginTop:"-1rem"
+                        }}
+                    />
+                </div>
                 <iframe title="Agreement"
                     className="agreement_frame"
                     width="100%"
