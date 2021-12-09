@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Form, Button, Modal } from 'antd';
+import { Form, Button, Modal, Row, Col } from 'antd';
 
 import { setError, unsetError, updateStep } from '../../actions/ui';
 import UserInfoTable from './UserInfoTable';
-import CustomSelect from '../ui/form/CustomSelect';
+import CustomSelect from '../ui/form/CustomACHSelect';
 import { getAgree, getAgreement, getEnroll, setAchAccount } from '../../actions/ach';
 import Logo from '../../res/img/logo_red.svg';
+import iconErr from '../../res/img/alert_icon.svg';
 
 const EnableACH = () => {
 
@@ -17,6 +18,10 @@ const EnableACH = () => {
     const [account, setAccount] = useState('');
     const [approved, setApproved] = useState(false);
     const [visibility, setVisibility] = useState(false);
+    const [visibilityModalConfirm, setVisibilityModalConfirm] = useState(false);
+    const [isConfirmAcc, setIsConfirmAcc] = useState(false);
+    const I_PLACEHOLDER_TEXT = 'Seleccione una Cuenta';
+    const [selected, setSelected] = useState(I_PLACEHOLDER_TEXT);
 
     useEffect(() => {
         window.addEventListener('message', receiveMessage, true);
@@ -26,7 +31,7 @@ const EnableACH = () => {
             var origin = event.origin || event.originalEvent.origin;
             var data = event.data;
             if (typeof data === "string")
-                console.log('data => origin:',{data}, {origin});
+                //console.log('data => origin:',{data}, {origin}); ACTIVAR ESTO PARA DEBUG
 
             switch (data) {
                 case 'ESL:MESSAGE:REGISTER':
@@ -37,33 +42,43 @@ const EnableACH = () => {
                     event.source.postMessage('ESL:MESSAGE:SUCCESS:SIGNER_COMPLETE', origin);
                     setApproved(true);
                     break;
-
-                case 'ESL:MESSAGE:STARTED:SIGNER_COMPLETE_REVIEWED':
-                    // event.source.postMessage('ESL:MESSAGE:STARTED:SIGNER_COMPLETE_REVIEWED', origin);
-                    console.log('SIGNER_COMPLETE_REVIEWED 3', {event});
-                    dispatch(getEnroll(token, selectedAccount));
-                    setTimeout(() => {                        
-                        setVisibility(false); 
-                    }, 10000);        
+                case 'ESL:MESSAGE:SUCCESS:PACKAGE_DECLINE':
+                    event.source.postMessage('ESL:MESSAGE:SUCCESS:PACKAGE_DECLINE', origin);
+                    setSelected(null);                 
+                    setVisibility(false);  
+                    setSelected(I_PLACEHOLDER_TEXT);                   
                     break;
 
+                case 'ESL:MESSAGE:STARTED:SIGNER_COMPLETE_REVIEWED':
+                    event.source.postMessage('ESL:MESSAGE:STARTED:SIGNER_COMPLETE_REVIEWED', origin);
+                    console.log('SIGNER_COMPLETE_REVIEWED 3', {event});
+                    dispatch(getEnroll(token, selectedAccount));                  
+                    setVisibility(false);        
+                    break;
                 default:
-                    console.log('default => ', {event});
-                    event.source.postMessage(data, origin)
+                    //console.log('default => ', {event});
+                    //event.source.postMessage(data, origin); 
                     break;
             }
         }
     })
 
     useEffect(() => {
-        console.log("Cristian agreement: ", agreement)
-        setVisibility(!!agreement)
+        //console.log("Cristian agreement: ", agreement)
+        // setVisibility(!!agreement); // levantar el modal OneSpan
+        if(isConfirmAcc) {
+            console.log("is ConfirmAcc")
+            setVisibility(!!agreement);
+        }else{
+            setVisibilityModalConfirm(!!agreement);
+            console.log("is not ConfirmAcc")
+        }
     }, [agreement])
 
     const handleSubmit = e => {
         e.preventDefault();
         if (!agreement) {
-            if (account === '') {
+            if (!account) {
                 dispatch(setError('Selecciona una cuenta'));
                 return;
             }
@@ -77,9 +92,11 @@ const EnableACH = () => {
     }
 
     const handleChange = value => {
+        console.log(`handleChange => ${value}`);
         dispatch(setAchAccount(value));
         setAccount(value);
-        dispatch(getAgreement(token, value));
+        setVisibilityModalConfirm(true);
+        //dispatch(getAgreement(token, value));
     }
 
     const handleBack = () => {
@@ -91,6 +108,33 @@ const EnableACH = () => {
     const handleNext = () => {
         dispatch(getEnroll(token, selectedAccount));
         setVisibility(false)
+    }
+
+    const declineAccConfirm = () => {
+        console.log(`declineAccConfirm`);
+        setVisibilityModalConfirm(false);
+        setSelected(null);
+        dispatch(setAchAccount(null)); 
+        setAccount(null);
+        setIsConfirmAcc(false);
+        setTimeout(() => {
+            setSelected(I_PLACEHOLDER_TEXT);
+        },0);
+    }
+    const approveAccConfirm = () => {
+        console.log(`approveAccConfirm => ${account}`);
+        setVisibilityModalConfirm(false); 
+        setIsConfirmAcc(true);
+        setSelected(account);
+        dispatch(getAgreement(token, account));
+    }
+
+    const getSelectedMaskAccount = ()  => {
+        if(accounts && accounts.length) {
+            const accountResult = accounts.find( account => account.product === selected)
+            if(accountResult)  return accountResult.mask
+        }
+        return '';
     }
 
     return (
@@ -106,12 +150,14 @@ const EnableACH = () => {
                 fieldName="account-item"
                 iLabel="Selecciona una cuenta"
                 errMjs="Por favor seleccione una cuenta"
-                iPlaceholder="Seleccione una Cuenta"
+                iPlaceholder={I_PLACEHOLDER_TEXT}
                 items={accounts}
                 iHandleSelectChange={handleChange}
+                iOnHandleSelectChange={setSelected}
+                selectedValue={selected}
             />
 
-            <Modal visible={visibility} width={1000} height={500}
+            <Modal visible={visibility} width={1000} height={500} className="stc-onespan-modal"
                 footer={[approved && <Button key="submit" type="primary" onClick={handleNext}>
                         Continuar
                     </Button>]}>
@@ -132,6 +178,30 @@ const EnableACH = () => {
                     scrolling="yes"
                     allowTransparency="true" src={agreement}></iframe>
             </Modal>
+            <div className="stc-card-title">
+                <Modal
+                    title="Error"
+                    visible={visibilityModalConfirm}
+                    onCancel={declineAccConfirm}
+                    className="stc-error-modal stc-modal"
+                    footer={null}
+                >
+                    <img alt="Error img" className="stc-err-icon" src={iconErr} />
+                    <p>{`Se activará el servicio ACH para la cuenta`} <span><strong style={{fontFamily:'neo_sans_bld'}}>{`${getSelectedMaskAccount()}`}</strong></span></p>
+                    <Row type="flex" justify="center" className="icons-list">
+                        <Col xs={12} sm={12} md={12} lg={12} xl={12} xxl={12} style={{textAlign:'center'}}>
+                            <Button type="default" className="btn stc-button-not-confirm-modal" htmlType="button" onClick={declineAccConfirm}>
+                                Cancelar
+                            </Button>
+                        </Col> 
+                        <Col xs={12} sm={12} md={12} lg={12} xl={12} xxl={12} style={{textAlign:'center'}}>
+                            <Button type="primary" className="stc-button-confirm-modal" htmlType="button" onClick={approveAccConfirm}>
+                                Confirmar
+                            </Button>
+                        </Col>
+                    </Row>
+                </Modal>
+            </div>
 
             <Form.Item>
                 <Button type="default" className="btn stc-button-default" htmlType="button" onClick={handleBack}>

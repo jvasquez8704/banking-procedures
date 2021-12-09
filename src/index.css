@@ -431,6 +431,34 @@ div#rcDialogTitle0{
   font-family: 'neo_sans_bld';
 }
 
+.stc-button-not-confirm-modal {
+  border-radius: 7px;
+  padding: 0.4rem 0.8rem 1.5rem;
+  font-weight: 700;
+  font-size: small;
+  text-transform: uppercase;
+  font-family: 'neo_sans_bld';
+}
+
+.stc-button-confirm-modal {
+  color: #fff;
+  font-size: small;
+  font-family: 'neo_sans_bld';
+  padding: 0.4rem 0.8rem 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 7px;
+}
+
+.stc-button-not-confirm-modal:hover, .stc-button-default:focus {
+  color: #e64e4e;
+  border-color: #e64e4e;
+}
+
+.stc-onespan-modal .ant-modal-close-x {
+ display: none;
+}
+
 .ant-btn-primary {
    background-color: #d9272e;
   border-color: #d9272e;
