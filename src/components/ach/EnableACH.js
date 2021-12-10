@@ -67,11 +67,9 @@ const EnableACH = () => {
         //console.log("Cristian agreement: ", agreement)
         // setVisibility(!!agreement); // levantar el modal OneSpan
         if(isConfirmAcc) {
-            console.log("is ConfirmAcc")
             setVisibility(!!agreement);
         }else{
             setVisibilityModalConfirm(!!agreement);
-            console.log("is not ConfirmAcc")
         }
     }, [agreement])
 
@@ -92,11 +90,9 @@ const EnableACH = () => {
     }
 
     const handleChange = value => {
-        console.log(`handleChange => ${value}`);
-        dispatch(setAchAccount(value));
-        setAccount(value);
+        dispatch(setAchAccount(selected));
+        setAccount(selected);
         setVisibilityModalConfirm(true);
-        //dispatch(getAgreement(token, value));
     }
 
     const handleBack = () => {
@@ -111,7 +107,6 @@ const EnableACH = () => {
     }
 
     const declineAccConfirm = () => {
-        console.log(`declineAccConfirm`);
         setVisibilityModalConfirm(false);
         setSelected(null);
         dispatch(setAchAccount(null)); 
@@ -122,11 +117,9 @@ const EnableACH = () => {
         },0);
     }
     const approveAccConfirm = () => {
-        console.log(`approveAccConfirm => ${account}`);
         setVisibilityModalConfirm(false); 
         setIsConfirmAcc(true);
-        setSelected(account);
-        dispatch(getAgreement(token, account));
+        dispatch(getAgreement(token, selected));
     }
 
     const getSelectedMaskAccount = ()  => {
