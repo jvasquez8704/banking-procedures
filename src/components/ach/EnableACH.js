@@ -55,6 +55,65 @@ const EnableACH = () => {
                     dispatch(getEnroll(token, selectedAccount));                  
                     setVisibility(false);        
                     break;
+                case 'ESL:MESSAGE:SUCCESS:DOCUMENT_NAVIGATION':
+                    event.source.postMessage('ESL:MESSAGE:SUCCESS:DOCUMENT_NAVIGATION', origin);
+                    console.log('ESL:MESSAGE:SUCCESS:DOCUMENT_NAVIGATION');     
+                    break;
+                case 'ESL:MESSAGE:STARTED:DOCUMENT_NAVIGATION':
+                    event.source.postMessage('ESL:MESSAGE:STARTED:DOCUMENT_NAVIGATION', origin);
+                    console.log('ESL:MESSAGE:STARTED:DOCUMENT_NAVIGATION');     
+                    break;
+                case 'ESL:MESSAGE:STARTED:SIGNER_COMPLETE':
+                    event.source.postMessage('ESL:MESSAGE:STARTED:SIGNER_COMPLETE', origin);
+                    console.log('ESL:MESSAGE:STARTED:SIGNER_COMPLETE');     
+                    break;
+                case 'ESL:MESSAGE:ERROR:DOCUMENT_CONFIRM':
+                    event.source.postMessage('ESL:MESSAGE:ERROR:DOCUMENT_CONFIRM', origin);
+                    console.log('ESL:MESSAGE:ERROR:DOCUMENT_CONFIRM');     
+                    break;
+                case 'ESL:MESSAGE:SUCCESS:DOCUMENT_CONFIRM':
+                    event.source.postMessage('ESL:MESSAGE:SUCCESS:DOCUMENT_CONFIRM', origin);
+                    console.log('ESL:MESSAGE:SUCCESS:DOCUMENT_CONFIRM');     
+                    break;
+                case 'ESL:MESSAGE:STARTED:DOCUMENT_CONFIRM':
+                    event.source.postMessage('ESL:MESSAGE:STARTED:DOCUMENT_CONFIRM', origin);
+                    console.log('ESL:MESSAGE:STARTED:DOCUMENT_CONFIRM');     
+                    break;
+                case 'ESL:MESSAGE:ERROR:PACKAGE_DECLINE':
+                    event.source.postMessage('ESL:MESSAGE:ERROR:PACKAGE_DECLINE', origin);
+                    console.log('ESL:MESSAGE:ERROR:PACKAGE_DECLINE');     
+                    break;
+                case 'ESL:MESSAGE:STARTED:PACKAGE_DECLINE':
+                    event.source.postMessage('ESL:MESSAGE:STARTED:PACKAGE_DECLINE', origin);
+                    console.log('ESL:MESSAGE:STARTED:PACKAGE_DECLINE');     
+                    break;
+                case 'ESL:MESSAGE:ERROR:PACKAGE_OPT_OUT':
+                    event.source.postMessage('ESL:MESSAGE:ERROR:PACKAGE_OPT_OUT', origin);
+                    console.log('ESL:MESSAGE:ERROR:PACKAGE_OPT_OUT');     
+                    break;
+                case 'ESL:MESSAGE:SUCCESS:PACKAGE_OPT_OUT':
+                    event.source.postMessage('ESL:MESSAGE:SUCCESS:PACKAGE_OPT_OUT', origin);
+                    console.log('ESL:MESSAGE:SUCCESS:PACKAGE_OPT_OUT');     
+                    break;
+                case 'ESL:MESSAGE:STARTED:PACKAGE_OPT_OUT':
+                    event.source.postMessage('ESL:MESSAGE:STARTED:PACKAGE_OPT_OUT', origin);
+                    console.log('ESL:MESSAGE:STARTED:PACKAGE_OPT_OUT');     
+                    break;
+                case 'ESL:MESSAGE:ERROR:DOCUMENT_ACCEPT':
+                    event.source.postMessage('ESL:MESSAGE:ERROR:DOCUMENT_ACCEPT', origin);
+                    console.log('ESL:MESSAGE:ERROR:DOCUMENT_ACCEPT');  
+                    setSelected(null);                 
+                    setVisibility(false);  
+                    setSelected(I_PLACEHOLDER_TEXT);   
+                    break;
+                case 'ESL:MESSAGE:SUCCESS:DOCUMENT_ACCEPT':
+                    event.source.postMessage('ESL:MESSAGE:SUCCESS:DOCUMENT_ACCEPT', origin);
+                    console.log('ESL:MESSAGE:SUCCESS:DOCUMENT_ACCEPT', {origin});     
+                    break;
+                case 'ESL:MESSAGE:STARTED:DOCUMENT_ACCEPT':
+                    event.source.postMessage('ESL:MESSAGE:STARTED:DOCUMENT_ACCEPT', origin);
+                    console.log('ESL:MESSAGE:STARTED:DOCUMENT_ACCEPT');     
+                    break;
                 default:
                     //console.log('default => ', {event});
                     //event.source.postMessage(data, origin); 
