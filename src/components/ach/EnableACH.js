@@ -105,6 +105,8 @@ const EnableACH = () => {
                     setSelected(null);                 
                     setVisibility(false);  
                     setSelected(I_PLACEHOLDER_TEXT);   
+                    handleBack();
+                    dispatch(updateStep(0));
                     break;
                 case 'ESL:MESSAGE:SUCCESS:DOCUMENT_ACCEPT':
                     event.source.postMessage('ESL:MESSAGE:SUCCESS:DOCUMENT_ACCEPT', origin);
