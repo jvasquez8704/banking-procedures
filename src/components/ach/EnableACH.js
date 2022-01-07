@@ -43,10 +43,13 @@ const EnableACH = () => {
                     setApproved(true);
                     break;
                 case 'ESL:MESSAGE:SUCCESS:PACKAGE_DECLINE':
-                    event.source.postMessage('ESL:MESSAGE:SUCCESS:PACKAGE_DECLINE', origin);
+                    event && event.source && event.source.postMessage('ESL:MESSAGE:SUCCESS:PACKAGE_DECLINE', origin);
                     setSelected(null);                 
                     setVisibility(false);  
-                    setSelected(I_PLACEHOLDER_TEXT);                   
+                    setSelected(I_PLACEHOLDER_TEXT);
+                    handleBack();
+                    dispatch(updateStep(0));
+                    console.log('ESL:MESSAGE:SUCCESS:PACKAGE_DECLINE');                   
                     break;
 
                 case 'ESL:MESSAGE:STARTED:SIGNER_COMPLETE_REVIEWED':
