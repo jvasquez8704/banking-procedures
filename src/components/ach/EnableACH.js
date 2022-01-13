@@ -35,11 +35,10 @@ const EnableACH = () => {
 
             switch (data) {
                 case 'ESL:MESSAGE:REGISTER':
-                    event.source.postMessage('ESL:MESSAGE:ACTIVATE_EVENTS', origin);
+                    event && event.source && event.source.postMessage('ESL:MESSAGE:ACTIVATE_EVENTS', origin);
                     break;
-
                 case 'ESL:MESSAGE:SUCCESS:SIGNER_COMPLETE':
-                    event.source.postMessage('ESL:MESSAGE:SUCCESS:SIGNER_COMPLETE', origin);
+                    event && event.source && event.source.postMessage('ESL:MESSAGE:SUCCESS:SIGNER_COMPLETE', origin);
                     setApproved(true);
                     break;
                 case 'ESL:MESSAGE:SUCCESS:PACKAGE_DECLINE':
@@ -51,58 +50,57 @@ const EnableACH = () => {
                     dispatch(updateStep(0));
                     console.log('ESL:MESSAGE:SUCCESS:PACKAGE_DECLINE');                   
                     break;
-
                 case 'ESL:MESSAGE:STARTED:SIGNER_COMPLETE_REVIEWED':
                     event && event.source && event.source.postMessage('ESL:MESSAGE:STARTED:SIGNER_COMPLETE_REVIEWED', origin);
                     console.log('SIGNER_COMPLETE_REVIEWED 3', {event});
                     dispatch(updateStep(3));
                     break;
                 case 'ESL:MESSAGE:SUCCESS:DOCUMENT_NAVIGATION':
-                    event.source.postMessage('ESL:MESSAGE:SUCCESS:DOCUMENT_NAVIGATION', origin);
+                    event && event.source && event.source.postMessage('ESL:MESSAGE:SUCCESS:DOCUMENT_NAVIGATION', origin);
                     console.log('ESL:MESSAGE:SUCCESS:DOCUMENT_NAVIGATION');     
                     break;
                 case 'ESL:MESSAGE:STARTED:DOCUMENT_NAVIGATION':
-                    event.source.postMessage('ESL:MESSAGE:STARTED:DOCUMENT_NAVIGATION', origin);
+                    event && event.source && event.source.postMessage('ESL:MESSAGE:STARTED:DOCUMENT_NAVIGATION', origin);
                     console.log('ESL:MESSAGE:STARTED:DOCUMENT_NAVIGATION');     
                     break;
                 case 'ESL:MESSAGE:STARTED:SIGNER_COMPLETE':
-                    event.source.postMessage('ESL:MESSAGE:STARTED:SIGNER_COMPLETE', origin);
+                    event && event.source && event.source.postMessage('ESL:MESSAGE:STARTED:SIGNER_COMPLETE', origin);
                     console.log('ESL:MESSAGE:STARTED:SIGNER_COMPLETE');     
                     break;
                 case 'ESL:MESSAGE:ERROR:DOCUMENT_CONFIRM':
-                    event.source.postMessage('ESL:MESSAGE:ERROR:DOCUMENT_CONFIRM', origin);
+                    event && event.source && event.source.postMessage('ESL:MESSAGE:ERROR:DOCUMENT_CONFIRM', origin);
                     console.log('ESL:MESSAGE:ERROR:DOCUMENT_CONFIRM');     
                     break;
                 case 'ESL:MESSAGE:SUCCESS:DOCUMENT_CONFIRM':
-                    event.source.postMessage('ESL:MESSAGE:SUCCESS:DOCUMENT_CONFIRM', origin);
+                    event && event.source && event.source.postMessage('ESL:MESSAGE:SUCCESS:DOCUMENT_CONFIRM', origin);
                     console.log('ESL:MESSAGE:SUCCESS:DOCUMENT_CONFIRM');     
                     break;
                 case 'ESL:MESSAGE:STARTED:DOCUMENT_CONFIRM':
-                    event.source.postMessage('ESL:MESSAGE:STARTED:DOCUMENT_CONFIRM', origin);
+                    event && event.source && event.source.postMessage('ESL:MESSAGE:STARTED:DOCUMENT_CONFIRM', origin);
                     console.log('ESL:MESSAGE:STARTED:DOCUMENT_CONFIRM');     
                     break;
                 case 'ESL:MESSAGE:ERROR:PACKAGE_DECLINE':
-                    event.source.postMessage('ESL:MESSAGE:ERROR:PACKAGE_DECLINE', origin);
+                    event && event.source && event.source.postMessage('ESL:MESSAGE:ERROR:PACKAGE_DECLINE', origin);
                     console.log('ESL:MESSAGE:ERROR:PACKAGE_DECLINE');     
                     break;
                 case 'ESL:MESSAGE:STARTED:PACKAGE_DECLINE':
-                    event.source.postMessage('ESL:MESSAGE:STARTED:PACKAGE_DECLINE', origin);
+                    event && event.source && event.source.postMessage('ESL:MESSAGE:STARTED:PACKAGE_DECLINE', origin);
                     console.log('ESL:MESSAGE:STARTED:PACKAGE_DECLINE');     
                     break;
                 case 'ESL:MESSAGE:ERROR:PACKAGE_OPT_OUT':
-                    event.source.postMessage('ESL:MESSAGE:ERROR:PACKAGE_OPT_OUT', origin);
+                    event && event.source && event.source.postMessage('ESL:MESSAGE:ERROR:PACKAGE_OPT_OUT', origin);
                     console.log('ESL:MESSAGE:ERROR:PACKAGE_OPT_OUT');     
                     break;
                 case 'ESL:MESSAGE:SUCCESS:PACKAGE_OPT_OUT':
-                    event.source.postMessage('ESL:MESSAGE:SUCCESS:PACKAGE_OPT_OUT', origin);
+                    event && event.source && event.source.postMessage('ESL:MESSAGE:SUCCESS:PACKAGE_OPT_OUT', origin);
                     console.log('ESL:MESSAGE:SUCCESS:PACKAGE_OPT_OUT');     
                     break;
                 case 'ESL:MESSAGE:STARTED:PACKAGE_OPT_OUT':
-                    event.source.postMessage('ESL:MESSAGE:STARTED:PACKAGE_OPT_OUT', origin);
+                    event && event.source && event.source.postMessage('ESL:MESSAGE:STARTED:PACKAGE_OPT_OUT', origin);
                     console.log('ESL:MESSAGE:STARTED:PACKAGE_OPT_OUT');     
                     break;
                 case 'ESL:MESSAGE:ERROR:DOCUMENT_ACCEPT':
-                    event.source.postMessage('ESL:MESSAGE:ERROR:DOCUMENT_ACCEPT', origin);
+                    event && event.source && event.source.postMessage('ESL:MESSAGE:ERROR:DOCUMENT_ACCEPT', origin);
                     console.log('ESL:MESSAGE:ERROR:DOCUMENT_ACCEPT');  
                     setTimeout(() => {
                         dispatch(getEnroll(token, selectedAccount));
@@ -114,11 +112,11 @@ const EnableACH = () => {
                     // dispatch(updateStep(0));
                     break;
                 case 'ESL:MESSAGE:SUCCESS:DOCUMENT_ACCEPT':
-                    event.source.postMessage('ESL:MESSAGE:SUCCESS:DOCUMENT_ACCEPT', origin);
+                    event && event.source && event.source.postMessage('ESL:MESSAGE:SUCCESS:DOCUMENT_ACCEPT', origin);
                     console.log('ESL:MESSAGE:SUCCESS:DOCUMENT_ACCEPT', {origin});     
                     break;
                 case 'ESL:MESSAGE:STARTED:DOCUMENT_ACCEPT':
-                    event.source.postMessage('ESL:MESSAGE:STARTED:DOCUMENT_ACCEPT', origin);
+                    event && event.source && event.source.postMessage('ESL:MESSAGE:STARTED:DOCUMENT_ACCEPT', origin);
                     console.log('ESL:MESSAGE:STARTED:DOCUMENT_ACCEPT');     
                     break;
                 default:
