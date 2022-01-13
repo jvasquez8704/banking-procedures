@@ -53,10 +53,9 @@ const EnableACH = () => {
                     break;
 
                 case 'ESL:MESSAGE:STARTED:SIGNER_COMPLETE_REVIEWED':
-                    event.source.postMessage('ESL:MESSAGE:STARTED:SIGNER_COMPLETE_REVIEWED', origin);
+                    event && event.source && event.source.postMessage('ESL:MESSAGE:STARTED:SIGNER_COMPLETE_REVIEWED', origin);
                     console.log('SIGNER_COMPLETE_REVIEWED 3', {event});
-                    dispatch(getEnroll(token, selectedAccount));                  
-                    setVisibility(false);        
+                    dispatch(updateStep(3));
                     break;
                 case 'ESL:MESSAGE:SUCCESS:DOCUMENT_NAVIGATION':
                     event.source.postMessage('ESL:MESSAGE:SUCCESS:DOCUMENT_NAVIGATION', origin);
@@ -105,11 +104,14 @@ const EnableACH = () => {
                 case 'ESL:MESSAGE:ERROR:DOCUMENT_ACCEPT':
                     event.source.postMessage('ESL:MESSAGE:ERROR:DOCUMENT_ACCEPT', origin);
                     console.log('ESL:MESSAGE:ERROR:DOCUMENT_ACCEPT');  
-                    setSelected(null);                 
-                    setVisibility(false);  
-                    setSelected(I_PLACEHOLDER_TEXT);   
-                    handleBack();
-                    dispatch(updateStep(0));
+                    setTimeout(() => {
+                        dispatch(getEnroll(token, selectedAccount));
+                        //setSelected(null);                 
+                        setVisibility(false);  
+                        //setSelected(I_PLACEHOLDER_TEXT);
+                    }, 7000);   
+                    // handleBack();
+                    // dispatch(updateStep(0));
                     break;
                 case 'ESL:MESSAGE:SUCCESS:DOCUMENT_ACCEPT':
                     event.source.postMessage('ESL:MESSAGE:SUCCESS:DOCUMENT_ACCEPT', origin);
