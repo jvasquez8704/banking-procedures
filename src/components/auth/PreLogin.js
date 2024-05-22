@@ -55,7 +55,7 @@ const Verify = () => {
                         message: 'Por favor ingresa una identificación válida'
                     },
                     minLength: {
-                        value: 6,
+                        value: 4,
                         message: 'Por favor ingresa una identificación válida'
                     },
                     pattern: {
