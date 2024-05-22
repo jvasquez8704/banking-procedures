@@ -1,4 +1,5 @@
-const baseUrl = 'http://150.150.6.114:81/LandingPageREST/rest';
+const baseUrl = 'https://slat.bancatlan.hn/LandingPageREST/rest';
+//const baseUrl = 'http://150.150.6.114:81/LandingPageREST/rest';
 const tabs = {
     unlockUser: 1,
     enableACH: 2,
